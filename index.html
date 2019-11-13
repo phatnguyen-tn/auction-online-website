@@ -11,7 +11,7 @@
   <!--Import social icons-->
   <script src="https://kit.fontawesome.com/428fdbe2d7.js" crossorigin="anonymous"></script>
   <!--Custom css-->
-  <!--link rel="stylesheet" href="css/main.css"-->
+  <link rel="stylesheet" href="css/main.css">
   <title>Auction</title>
 </head>
 
@@ -26,15 +26,33 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="#top-5">Top 5</a></li>
-            <li><a href="">Danh mục</a></li>
-            <li><a href="">Tìm kiếm</a></li>
-            <li><a href="">Đăng nhập</a></li>
+            <!-- Dropdown Trigger -->
+            <li>
+              <a class="dropdown-trigger" href="list.html" data-target="dropdown1">
+                Danh mục
+                <i class="material-icons right">arrow_drop_down</i>
+              </a>
+            </li>
+            <li><a href="search.html">Tìm kiếm</a></li>
+            <li><a href="login.html">Đăng nhập</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </div>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="#!">Xe</a></li>
+    <li><a href="#!">Tranh</a></li>
+    <li class="divider"></li>
+    <li><a class="dropdown-button2" href="#!" data-target="dropdown2">Điện tử</a></li>
+  </ul>
+
+  <ul id='dropdown2' class='dropdown-content'>
+    <li><a href="#!">Điện thoại di động</a></li>
+    <li><a href="#!">Máy tính xách tay</a></li>
+  </ul>
+
   <!--SideNav Menu-->
   <ul class="grey darken-4 sidenav" id="mobile-nav">
     <li>
@@ -43,10 +61,9 @@
         <h5>Online Auction</h5>
       </a>
     </li>
-    <li><a href="#top-5" class="white-text">Top 5</a></li>
-    <li><a href="" class="white-text">Danh mục</a></li>
-    <li><a href="" class="white-text">Tìm kiếm</a></li>
-    <li><a href="" class="white-text">Đăng nhập</a></li>
+    <li><a href="list.html" class="white-text">Danh mục</a></li>
+    <li><a href="search.html" class="white-text">Tìm kiếm</a></li>
+    <li><a href="login.html" class="white-text">Đăng nhập</a></li>
   </ul>
   <!--Slider-->
   <div class="slider">
@@ -92,7 +109,7 @@
     <br>
     <div id="top-5-costs" class="carousel">
       <div class="caption center-align">
-        <h4>Giá cao nhất</h4>
+        <h4><strong>Giá cao nhất</strong></h4>
       </div>
       <a class="carousel-item" href="#one!">
         <div class="caption center-align">
@@ -131,37 +148,37 @@
     <br>
     <div id="top-5-time-left" class="carousel">
       <div class="caption center-align">
-        <h4>Gần kết thúc</h4>
+        <h4><strong>Gần kết thúc</strong></h4>
       </div>
       <a class="carousel-item" href="#one!">
         <div class="caption center-align">
           <p class="light green-text"><strong>59'</strong></p>
         </div>
-        <img src="/img/06.jpg">
+        <img src="/img/01.jpg">
       </a>
       <a class="carousel-item" href="#two!">
         <div class="caption center-align">
           <p class="light green-text"><strong>1h15'</strong></p>
         </div>
-        <img src="/img/07.jpg">
+        <img src="/img/02.jpg">
       </a>
       <a class="carousel-item" href="#three!">
         <div class="caption center-align">
           <p class="light green-text"><strong>15'</strong></p>
         </div>
-        <img src="/img/08.jpg">
+        <img src="/img/03.jpg">
       </a>
       <a class="carousel-item" href="#four!">
         <div class="caption center-align">
           <p class="light green-text"><strong>1h05'</strong></p>
         </div>
-        <img src="/img/09.jpg">
+        <img src="/img/04.jpg">
       </a>
       <a class="carousel-item" href="#five!">
         <div class="caption center-align">
           <p class="light green-text"><strong>32'</strong></p>
         </div>
-        <img src="/img/03.jpg">
+        <img src="/img/05.jpg">
       </a>
     </div>
     <br>
@@ -170,37 +187,37 @@
     <br>
     <div id="top-5-votes" class="carousel">
       <div class="caption center-align">
-        <h4>Lượt đấu giá</h4>
+        <h4><strong>Lượt đấu giá</strong></h4>
       </div>
       <a class="carousel-item" href="#one!">
         <div class="caption center-align">
           <p class="light green-text"><strong>8022 lượt</strong></p>
         </div>
-        <img src="/img/10.jpg">
+        <img src="/img/01.jpg">
       </a>
       <a class="carousel-item" href="#two!">
         <div class="caption center-align">
           <p class="light green-text"><strong>7701 lượt</strong></p>
         </div>
-        <img src="/img/04.jpg">
+        <img src="/img/02.jpg">
       </a>
       <a class="carousel-item" href="#three!">
         <div class="caption center-align">
           <p class="light green-text"><strong>5025 lượt</strong></p>
         </div>
-        <img src="/img/09.jpg">
+        <img src="/img/03.jpg">
       </a>
       <a class="carousel-item" href="#four!">
         <div class="caption center-align">
           <p class="light green-text"><strong>6452 lượt</strong></p>
         </div>
-        <img src="/img/08.jpg">
+        <img src="/img/04.jpg">
       </a>
       <a class="carousel-item" href="#five!">
         <div class="caption center-align">
           <p class="light green-text"><strong>4549 lượt</strong></p>
         </div>
-        <img src="/img/02.jpg">
+        <img src="/img/05.jpg">
       </a>
     </div>
     <br>
@@ -241,32 +258,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="/js/main.js"></script>
-
-    <!--Test-->
-    <script>
-      //$(".dropdown-trigger").dropdown();
-      $(document).ready(() => {
-        $(".dropdown-trigger").dropdown({
-          hover: true,
-          coverTrigger: false
-        });
-      })
-
-      $(document).ready(function () {
-        $('.scrollspy').scrollSpy({
-          throttle: 10
-        });
-      });
-
-      const ac = document.querySelector('.autocomplete');
-      M.Autocomplete.init(ac, {
-        "Aruba": null,
-        "Google": null,
-        "Facebook": null,
-        "ahihi": null
-      })
-
-    </script>
 
 </body>
 

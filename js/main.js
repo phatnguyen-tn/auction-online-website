@@ -14,10 +14,20 @@ $(document).ready(function () {
     })
 
     $('#top-5-time-left.carousel').carousel({
-        noWrap: true
+        shift: -80
     })
 
     $('#top-5-votes.carousel').carousel({
-        dist: 0
+        shift: -80
     })
+    // dropdown
+    $(".dropdown-trigger").dropdown({
+        hover: true,
+        coverTrigger: false,
+    });
+
+    $('.dropdown-button2').dropdown({
+        hover: true,
+        coverTrigger: false
+    });
 })
