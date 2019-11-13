@@ -26,7 +26,7 @@
             <i class="material-icons">menu</i>
           </a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="">Top 5</a></li>
+            <li><a href="#top-5">Top 5</a></li>
             <li><a href="">Danh mục</a></li>
             <li><a href="">Tìm kiếm</a></li>
             <li><a href="">Đăng nhập</a></li>
@@ -54,29 +54,29 @@
       <li>
         <img src="/img/slider-01.jpg">
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Chất lượng giao dịch</h3>
+          <h5 class="light grey-text text-lighten-3">Đảm bảo giao dịch đúng thời hạn</h5>
         </div>
       </li>
       <li>
         <img src="/img/slider-02.jpg">
         <div class="caption left-align">
-          <h3>Left Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>An toàn</h3>
+          <h5 class="light grey-text text-lighten-3">Đảm bảo các hoạt động đấu giá</h5>
         </div>
       </li>
       <li>
         <img src="/img/slider-03.jpg">
         <div class="caption right-align">
-          <h3>Right Aligned Caption</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Đội ngũ thân thiện</h3>
+          <h5 class="light grey-text text-lighten-3">Luôn luôn lắng nghe khác hàng</h5>
         </div>
       </li>
       <li>
         <img src="/img/slider-04.jpg">
         <div class="caption center-align">
-          <h3>This is our big Tagline!</h3>
-          <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+          <h3>Nơi tìm kiếm</h3>
+          <h5 class="light grey-text text-lighten-3">Các sản phẩm quý giá được trưng bày</h5>
         </div>
       </li>
     </ul>
@@ -210,11 +210,12 @@
         <div class="row">
           <div class="col l6 s12">
             <h5 class="white-text">Thông tin chi tiết</h5>
-            <p class="grey-text text-lighten-4">Người tham gia có thể mua và bán sản phẩm thông qua đấu giá bằng hình thức online</p>
+            <p class="grey-text text-lighten-4">Người tham gia có thể mua và bán sản phẩm thông qua đấu giá bằng hình
+              thức online</p>
           </div>
           <div class="col l4 offset-l2 s12">
             <h5 class="white-text">Liên hệ thông qua</h5>
-            <ul class="center">
+            <ul>
               <li>
                 <a class="grey-text text-lighten-3" href="#!">
                   <span>Facebook</span>
@@ -222,22 +223,8 @@
                 </a>
               </li>
               <li>
-                <a class="grey-text text-lighten-3" href="#!">
-                  <span>Instagram</span>
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>
-              <li>
-                <a class="grey-text text-lighten-3" href="#!">
-                    <span>Github</span>
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-              <li>
-                  <span>Twitter</span>
-                <a class="grey-text text-lighten-3" href="#!">
-                  <i class="fab fa-twitter"></i>
-                </a>
+                <span>Địa chỉ: </span>
+                <a href="https://goo.gl/maps/NrvjEXRzg5rvMtGj6" target="blank">Trường ĐH KHTN TP HCM (HCMUS)</a>
               </li>
             </ul>
           </div>
@@ -253,45 +240,10 @@
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!--Test-->
     <script>
-
-      // Sidenav
-      const sideNav = document.querySelector('.sidenav');
-      M.Sidenav.init(sideNav, {});
-
-      // Slider
-      const slider = document.querySelector('.slider');
-      M.Slider.init(slider, {
-        indicators: false,
-        duration: 200,
-        interval: 2000
-      });
-      // carousel
-      const carousel = document.querySelector('#top-5-costs.carousel');
-      M.Carousel.init(carousel, {
-        shift: -80
-      });
-
-      const carousel2 = document.querySelector('#top-5-votes.carousel');
-      M.Carousel.init(carousel2, {
-        dist: 0
-      });
-
-      const carousel1 = document.querySelector('#top-5-time-left.carousel');
-      M.Carousel.init(carousel1, {
-        noWrap: true,
-      });
-
-      // parallax
-      const parallax = document.querySelector('.parallax');
-      M.Parallax.init(parallax, {});
-
-      // crollSpy
-      document.addEventListener('DOMContentLoaded', function () {
-        var elems = document.querySelectorAll('.scrollspy');
-        var instances = M.ScrollSpy.init(elems, options);
-      });
-
       //$(".dropdown-trigger").dropdown();
       $(document).ready(() => {
         $(".dropdown-trigger").dropdown({
