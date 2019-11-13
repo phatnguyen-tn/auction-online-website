@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import social icons-->
+    <script src="https://kit.fontawesome.com/428fdbe2d7.js" crossorigin="anonymous"></script>
+    <!--Custom css-->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <!--NavBar-->
+    <div class="navbar-fixed">
+        <nav class="grey darken-4">
+            <div class="container">
+                <a href="index.html" class="brand-logo center">Auction</a>
+                <div class="nav-wrapper">
+                    <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <!-- Dropdown Trigger -->
+                        <li>
+                            <a class="dropdown-trigger" href="list.html" data-target="dropdown1">
+                                Danh mục
+                                <i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
+                        <li><a href="search.html">Tìm kiếm</a></li>
+                        <li><a href="">Đăng nhập</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">Xe</a></li>
+        <li><a href="#!">Tranh</a></li>
+        <li class="divider"></li>
+        <li><a class="dropdown-button2" href="#!" data-target="dropdown2">Điện tử</a></li>
+    </ul>
+
+    <ul id='dropdown2' class='dropdown-content'>
+        <li><a href="#!">Điện thoại di động</a></li>
+        <li><a href="#!">Máy tính xách tay</a></li>
+    </ul>
+
+    <!--SideNav Menu-->
+    <ul class="grey darken-4 sidenav" id="mobile-nav">
+        <li>
+            <br>
+            <a href="index.html" class="white-text">
+                <h5>Online Auction</h5>
+            </a>
+        </li>
+        <li><a href="list.html" class="white-text">Danh mục</a></li>
+        <li><a href="search.html" class="white-text">Tìm kiếm</a></li>
+        <li><a href="" class="white-text">Đăng nhập</a></li>
+    </ul>
+
+    <!--Form-->
+    <div class="container">
+        <div class="row">
+            <!--Login-->
+            <div class="col s12 m4">
+                <div class="container"></div>
+                <div class="card-panel grey darken-4 white-text center">
+                    <h4>Đăng nhập</h4>
+                </div>
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input id="username" type="text" class="validate" data-length="30">
+                            <label for="username">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input id="password" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="container">
+                            <button class="btn waves-effect waves-light grey darken-4 right" type="submit"
+                                name="action">Đăng nhập</button>
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+            <!--Reset password-->
+            <div class="col s12 m8">
+                <div class="container">
+                    <div class="card-panel grey darken-4 white-text center">
+                        <h4>Đăng ký tài khoản</h4>
+                        <div class="divider"></div>
+                        <p>Nếu chưa có tài khoản, bạn có thể đăng ký tại đây</p>
+                    </div>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">mode_edit</i>
+                                <textarea id="fullNameRegister" class="materialize-textarea"></textarea>
+                                <label for="fullNameRegister">Full Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="usernameRegister" type="text" class="validate" data-length="30">
+                                <label for="usernameRegister">Username</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="emailRegister" type="email" class="validate">
+                                <label for="emailRegister">Email</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock</i>
+                                <input id="passwordRegister" type="password" class="validate">
+                                <label for="passwordRegister">Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock_outline</i>
+                                <input id="confirmPasswordRegister" type="password" class="validate">
+                                <label for="confirmPasswordRegister">Confirm Password</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label class="col s12">
+                                <input type="checkbox" />
+                                <span>Tôi đã đồng ý các điều khoản</span>
+                            </label>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <button class="btn waves-effect waves-light grey darken-4 right" type="submit"
+                                    name="action">Đăng ký</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <!--Footer-->
+    <footer class="page-footer grey darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Thông tin chi tiết</h5>
+                    <p class="grey-text text-lighten-4">Người tham gia có thể mua và bán sản phẩm thông qua đấu
+                        giá
+                        bằng
+                        hình
+                        thức online</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Liên hệ thông qua</h5>
+                    <ul>
+                        <li>
+                            <a class="grey-text text-lighten-3" href="#!">
+                                <span>Facebook</span>
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <span>Địa chỉ: </span>
+                            <a href="https://goo.gl/maps/NrvjEXRzg5rvMtGj6" target="blank">Trường ĐH KHTN TP HCM
+                                (HCMUS)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2019 Online Auction
+                <a class="grey-text text-lighten-4 right" href="#!">Hỗ trợ</a>
+            </div>
+        </div>
+    </footer>
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/login.js"></script>
+
+</body>
+
+</html>
