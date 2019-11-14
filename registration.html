@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Auction Online</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="font-awesome/iconic/css/material-design-iconic-font.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/util.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header start -->
+    <div class="header-area">
+      <div class="header-top-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-6">
+              <div class="socical-meadia-link">
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-md-6">
+              <div class="short-contact-list">
+                <ul>
+                  <li><i class="fa fa-envelope"></i> info@auctiononline.com</li>
+                  <li><i class="fa fa-phone"></i> 1800 1959</li>
+                  <li>
+                    <i class="fa fa-sign-in"></i>
+                    <button type="button" class="btn btn-primary" id="sign-in">
+                      Đăng nhập
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-main-area">
+        <div class="container">
+          <div class="row align-items-center main-menu-area">
+            <div class="col-md-3 col-lg-2">
+              <!-- logo -->
+              <div class="logo">
+                <a href="index.html">
+                  <img
+                    src="images/logo.png"
+                    alt="logo"
+                    width="200px"
+                    height="80px"
+                  />
+                </a>
+              </div>
+            </div>
+            <div></div>
+            <div class="col-md-6 col-lg-7">
+              <!-- navigation bar -->
+              <div class="main-menu">
+                <nav class="navbar navbar-expand-lg">
+                  <ul class="navbar-nav mr-auto menu">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">
+                        Danh mục sản phẩm
+                      </a>
+                      <ul class="sub-menu-1">
+                        <li>
+                          <a class="nav-link" href="#">Điện tử</a>
+                          <ul class="sub-menu-2">
+                            <li>
+                              <a class="nav-link" href="#"
+                                >Điện thoại di động</a
+                              >
+                            </li>
+                            <li>
+                              <a class="nav-link" href="#">Máy tính xách tay</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a class="nav-link" href="#">Quần áo</a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Giỏ hàng</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sản phẩm của tôi</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="col-md-3 col-lg-3">
+              <form class="form-inline my-2 my-md-0">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Tìm kiếm"
+                  aria-label="Search"
+                />
+                <button type="button" id="search-input" class="btn btn-primary">
+                  <i class="fa fa-search"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- header end -->
+
+    <!-- main content -->
+
+    <div class="main-content">
+      <div class="registration-page container">
+        <div class="signup-content">
+          <form method="POST" id="signup-form" class="signup-form">
+            <h2 class="login-form-title">Tạo tài khoản</h2>
+            <div class="form-group p-t-15">
+              <span class="label-input">Tài khoản</span>
+              <input
+                type="text"
+                class="form-input"
+                name="name"
+                id="name"
+                placeholder="Nhập họ tên"
+              />
+            </div>
+            <div class="form-group">
+              <span class="label-input">Email</span>
+              <input
+                type="email"
+                class="form-input"
+                name="email"
+                id="email"
+                placeholder="Nhập email"
+              />
+            </div>
+            <div class="form-group">
+              <span class="label-input">Mật khẩu</span>
+              <input
+                type="password"
+                class="form-input"
+                name="password"
+                id="password"
+                placeholder="Mật khẩu"
+              />
+              <span
+                toggle="#password"
+                class="zmdi zmdi-eye field-icon toggle-password"
+              ></span>
+            </div>
+            <div class="form-group">
+              <span class="label-input">Nhập lại mật khẩu</span>
+              <input
+                type="password"
+                class="form-input"
+                name="re_password"
+                id="re_password"
+                placeholder="Nhập lại mật khẩu"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="checkbox"
+                name="agree-term"
+                id="agree-term"
+                class="agree-term"
+              />
+              <label for="agree-term" class="label-agree-term"
+                ><span><span></span></span>Tôi đã đọc và đồng ý với
+                <a href="#" class="term-service">Điều khoản sử dụng</a></label
+              >
+            </div>
+            <div class="container-login-form-btn">
+              <div class="wrap-login-form-btn">
+                <div class="login-form-bgbtn"></div>
+                <button class="login-form-btn">
+                  Đăng ký
+                </button>
+              </div>
+            </div>
+          </form>
+          <p class="loginhere">
+            Đã có tài khoản ? <a href="#" class="loginhere-link">Đăng nhập</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- main content end -->
+
+    <div class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h1 class="logo-text">About</h1>
+          <p>
+            Địa chỉ: 227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh <br />
+            Liên hệ: 1800 1890 <br />
+            Email: info@auctiononline.com
+          </p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-youtube"></i></a>
+        </div>
+        <div class="footer-section link">
+          <h1 class="logo-text">Map</h1>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2330.629502120399!2d106.680900353029!3d10.76251203916941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1bfc262bf1%3A0x4e843897f2900135!2zMjI3IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6ssIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1573469000093!5m2!1sen!2s"
+            width="400"
+            height="250"
+            frameborder="0"
+            style="border:0;"
+            allowfullscreen=""
+          ></iframe>
+        </div>
+        <div class="footer-section contact-form">
+          <h1 class="logo-text">Contact us</h1>
+          <form action="#" method="post">
+            <input
+              type="email"
+              name="email"
+              class="contact-input"
+              placeholder="Your email address..."
+            />
+            <textarea
+              name="message"
+              class="contact-input"
+              placeholder="Your message..."
+            ></textarea>
+            <button type="submit" class="btn btn-primary">
+              <i class="fa fa-envelope"></i>
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; auctiononline.com | Designed by NTP and DPL
+      </div>
+    </div>
+
+    <!-- javascript -->
+    <link rel="stylesheet" href="js/app.js" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
