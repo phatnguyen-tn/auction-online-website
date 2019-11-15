@@ -1,6 +1,7 @@
 $(document).ready(function () {
-  $(document).on('click', '.toggle-password', function () {
-    $(this).toggleClass("zmdi-eye-off");
+  $('.toggle-password').on('click', function () {
+    $(this).toggleClass("zmdi-eye zmdi-eye-off");
+    var input = $($(this).attr("toggle"));
     if (input.attr("type") == "password") {
       input.attr("type", "text");
     } else {
