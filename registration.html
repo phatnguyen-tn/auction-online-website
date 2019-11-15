@@ -19,111 +19,85 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <!-- header start -->
-    <div class="header-area">
-      <div class="header-top-area">
+    <!-- Header section start -->
+    <header class="header-section">
+      <div class="header-top">
         <div class="container">
           <div class="row">
-            <div class="col-md-6 col-md-6">
-              <div class="socical-meadia-link">
-                <a href="#"><i class="fa fa-linkedin"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-google-plus"></i></a>
-              </div>
-            </div>
-            <div class="col-md-6 col-md-6">
-              <div class="short-contact-list">
-                <ul>
-                  <li><i class="fa fa-envelope"></i> info@auctiononline.com</li>
-                  <li><i class="fa fa-phone"></i> 1800 1959</li>
-                  <li>
-                    <i class="fa fa-sign-in"></i>
-                    <button type="button" class="btn btn-primary" id="sign-in">
-                      Đăng nhập
-                    </button>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="header-main-area">
-        <div class="container">
-          <div class="row align-items-center main-menu-area">
-            <div class="col-md-3 col-lg-2">
+            <div class="col-lg-2 text-center text-lg-left">
               <!-- logo -->
-              <div class="logo">
-                <a href="index.html">
-                  <img
-                    src="images/logo.png"
-                    alt="logo"
-                    width="200px"
-                    height="80px"
-                  />
-                </a>
-              </div>
-            </div>
-            <div></div>
-            <div class="col-md-6 col-lg-7">
-              <!-- navigation bar -->
-              <div class="main-menu">
-                <nav class="navbar navbar-expand-lg">
-                  <ul class="navbar-nav mr-auto menu">
-                    <li class="nav-item">
-                      <a class="nav-link active" href="#">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">
-                        Danh mục sản phẩm
-                      </a>
-                      <ul class="sub-menu-1">
-                        <li>
-                          <a class="nav-link" href="#">Điện tử</a>
-                          <ul class="sub-menu-2">
-                            <li>
-                              <a class="nav-link" href="#"
-                                >Điện thoại di động</a
-                              >
-                            </li>
-                            <li>
-                              <a class="nav-link" href="#">Máy tính xách tay</a>
-                            </li>
-                          </ul>
-                        </li>
-                        <li>
-                          <a class="nav-link" href="#">Quần áo</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Giỏ hàng</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Sản phẩm của tôi</a>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="col-md-3 col-lg-3">
-              <form class="form-inline my-2 my-md-0">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Tìm kiếm"
-                  aria-label="Search"
+              <a href="./index.html" class="site-logo">
+                <img
+                  src="images/logo.PNG"
+                  alt="logo"
+                  width="162px"
+                  height="31px"
                 />
-                <button type="button" id="search-input" class="btn btn-primary">
-                  <i class="fa fa-search"></i>
-                </button>
+              </a>
+            </div>
+            <div class="col-xl-6 col-lg-5">
+              <form class="header-search-form">
+                <input type="text" placeholder="Tìm kiếm" />
+                <button><i class="fa fa-search"></i></button>
               </form>
             </div>
+            <div class="col-xl-4 col-lg-5">
+              <div class="user-panel">
+                <div class="up-item">
+                  <i class="fa fa-user"></i>
+                  <a href="#">Đăng nhập</a> hoặc <a href="#">Đăng ký</a>
+                </div>
+                <div class="up-item">
+                  <div class="shopping-card">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>0</span>
+                  </div>
+                  <a href="#">Giỏ hàng</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- header end -->
+      <nav class="main-navbar">
+        <div class="container">
+          <!-- menu -->
+          <ul class="main-menu">
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Giỏ hàng</a></li>
+            <li>
+              <a href="#"
+                >Đăng bán
+                <span class="new">New</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">Danh mục sản phẩm</a>
+              <ul class="sub-menu">
+                <li>
+                  <a href="#">Giày</a>
+                  <ul class="sub-menu-1">
+                    <li><a href="#">Adidas</a></li>
+                    <li><a href="#">Nike</a></li>
+                    <li><a href="#">Jordan</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">Điện tử</a>
+                  <ul class="sub-menu-1">
+                    <li><a href="#">Điện thoại di động</a></li>
+                    <li><a href="#">Máy tính xách tay</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Quần áo</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Chính sách</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Header section end -->
 
     <!-- main content -->
 
@@ -206,56 +180,140 @@
 
     <!-- main content end -->
 
-    <div class="footer">
-      <div class="footer-content">
-        <div class="footer-section about">
-          <h1 class="logo-text">About</h1>
-          <p>
-            Địa chỉ: 227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh <br />
-            Liên hệ: 1800 1890 <br />
-            Email: info@auctiononline.com
+    <!-- Footer section -->
+    <section class="footer-section">
+      <div class="container">
+        <div class="footer-logo text-center">
+          <a href="index.html"
+            ><img
+              src="./images/logo-light.png"
+              alt="logo"
+              width="220px"
+              height="50px"
+          /></a>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-widget about-widget">
+              <h2>About</h2>
+              <p>
+                Donec vitae purus nunc. Morbi faucibus erat sit amet congue
+                mattis. Nullam frin-gilla faucibus urna, id dapibus erat iaculis
+                ut. Integer ac sem.
+              </p>
+              <img src="images/cards.png" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-widget about-widget">
+              <h2>Questions</h2>
+              <ul>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Track Orders</a></li>
+                <li><a href="">Returns</a></li>
+                <li><a href="">Jobs</a></li>
+                <li><a href="">Shipping</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>
+              <ul>
+                <li><a href="">Partners</a></li>
+                <li><a href="">Bloggers</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">Press</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-widget about-widget">
+              <h2>Questions</h2>
+              <div class="fw-latest-post-widget">
+                <div class="lp-item">
+                  <div
+                    class="lp-thumb set-bg"
+                    data-setbg="img/blog-thumbs/1.jpg"
+                  ></div>
+                  <div class="lp-content">
+                    <h6>what shoes to wear</h6>
+                    <span>Oct 21, 2018</span>
+                    <a href="#" class="readmore">Read More</a>
+                  </div>
+                </div>
+                <div class="lp-item">
+                  <div
+                    class="lp-thumb set-bg"
+                    data-setbg="img/blog-thumbs/2.jpg"
+                  ></div>
+                  <div class="lp-content">
+                    <h6>trends this year</h6>
+                    <span>Oct 21, 2018</span>
+                    <a href="#" class="readmore">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-widget contact-widget">
+              <h2>Questions</h2>
+              <div class="con-info">
+                <span>C.</span>
+                <p>Your Company Ltd</p>
+              </div>
+              <div class="con-info">
+                <span>B.</span>
+                <p>1481 Creekside Lane Avila Beach, CA 93424, P.O. BOX 68</p>
+              </div>
+              <div class="con-info">
+                <span>T.</span>
+                <p>+53 345 7953 32453</p>
+              </div>
+              <div class="con-info">
+                <span>E.</span>
+                <p>office@youremail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="social-links-warp">
+        <div class="container">
+          <div class="social-links text-center">
+            <a href="" class="instagram"
+              ><i class="fa fa-instagram"></i><span>instagram</span></a
+            >
+            <a href="" class="google-plus"
+              ><i class="fa fa-google-plus"></i><span>g+plus</span></a
+            >
+            <a href="" class="pinterest"
+              ><i class="fa fa-pinterest"></i><span>pinterest</span></a
+            >
+            <a href="" class="facebook"
+              ><i class="fa fa-facebook"></i><span>facebook</span></a
+            >
+            <a href="" class="twitter"
+              ><i class="fa fa-twitter"></i><span>twitter</span></a
+            >
+            <a href="" class="youtube"
+              ><i class="fa fa-youtube"></i><span>youtube</span></a
+            >
+          </div>
+
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          <p class="text-white text-center mt-5">
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            All rights reserved | This template is made with
+            <i class="fa fa-heart-o" aria-hidden="true"></i> by
+            <a href="https://colorlib.com" target="_blank">Colorlib</a>
           </p>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-youtube"></i></a>
-        </div>
-        <div class="footer-section link">
-          <h1 class="logo-text">Map</h1>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2330.629502120399!2d106.680900353029!3d10.76251203916941!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f1bfc262bf1%3A0x4e843897f2900135!2zMjI3IMSQxrDhu51uZyBOZ3V54buFbiBWxINuIEPhu6ssIFBoxrDhu51uZyA0LCBRdeG6rW4gNSwgSOG7kyBDaMOtIE1pbmgsIFZpZXRuYW0!5e0!3m2!1sen!2s!4v1573469000093!5m2!1sen!2s"
-            width="400"
-            height="250"
-            frameborder="0"
-            style="border:0;"
-            allowfullscreen=""
-          ></iframe>
-        </div>
-        <div class="footer-section contact-form">
-          <h1 class="logo-text">Contact us</h1>
-          <form action="#" method="post">
-            <input
-              type="email"
-              name="email"
-              class="contact-input"
-              placeholder="Your email address..."
-            />
-            <textarea
-              name="message"
-              class="contact-input"
-              placeholder="Your message..."
-            ></textarea>
-            <button type="submit" class="btn btn-primary">
-              <i class="fa fa-envelope"></i>
-              Send
-            </button>
-          </form>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
         </div>
       </div>
-      <div class="footer-bottom">
-        &copy; auctiononline.com | Designed by NTP and DPL
-      </div>
-    </div>
+    </section>
+    <!-- Footer section end -->
 
     <!-- javascript -->
     <link rel="stylesheet" href="js/app.js" />
