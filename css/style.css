@@ -847,3 +847,49 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
 }
+
+/*//////////////////////////////////////////////////////////////////
+[ forget password ]*/
+
+.main-content .forgetpassword-page {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.forgetpassword-content {
+  background: #e9e7e7;
+  width: 380px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  padding: 15px 30px;
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ forget password ]*/
+
+.main-content .updateprofile-page {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.updateprofile-content {
+  background: #e9e7e7;
+  width: 400px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  padding: 15px 30px;
+  -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+}
