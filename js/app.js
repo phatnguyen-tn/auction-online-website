@@ -23,4 +23,13 @@ $(document).ready(function () {
 		}
 	});
 
+	/*------------------
+		  wishbtn
+	  --------------------*/
+	$('.wishlist-btn').on('click', function () {
+		$(this).toggleClass('color-f151167 color-666666');
+		var element = $('.wishlist-btn > i');
+		element.toggleClass('fa-heart fa-heart-o');
+	});
+
 });

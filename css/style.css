@@ -906,6 +906,33 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 }
 
 /* --------------
+  Other Pages
+------------------*/
+
+.page-top-info {
+	background: #f8f7f7;
+	padding: 60px 0 70px;
+}
+
+.page-top-info h4 {
+	color: #414141;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.site-pagination {
+	font-size: 14px;
+	font-weight: 600;
+	color: #414141;
+}
+
+.site-pagination a {
+	display: inline-block;
+	font-size: 14px;
+	color: #414141;
+}
+
+/* --------------
   Product page
 ------------------*/
 
@@ -1009,10 +1036,6 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   color: #e6e6e6;
 }
 
-.product-details .site-btn {
-  min-width: 190px;
-}
-
 .site-btn:hover{
   color: #ffffff;
 }
@@ -1033,6 +1056,24 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   cursor: pointer;
   text-align: center;
 }
+
+.wishlist-btn{
+  color: #f51167;
+  font-size: 32px;
+}
+
+.color-666666{
+  color: #666666;
+}
+
+.color-f51167{
+  color: #f51167;
+}
+
+.wishlist-btn:hover{
+  color: #f51167;
+}
+
 
 .product-details .social-sharing {
   padding-top: 50px;
