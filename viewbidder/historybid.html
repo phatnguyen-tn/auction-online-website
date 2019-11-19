@@ -9,14 +9,9 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="font-awesome/iconic/css/material-design-iconic-font.min.css"
-    />
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="../css/util.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
   </head>
   <body>
     <!-- Header section start -->
@@ -26,9 +21,9 @@
           <div class="row">
             <div class="col-lg-2 text-center text-lg-left">
               <!-- logo -->
-              <a href="./index.html" class="site-logo">
+              <a href="../index.html" class="site-logo">
                 <img
-                  src="images/logo.PNG"
+                  src="../images/logo.PNG"
                   alt="logo"
                   width="162px"
                   height="31px"
@@ -102,51 +97,96 @@
     <!-- main content -->
 
     <div class="main-content">
-      <div class="changepassword-page container">
-        <div class="changepassword-content">
-          <form method="POST" id="signup-form" class="signup-form">
-            <h2 class="login-form-title">Đổi mật khẩu</h2>
-            <div class="form-group p-t-15">
-              <span class="label-input">Mật khẩu hiện tại</span>
-              <input
-                type="password"
-                class="form-input"
-                name="oldPassword"
-                id="oldPassword"
-                placeholder="Nhập mật khẩu"
-              />
-            </div>
-            <div class="form-group">
-              <span class="label-input">Mật khẩu mới</span>
-              <input
-                type="password"
-                class="form-input"
-                name="newPassword"
-                id="newPassword"
-                placeholder="Nhập mật khẩu mới"
-              />
-            </div>
-            <div class="form-group">
-              <span class="label-input">Nhập lại mật khẩu mới</span>
-              <input
-                type="password"
-                class="form-input"
-                name="re_newPassword"
-                id="re_newPassword"
-                placeholder="Nhập lại mật khẩu mới"
-              />
-            </div>
-            <div class="container-login-form-btn p-tb-25">
-              <div class="wrap-login-form-btn">
-                <div class="login-form-bgbtn"></div>
-                <button class="login-form-btn">
-                  Đổi mật khẩu
-                </button>
-              </div>
-            </div>
-          </form>
+      <div class="page-top-info">
+        <div class="container">
+          <h4>Lịch sử đấu giá</h4>
         </div>
       </div>
+      <section class="product-section">
+        <div class="container">
+          <div class="back-link">
+            <a href="../category.html"> &lt;&lt; Trở về chi tiết sản phẩm</a>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="product-pic-zoom">
+                <img
+                  class="product-big-img"
+                  src="../images/laptop/laptop-macbookpro-2017.png"
+                  alt=""
+                />
+              </div>
+              <div
+                class="product-thumbs"
+                tabindex="1"
+                style="overflow: hidden; outline: none;"
+              >
+                <div class="product-thumbs-track">
+                  <div
+                    class="pt active"
+                    data-imgbigurl="../images/laptop/macbookpro-2017-1.webp"
+                  >
+                    <img src="../images/laptop/macbookpro-2017-1.webp" alt="" />
+                  </div>
+                  <div
+                    class="pt"
+                    data-imgbigurl="../images/laptop/macbookpro-2017-2.webp"
+                  >
+                    <img src="../images/laptop/macbookpro-2017-2.webp" alt="" />
+                  </div>
+                  <div
+                    class="pt"
+                    data-imgbigurl="../images/laptop/macbookpro-2017-3.webp"
+                  >
+                    <img src="../images/laptop/macbookpro-2017-3.webp" alt="" />
+                  </div>
+                  <div
+                    class="pt"
+                    data-imgbigurl="../images/laptop/laptop-macbookpro-2017.png"
+                  >
+                    <img
+                      src="../images/laptop/laptop-macbookpro-2017.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 product-details">
+              <h2 class="p-title">Laptop macbook pro 2017</h2>
+              <div class="history-bid table table-striped">
+                <table>
+                  <tr>
+                    <th>Thời điểm</th>
+                    <th>Người mua</th>
+                    <th>Giá</th>
+                  </tr>
+                  <tr>
+                    <td>1/11/2019 10:43</td>
+                    <td>****Khoa</td>
+                    <td>6,000,000</td>
+                  </tr>
+                  <tr>
+                    <td>1/11/2019 9:43</td>
+                    <td>****Quang</td>
+                    <td>5,900,000</td>
+                  </tr>
+                  <tr>
+                    <td>1/11/2019 8:43</td>
+                    <td>****Tuấn</td>
+                    <td>5,800,000</td>
+                  </tr>
+                  <tr>
+                    <td>1/11/2019 7:43</td>
+                    <td>****Minh</td>
+                    <td>5,700,000</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- main content end -->
@@ -291,6 +331,6 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
-    <script src="js/app.js"></script>
+    <script src="../js/app.js"></script>
   </body>
 </html>

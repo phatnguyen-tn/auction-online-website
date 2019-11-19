@@ -1436,7 +1436,7 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   width: 30px;
   line-height: 30px;
   text-align: center;
-  background: #828bb2;
+  background: #f51167;
   border-radius: 50%;
   display: inline-block;
   color: #fff;
@@ -1526,4 +1526,14 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   border: 0px;
   border-right: 1px solid #eee;
   color: #cccccc;
+}
+
+
+/* --------------
+  history bid
+------------------*/
+
+.history-bid {
+  padding-top: 40px;
+  font-size: 22px;
 }
