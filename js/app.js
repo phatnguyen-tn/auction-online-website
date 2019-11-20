@@ -50,6 +50,7 @@ $(document).ready(function () {
 	$('.back-login-btn').on('click', function () {
 		$('.login-page').css('display', 'flex');
 		$('.forgetpassword-page').css('display', 'none');
+		$('.signup-page').css('display', 'none');
 	});
 
 	/*------------------
