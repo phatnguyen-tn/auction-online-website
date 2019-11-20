@@ -1668,11 +1668,11 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 /*//////////////////////////////////////////////////////////////////
 [ feedback sell ]*/
 
-.feedback-section{
+.feedback-section {
   padding: 40px 0;
 }
 
-.feedback-section .col-5{
+.feedback-section .col-5 {
   border-right: 1px solid #d7d7d7;
 }
 
@@ -1684,10 +1684,22 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   border: 1px solid #dfdfdf;
 }
 
-.feedback-textarea-text{
+.feedback-textarea-text {
   width: 100%;
   padding: 7px 8px;
   font-size: 13px;
   border: 1px solid #dfdfdf;
   font-weight: 300;
+}
+
+.fb-ratings-header {
+  font-size: 1.125rem;
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 1em;
+  text-transform: capitalize;
+}
+
+.fb-ratings-overview-wrapper {
+  text-align: center;
+  margin-right: 1.875rem;
 }

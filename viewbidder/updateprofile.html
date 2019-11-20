@@ -102,47 +102,64 @@
     <!-- main content -->
 
     <div class="main-content">
-      <div class="updateprofile-page container">
-        <div class="updateprofile-content">
-          <form method="POST" id="signup-form" class="signup-form">
-            <h2 class="login-form-title">Cập nhật tài khoản</h2>
-            <div class="form-group p-t-15">
+      <div class="signup-page container">
+        <div class="wrap-login text-center">
+          <form method="POST" id="signup-form" class="login-form">
+            <span class="login-form-title p-tb-15">
+              Cập nhật tài khoản
+            </span>
+            <div
+              class="wrap-input text-left validate-input p-t-5"
+              data-validate="Name is required"
+            >
               <span class="label-input">Họ tên</span>
               <input
                 type="text"
-                class="form-input"
+                class="input"
                 name="name"
                 id="name"
                 placeholder="Nhập họ tên"
               />
+              <span class="focus-input" data-symbol="&#xf10c;"></span>
             </div>
-            <div class="form-group">
+
+            <div
+              class="wrap-input text-left validate-input p-t-5"
+              data-validate="Email is required"
+            >
               <span class="label-input">Email</span>
               <input
+                class="input"
                 type="email"
-                class="form-input"
                 name="email"
-                id="email"
                 placeholder="Nhập email"
+                required
               />
+              <span class="focus-input" data-symbol="&#xf15a;"></span>
             </div>
-            <div class="form-group">
+
+            <div
+              class="wrap-input text-left validate-input p-t-5"
+              data-validate="Address is required"
+            >
               <span class="label-input">Địa chỉ</span>
               <input
                 type="text"
-                class="form-input"
+                class="input"
                 name="address"
                 id="address"
                 placeholder="Nhập địa chỉ"
+                required
               />
+              <span class="focus-input" data-symbol="&#xf299;"></span>
             </div>
-            <div class="text-center fs-20">
+            <div class="text-center p-tb-20">
               <i class="fa fa-arrow-left" style="color: #007bff;"></i>
               <a href="#">
                 Quay lại
               </a>
             </div>
-            <div class="container-login-form-btn p-tb-25">
+            <div class="container-login-form-btn p-b-25">
               <div class="wrap-login-form-btn">
                 <div class="login-form-bgbtn"></div>
                 <button class="login-form-btn">
@@ -150,6 +167,31 @@
                 </button>
               </div>
             </div>
+            <!-- 
+                    
+                    <div class="form-group">
+                      <input
+                        type="checkbox"
+                        name="agree-term"
+                        id="agree-term"
+                        class="agree-term"
+                      />
+                      <label for="agree-term" class="label-agree-term"
+                        ><span><span></span></span>Tôi đã đọc và đồng ý với
+                        <a href="#" class="term-service">Điều khoản sử dụng</a></label
+                      >
+                    </div>
+                    <div class="container-login-form-btn">
+                      <div class="wrap-login-form-btn">
+                        <div class="login-form-bgbtn"></div>
+                        <button class="login-form-btn">
+                          Đăng ký
+                        </button>
+                      </div>
+                    </div>
+                    <p class="loginhere">
+                        Đã có tài khoản ? <a href="#" class="loginhere-link">Đăng nhập</a>
+                      </p> -->
           </form>
         </div>
       </div>
