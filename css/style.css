@@ -667,9 +667,9 @@ li {
 }
 
 /*//////////////////////////////////////////////////////////////////
-[ registration ]*/
+[ sign up ]*/
 
-.main-content .registration-page {
+.main-content .signup-page {
   display: flex;
   justify-content: center;
   padding: 40px 0;
@@ -748,13 +748,13 @@ li {
   color: #555;
   font-weight: 500;
   text-align: center;
-  margin-top: 91px;
-  margin-bottom: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .loginhere-link {
   font-weight: 700;
-  color: #222222;
+  color: #1da1f2;
 }
 
 .field-icon {
@@ -793,7 +793,7 @@ input[type="checkbox"]:not(old) {
 input[type="checkbox"]:not(old) + label {
   display: inline-block;
   margin-top: 7px;
-  margin-bottom: 25px;
+  margin-bottom: 10px;
 }
 
 input[type="checkbox"]:not(old) + label > span {
@@ -865,12 +865,12 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 .main-content .forgetpassword-page {
   display: flex;
   justify-content: center;
-  padding: 50px 0;
+  padding: 40px 0;
 }
 
 .forgetpassword-content {
   background: #e9e7e7;
-  width: 380px;
+  width: 450px;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -883,7 +883,7 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 }
 
 /*//////////////////////////////////////////////////////////////////
-[ forget password ]*/
+[update profile]*/
 
 .main-content .updateprofile-page {
   display: flex;

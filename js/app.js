@@ -1,4 +1,8 @@
 $(document).ready(function () {
+
+	/*------------------
+		  hide the password
+	  --------------------*/
 	$('.toggle-password').on('click', function () {
 		$(this).toggleClass("zmdi-eye zmdi-eye-off");
 		var input = $($(this).attr("toggle"));
@@ -30,6 +34,31 @@ $(document).ready(function () {
 		$(this).toggleClass('color-f151167 color-666666');
 		var element = $('.wishlist-btn > i');
 		element.toggleClass('fa-heart fa-heart-o');
+	});
+
+	/*------------------
+		  go to forgetpassword page button
+	  --------------------*/
+	$('.forget-pw-btn').on('click', function () {
+		$('.login-page').css('display', 'none');
+		$('.forgetpassword-page').css('display', 'flex');
+	});
+
+	/*------------------
+		  back login page button
+	  --------------------*/
+	$('.back-login-btn').on('click', function () {
+		$('.login-page').css('display', 'flex');
+		$('.forgetpassword-page').css('display', 'none');
+	});
+
+	/*------------------
+		  sign up button
+	  --------------------*/
+	  $('.signup-btn').on('click', function () {
+		$('.login-page').css('display', 'none');
+		$('.forgetpassword-page').css('display', 'none');
+		$('.signup-page').css('display', 'flex');
 	});
 
 });
