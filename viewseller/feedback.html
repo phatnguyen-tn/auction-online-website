@@ -99,89 +99,64 @@
     <div class="main-content">
       <div class="page-top-info">
         <div class="container">
-          <h4>Lịch sử đấu giá</h4>
+          <h4>Đánh giá người mua</h4>
         </div>
       </div>
-      <section class="product-section">
+      <section class="feedback-section">
         <div class="container">
-          <div class="back-link">
-            <a href="../category.html"> &lt;&lt; Trở về chi tiết sản phẩm</a>
-          </div>
           <div class="row">
-            <div class="col-lg-6">
-              <div class="product-pic-zoom">
-                <img
-                  class="product-big-img"
-                  src="../images/laptop/laptop-macbookpro-2017.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="product-thumbs"
-                tabindex="1"
-                style="overflow: hidden; outline: none;"
-              >
-                <div class="product-thumbs-track">
-                  <div
-                    class="pt active"
-                    data-imgbigurl="../images/laptop/macbookpro-2017-1.webp"
-                  >
-                    <img src="../images/laptop/macbookpro-2017-1.webp" alt="" />
-                  </div>
-                  <div
-                    class="pt"
-                    data-imgbigurl="../images/laptop/macbookpro-2017-2.webp"
-                  >
-                    <img src="../images/laptop/macbookpro-2017-2.webp" alt="" />
-                  </div>
-                  <div
-                    class="pt"
-                    data-imgbigurl="../images/laptop/macbookpro-2017-3.webp"
-                  >
-                    <img src="../images/laptop/macbookpro-2017-3.webp" alt="" />
-                  </div>
-                  <div
-                    class="pt"
-                    data-imgbigurl="../images/laptop/laptop-macbookpro-2017.png"
-                  >
-                    <img
-                      src="../images/laptop/laptop-macbookpro-2017.png"
-                      alt=""
-                    />
-                  </div>
+            <div class="col-5">
+              <h4 class="p-b-20">GỬI ĐÁNH GIÁ CỦA BẠN</h4>
+              <form action="" method="post">
+                <div class="d-inline p-t-15">
+                  <h5 class="d-inline">1. Đánh giá của bạn:</h5>
+                  <input
+                    type="radio"
+                    name="feedback-seller"
+                    id="feedback-seller"
+                    class="d-inline"
+                  />
+                  1
+                  <input
+                    type="radio"
+                    name="feedback-seller"
+                    id="feedback-seller"
+                    class="d-inline"
+                  />
+                  -1
                 </div>
-              </div>
+                <h5 class="p-t-15 p-b-5">2. Tiêu đề nhận xét:</h5>
+                <input
+                  type="text"
+                  name="feedback-seller-header"
+                  id="feedback-seller-header"
+                  class="feedback-input-text"
+                  placeholder="Nhập tiêu đề đánh giá (không bắt buộc)"
+                />
+                <h5 class="p-t-15 p-b-5">3. Nội dung nhận xét:</h5>
+                <textarea
+                  name="feedback-seller-content"
+                  id="fb-seller-content"
+                  cols="30"
+                  rows="10"
+                  class="feedback-textarea-text"
+                  placeholder="Nhập nội dung đánh giá"
+                ></textarea>
+                <h5 class="p-t-15 p-b-5">4. Hình ảnh(nếu có):</h5>
+                <input type="file" name="file-fb" id="file-fb" multiple>
+                <button type="submit" class="btn btn-primary m-t-15">Gửi đánh giá</button>
+              </form>
             </div>
-            <div class="col-lg-6 product-details">
-              <h2 class="p-title">Laptop macbook pro 2017</h2>
-              <div class="history-bid table table-striped">
-                <table>
-                  <tr>
-                    <th>Thời điểm</th>
-                    <th>Người mua</th>
-                    <th>Giá</th>
-                  </tr>
-                  <tr>
-                    <td>1/11/2019 10:43</td>
-                    <td>****Khoa</td>
-                    <td>6,000,000</td>
-                  </tr>
-                  <tr>
-                    <td>1/11/2019 9:43</td>
-                    <td>****Quang</td>
-                    <td>5,900,000</td>
-                  </tr>
-                  <tr>
-                    <td>1/11/2019 8:43</td>
-                    <td>****Tuấn</td>
-                    <td>5,800,000</td>
-                  </tr>
-                  <tr>
-                    <td>1/11/2019 7:43</td>
-                    <td>****Minh</td>
-                    <td>5,700,000</td>
-                  </tr>
-                </table>
+            <div class="col-7">
+              <img
+                src="../images/laptop/laptop-redmibook.png"
+                alt=""
+                width="200px"
+                height="200px"
+              />
+              <div class="d-inline-block">
+                <h3>LAPTOP REDMI NOTEBOOK</h3>
+                <p>Cung cập bởi: <a href="#">Nguyễn Văn A</a></p>
               </div>
             </div>
           </div>
