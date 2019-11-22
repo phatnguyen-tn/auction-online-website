@@ -1,475 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Auction Online</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="../css/util.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Header section start -->
     <header class="header-section">
-      <div class="header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-2 text-center text-lg-left">
-              <!-- logo -->
-              <a href="../index.html" class="site-logo">
-                <img
-                  src="../images/logo.PNG"
-                  alt="logo"
-                  width="162px"
-                  height="31px"
-                />
-              </a>
-            </div>
-            <div class="col-xl-6 col-lg-5">
-              <form class="header-search-form">
-                <input type="text" placeholder="Tìm kiếm" />
-                <button><i class="fa fa-search"></i></button>
-              </form>
-            </div>
-            <div class="col-xl-4 col-lg-5">
-              <div class="user-panel">
-                <div class="up-item">
-                  <i class="fa fa-user"></i>
-                  <a href="#">Đăng nhập</a> hoặc <a href="#">Đăng ký</a>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 text-center text-lg-left">
+                        <!-- logo -->
+                        <a href="../index.html" class="site-logo">
+                            <img src="../images/logo.PNG" alt="logo" width="162px" height="31px" />
+                        </a>
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <form class="header-search-form">
+                            <input type="text" placeholder="Tìm kiếm" />
+                            <button><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="user-panel">
+                            <div class="up-item">
+                                <i class="fa fa-user"></i>
+                                <a href="../login.html">Đăng nhập</a> hoặc <a href="../registration.html">Đăng ký</a>
+                            </div>
+                            <div class="up-item">
+                                <div class="shopping-card">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>0</span>
+                                </div>
+                                <a href="#">Giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="up-item">
-                  <div class="shopping-card">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>0</span>
-                  </div>
-                  <a href="#">Giỏ hàng</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <nav class="main-navbar">
-        <div class="container">
-          <!-- menu -->
-          <ul class="main-menu">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Hồ sơ</a></li>
-            <li>
-              <a href="#"
-                >Danh mục sản phẩm
+        <nav class="main-navbar">
+            <div class="container">
+                <!-- menu -->
+                <ul class="main-menu">
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="profile.html">Hồ sơ</a></li>
+                    <li>
+                        <a href="../listproduct.html">Danh mục sản phẩm
                 <span class="new">New</span>
               </a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="#">Giày</a>
-                  <ul class="sub-menu-1">
-                    <li><a href="#">Adidas</a></li>
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Jordan</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Điện tử</a>
-                  <ul class="sub-menu-1">
-                    <li><a href="#">Điện thoại di động</a></li>
-                    <li><a href="#">Máy tính xách tay</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Quần áo</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Yêu thích</a>
-            </li>
-            <li><a href="#">Đăng bán</a></li>
-          </ul>
-        </div>
-      </nav>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Giày</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Jordan</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Điện tử</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="#">Điện thoại di động</a></li>
+                                    <li><a href="#">Máy tính xách tay</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Quần áo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Yêu thích</a>
+                    </li>
+                    <li><a href="postproduct.html">Đăng bán</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <!-- Header section end -->
 
     <!-- main content -->
 
     <div class="main-content">
-      <div class="page-top-info">
-        <div class="container">
-          <h4>Hồ sơ cá nhân</h4>
+        <div class="page-top-info">
+            <div class="container">
+                <h4>Hồ sơ cá nhân</h4>
+            </div>
         </div>
-      </div>
-      <section class="profile-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-4 profile-picture text-center">
-              <img
-                src="../images/profilepicture.png"
-                alt=""
-                width="200px"
-                height="200px"
-              />
-              <a href="#" class="update-profile-btn">
-                <h5 class="m-t-10 font-weight-bold">
-                  <i class="fa fa-plus"></i> Cập nhật thông tin
-                </h5></a
-              >
-            </div>
-            <div class="col-8">
-              <div class="info-profile fs-18">
-                <h6 class="d-inline font-weight-bold fs-18">Họ tên:</h6>
-                <span>Nguyễn Văn A</span>
-                <br />
-                <h6 class="d-inline font-weight-bold fs-18">Điểm đánh giá:</h6>
-                <span>86 điểm</span> <br />
-                <h6 class="d-inline font-weight-bold fs-18">Email:</h6>
-                <span>nva@gmail.com</span> <br />
-                <h6 class="d-inline font-weight-bold fs-18">Liên hệ:</h6>
-                <span>0855168201</span> <br />
-                <h6 class="d-inline font-weight-bold fs-18">Phân quyền:</h6>
-                <span>Người bán</span>
-                <div class="social-sharing">
-                  <a href="" class="google-plus "
-                    ><i class="fa fa-google-plus"></i
+        <section class="profile-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 profile-picture text-center">
+                        <img src="../images/profilepicture.png" alt="" width="200px" height="200px" />
+                        <a href="updateprofile.html" class="update-profile-btn">
+                            <h5 class="m-t-10 font-weight-bold">
+                                <i class="fa fa-plus"></i> Cập nhật thông tin
+                            </h5>
+                        </a>
+                    </div>
+                    <div class="col-8">
+                        <div class="info-profile fs-18">
+                            <h6 class="d-inline font-weight-bold fs-18">Họ tên:</h6>
+                            <span>Nguyễn Văn A</span>
+                            <br />
+                            <h6 class="d-inline font-weight-bold fs-18">Điểm đánh giá:</h6>
+                            <span>86 điểm</span> <br />
+                            <h6 class="d-inline font-weight-bold fs-18">Email:</h6>
+                            <span>nva@gmail.com</span> <br />
+                            <h6 class="d-inline font-weight-bold fs-18">Liên hệ:</h6>
+                            <span>0855168201</span> <br />
+                            <h6 class="d-inline font-weight-bold fs-18">Phân quyền:</h6>
+                            <span>Người bán</span>
+                            <div class="social-sharing">
+                                <a href="" class="google-plus "><i class="fa fa-google-plus"></i
                   ></a>
-                  <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
-                  <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
-                  <a href="" class="youtube"><i class="fa fa-youtube"></i></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <div id="accordion" class="accordion-area">
-                <div class="panel">
-                  <div class="panel-header" id="headingOne">
-                    <button
-                      class="panel-link active"
-                      data-toggle="collapse"
-                      data-target="#collapse1"
-                      aria-expanded="true"
-                      aria-controls="collapse1"
-                    >
+                                <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="" class="youtube"><i class="fa fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div id="accordion" class="accordion-area">
+                            <div class="panel">
+                                <div class="panel-header" id="headingOne">
+                                    <button class="panel-link active" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                       Danh sách yêu thích
                     </button>
-                  </div>
-                  <div
-                    id="collapse1"
-                    class="collapse show"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordion"
-                  >
-                    <div class="panel-body">
-                      <h3>Macbook Pro 2017</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-macbookpro-2017.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
-                            <br />
-                            Ngày đăng: 1/11/2019
-                            <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="p-r-25">Xoá</a>
-                          <a href="#">Xem chi tiết sản phẩm</a>
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 29,000,000 vnđ <br />
-                            Giá mua ngay: 49,000,000 vnđ
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel-body">
-                      <h3>Dell XPS15</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-xps15.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
-                            <br />
-                            Ngày đăng: 1/11/2019
-                            <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="p-r-25">Xoá</a>
-                          <a href="#">Xem chi tiết sản phẩm</a>
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 19,000,000 vnđ <br />
-                            Giá mua ngay: 39,000,000 vnđ
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-header" id="headingTwo">
-                    <button
-                      class="panel-link"
-                      data-toggle="collapse"
-                      data-target="#collapse2"
-                      aria-expanded="false"
-                      aria-controls="collapse2"
-                    >
+                                </div>
+                                <div id="collapse1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                                    <div class="panel-body">
+                                        <h3>Macbook Pro 2017</h3>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="../images/laptop/laptop-macbookpro-2017.png" alt="" width="200px" height="200px" />
+                                            </div>
+                                            <div class="col-5 p-t-20">
+                                                <p>
+                                                    Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
+                                                    <br /> Ngày đăng: 1/11/2019
+                                                    <br /> Thời gian còn lại: 2 ngày nữa
+                                                </p>
+                                                <a href="#" class="p-r-25">Xoá</a>
+                                                <a href="../productdetail.html">Xem chi tiết sản phẩm</a>
+                                            </div>
+                                            <div class="col-4 p-t-20">
+                                                <p>
+                                                    Giá hiện tại: 29,000,000 vnđ <br /> Giá mua ngay: 49,000,000 vnđ
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h3>Dell XPS15</h3>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="../images/laptop/laptop-xps15.png" alt="" width="200px" height="200px" />
+                                            </div>
+                                            <div class="col-5 p-t-20">
+                                                <p>
+                                                    Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
+                                                    <br /> Ngày đăng: 1/11/2019
+                                                    <br /> Thời gian còn lại: 2 ngày nữa
+                                                </p>
+                                                <a href="#" class="p-r-25">Xoá</a>
+                                                <a href="#">Xem chi tiết sản phẩm</a>
+                                            </div>
+                                            <div class="col-4 p-t-20">
+                                                <p>
+                                                    Giá hiện tại: 19,000,000 vnđ <br /> Giá mua ngay: 39,000,000 vnđ
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-header" id="headingTwo">
+                                    <button class="panel-link" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                       Danh sách đang đấu giá
                     </button>
-                  </div>
-                  <div
-                    id="collapse2"
-                    class="collapse"
-                    aria-labelledby="headingTwo"
-                    data-parent="#accordion"
-                  >
-                    <div class="panel-body">
-                      <h3>Dell XPS15</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-xps15.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
-                            <br />
-                            Ngày đăng: 1/11/2019
-                            <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="p-r-25">Xoá</a>
-                          <a href="#">Xem chi tiết sản phẩm</a>
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 19,000,000 vnđ <br />
-                            Giá mua ngay: 39,000,000 vnđ <br />
-                            Người ra giá cao hiện tại: Nguyễn Văn C
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-header" id="headingThree">
-                    <button
-                      class="panel-link"
-                      data-toggle="collapse"
-                      data-target="#collapse3"
-                      aria-expanded="false"
-                      aria-controls="collapse3"
-                    >
+                                </div>
+                                <div id="collapse2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                                    <div class="panel-body">
+                                        <h3>Dell XPS15</h3>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="../images/laptop/laptop-xps15.png" alt="" width="200px" height="200px" />
+                                            </div>
+                                            <div class="col-5 p-t-20">
+                                                <p>
+                                                    Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
+                                                    <br /> Ngày đăng: 1/11/2019
+                                                    <br /> Thời gian còn lại: 2 ngày nữa
+                                                </p>
+                                                <a href="#" class="p-r-25">Xoá</a>
+                                                <a href="#">Xem chi tiết sản phẩm</a>
+                                            </div>
+                                            <div class="col-4 p-t-20">
+                                                <p>
+                                                    Giá hiện tại: 19,000,000 vnđ <br /> Giá mua ngay: 39,000,000 vnđ <br /> Người ra giá cao hiện tại: Nguyễn Văn C
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-header" id="headingThree">
+                                    <button class="panel-link" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                       Danh sách đấu thành công
                     </button>
-                  </div>
-                  <div
-                    id="collapse3"
-                    class="collapse"
-                    aria-labelledby="headingThree"
-                    data-parent="#accordion"
-                  >
-                    <div class="panel-body">
-                      <h3>Asus ROG STRIX</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-rog-strix.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
-                            <br />
-                            Ngày đăng: 1/11/2019
-                            <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="fb-seller p-r-25">Đánh giá</a>
-                          <a href="#">Xem chi tiết sản phẩm</a>
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá mua: 29,000,000 vnđ <br />
-                            Kết quả: Thành công
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel">
-                  <div class="panel-header" id="headingFour">
-                    <button
-                      class="panel-link"
-                      data-toggle="collapse"
-                      data-target="#collapse4"
-                      aria-expanded="false"
-                      aria-controls="collapse4"
-                    >
+                                </div>
+                                <div id="collapse3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                                    <div class="panel-body">
+                                        <h3>Asus ROG STRIX</h3>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="../images/laptop/laptop-rog-strix.png" alt="" width="200px" height="200px" />
+                                            </div>
+                                            <div class="col-5 p-t-20">
+                                                <p>
+                                                    Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a>
+                                                    <br /> Ngày đăng: 1/11/2019
+                                                    <br /> Thời gian còn lại: 2 ngày nữa
+                                                </p>
+                                                <a href="#" class="fb-seller p-r-25">Đánh giá</a>
+                                                <a href="#">Xem chi tiết sản phẩm</a>
+                                            </div>
+                                            <div class="col-4 p-t-20">
+                                                <p>
+                                                    Giá mua: 29,000,000 vnđ <br /> Kết quả: Thành công
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel">
+                                <div class="panel-header" id="headingFour">
+                                    <button class="panel-link" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                       Danh sách đang bán
                     </button>
-                  </div>
-                  <div
-                    id="collapse4"
-                    class="collapse"
-                    aria-labelledby="headingFour"
-                    data-parent="#accordion"
-                  >
-                    <div class="panel-body">
-                      <h3>Dell XPS15</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-xps15.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn A</a>
-                            <br />
-                            Ngày đăng: 1/11/2019
-                            <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="p-r-25">Xoá</a>
-                          <a href="#">Thêm chi tiết sản phẩm</a>
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 19,000,000 vnđ <br />
-                            Giá mua ngay: 39,000,000 vnđ <br />
-                            Người ra giá cao hiện tại: Nguyễn Văn C
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                                </div>
+                                <div id="collapse4" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                                    <div class="panel-body">
+                                        <h3>Dell XPS15</h3>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="../images/laptop/laptop-xps15.png" alt="" width="200px" height="200px" />
+                                            </div>
+                                            <div class="col-5 p-t-20">
+                                                <p>
+                                                    Cung cấp bởi: <a href="#">Nguyễn Văn A</a>
+                                                    <br /> Ngày đăng: 1/11/2019
+                                                    <br /> Thời gian còn lại: 2 ngày nữa
+                                                </p>
+                                                <a href="#" class="p-r-25">Xoá</a>
+                                                <a href="#">Thêm chi tiết sản phẩm</a>
+                                            </div>
+                                            <div class="col-4 p-t-20">
+                                                <p>
+                                                    Giá hiện tại: 19,000,000 vnđ <br /> Giá mua ngay: 39,000,000 vnđ <br /> Người ra giá cao hiện tại: Nguyễn Văn C
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="panel">
-                    <div class="panel-header" id="headingFive">
-                      <button
-                        class="panel-link"
-                        data-toggle="collapse"
-                        data-target="#collapse5"
-                        aria-expanded="false"
-                        aria-controls="collapse5"
-                      >
+                            <div class="panel">
+                                <div class="panel-header" id="headingFive">
+                                    <button class="panel-link" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
                         Danh sách bán thành công
                       </button>
-                    </div>
-                    <div
-                      id="collapse5"
-                      class="collapse"
-                      aria-labelledby="headingFive"
-                      data-parent="#accordion"
-                    >
-                      <div class="panel-body">
-                        <h3>Dell XPS15</h3>
-                        <div class="row">
-                          <div class="col-3">
-                            <img
-                              src="../images/laptop/laptop-xps15.png"
-                              alt=""
-                              width="200px"
-                              height="200px"
-                            />
-                          </div>
-                          <div class="col-5 p-t-20">
-                            <p>
-                              Cung cấp bởi: <a href="#">Nguyễn Văn A</a>
-                              <br />
-                              Ngày đăng: 1/11/2019
-                            </p>
-                            <a href="#" class="p-r-25">Đánh giá người mua</a>
-                            <a href="#">Huỷ giao dịch</a>
-                          </div>
-                          <div class="col-4 p-t-20">
-                            <p>
-                              Giá bán: 19,000,000 vnđ <br />
-                              Người mua: Nguyễn Văn C
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                                </div>
+                                <div id="collapse5" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                                    <div class="panel-body">
+                                        <h3>Dell XPS15</h3>
+                                        <div class="row">
+                                            <div class="col-3">
+                                                <img src="../images/laptop/laptop-xps15.png" alt="" width="200px" height="200px" />
+                                            </div>
+                                            <div class="col-5 p-t-20">
+                                                <p>
+                                                    Cung cấp bởi: <a href="#">Nguyễn Văn A</a>
+                                                    <br /> Ngày đăng: 1/11/2019
+                                                </p>
+                                                <a href="#" class="p-r-25">Đánh giá người mua</a>
+                                                <a href="#">Huỷ giao dịch</a>
+                                            </div>
+                                            <div class="col-4 p-t-20">
+                                                <p>
+                                                    Giá bán: 19,000,000 vnđ <br /> Người mua: Nguyễn Văn C
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
-                <div class="panel">
-                  <div class="panel-header" id="headingSix">
-                    <button
-                      class="panel-link"
-                      data-toggle="collapse"
-                      data-target="#collapse6"
-                      aria-expanded="false"
-                      aria-controls="collapse6"
-                    >
+                            <div class="panel">
+                                <div class="panel-header" id="headingSix">
+                                    <button class="panel-link" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
                       Đánh giá
                     </button>
-                  </div>
-                  <div
-                    id="collapse6"
-                    class="collapse"
-                    aria-labelledby="headingSix"
-                    data-parent="#accordion"
-                  >
-                    <div class="panel-body">
-                      <div class="fb-ratings">
-                        <div class="fb-ratings-header">
-                          TỔNG ĐIỂM ĐÁNH GIÁ
-                        </div>
-                        <div class="fb-ratings-overview">
-                          <div class="row">
-                            <div class="col-4">
-                              <div class="fb-ratings-overview-wrapper">
-                                <div class="fb-ratings-overview-score">
-                                  <span class="fs-28 font-weight-bold">86</span>
-                                  <span>trên 100 điểm</span>
                                 </div>
-                              </div>
-                              <div class="fb-ratings-star-wrapper">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                              </div>
-                            </div>
-                            <div class="col-8">
-                              <div class="fb-ratings-filter">
-                                <span
-                                  class="fb-ratings-filter-item fb-ratings-filter-item-active"
-                                  >Tất cả</span
+                                <div id="collapse6" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                                    <div class="panel-body">
+                                        <div class="fb-ratings">
+                                            <div class="fb-ratings-header">
+                                                TỔNG ĐIỂM ĐÁNH GIÁ
+                                            </div>
+                                            <div class="fb-ratings-overview">
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <div class="fb-ratings-overview-wrapper">
+                                                            <div class="fb-ratings-overview-score">
+                                                                <span class="fs-28 font-weight-bold">86</span>
+                                                                <span>trên 100 điểm</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="fb-ratings-star-wrapper">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star-half-o"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-8">
+                                                        <div class="fb-ratings-filter">
+                                                            <span class="fb-ratings-filter-item fb-ratings-filter-item-active">Tất cả</span
                                 >
                                 <span class="fb-ratings-filter-item"
                                   >1 điểm</span
@@ -618,50 +488,49 @@
                   <div class="lp-content">
                     <h6>what shoes to wear</h6>
                     <span>Oct 21, 2019</span>
-                    <a href="#" class="readmore">Read More</a>
-                  </div>
-                </div>
-                <div class="lp-item">
-                  <div class="lp-thumb set-bg">
-                    <img src="../images/blog-thumbs/2.jpg" alt="" />
-                  </div>
-                  <div class="lp-content">
-                    <h6>trends this year</h6>
-                    <span>Oct 21, 2019</span>
-                    <a href="#" class="readmore">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget contact-widget">
-              <h2>Thông tin</h2>
-              <div class="con-info">
-                <span>Công ty:</span>
-                <p>Auction Online</p>
-              </div>
-              <div class="con-info">
-                <span>Địa chỉ.</span>
-                <p>227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh</p>
-              </div>
-              <div class="con-info">
-                <span>Hotline:</span>
-                <p>+84 1800 1900</p>
-              </div>
-              <div class="con-info">
-                <span>Email:</span>
-                <p>info@auctiononline.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="social-links-warp">
-        <div class="container">
-          <div class="social-links text-center">
-            <a href="" class="instagram"
-              ><i class="fa fa-instagram"></i><span>instagram</span></a
+                                                            <a href="#" class="readmore">Read More</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lp-item">
+                                                        <div class="lp-thumb set-bg">
+                                                            <img src="../images/blog-thumbs/2.jpg" alt="" />
+                                                        </div>
+                                                        <div class="lp-content">
+                                                            <h6>trends this year</h6>
+                                                            <span>Oct 21, 2019</span>
+                                                            <a href="#" class="readmore">Read More</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6">
+                                            <div class="footer-widget contact-widget">
+                                                <h2>Thông tin</h2>
+                                                <div class="con-info">
+                                                    <span>Công ty:</span>
+                                                    <p>Auction Online</p>
+                                                </div>
+                                                <div class="con-info">
+                                                    <span>Địa chỉ.</span>
+                                                    <p>227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh</p>
+                                                </div>
+                                                <div class="con-info">
+                                                    <span>Hotline:</span>
+                                                    <p>+84 1800 1900</p>
+                                                </div>
+                                                <div class="con-info">
+                                                    <span>Email:</span>
+                                                    <p>info@auctiononline.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="social-links-warp">
+                                    <div class="container">
+                                        <div class="social-links text-center">
+                                            <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a
             >
             <a href="" class="google-plus"
               ><i class="fa fa-google-plus"></i><span>g+plus</span></a

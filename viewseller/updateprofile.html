@@ -1,173 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Auction Online</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../font-awesome/iconic/css/material-design-iconic-font.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="../font-awesome/iconic/css/material-design-iconic-font.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/util.css" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Header section start -->
     <header class="header-section">
-      <div class="header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-2 text-center text-lg-left">
-              <!-- logo -->
-              <a href="../index.html" class="site-logo">
-                <img
-                  src="../images/logo.PNG"
-                  alt="logo"
-                  width="162px"
-                  height="31px"
-                />
-              </a>
-            </div>
-            <div class="col-xl-6 col-lg-5">
-              <form class="header-search-form">
-                <input type="text" placeholder="Tìm kiếm" />
-                <button><i class="fa fa-search"></i></button>
-              </form>
-            </div>
-            <div class="col-xl-4 col-lg-5">
-              <div class="user-panel">
-                <div class="up-item">
-                  <i class="fa fa-user"></i>
-                  <a href="#">Đăng nhập</a> hoặc <a href="#">Đăng ký</a>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 text-center text-lg-left">
+                        <!-- logo -->
+                        <a href="../index.html" class="site-logo">
+                            <img src="../images/logo.PNG" alt="logo" width="162px" height="31px" />
+                        </a>
+                    </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <form class="header-search-form">
+                            <input type="text" placeholder="Tìm kiếm" />
+                            <button><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="user-panel">
+                            <div class="up-item">
+                                <i class="fa fa-user"></i>
+                                <a href="../login.html">Đăng nhập</a> hoặc <a href="../registration.html">Đăng ký</a>
+                            </div>
+                            <div class="up-item">
+                                <div class="shopping-card">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>0</span>
+                                </div>
+                                <a href="#">Giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="up-item">
-                  <div class="shopping-card">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>0</span>
-                  </div>
-                  <a href="#">Giỏ hàng</a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-      <nav class="main-navbar">
-        <div class="container">
-          <!-- menu -->
-          <ul class="main-menu">
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Hồ sơ</a></li>
-            <li>
-              <a href="#"
-                >Danh mục sản phẩm
+        <nav class="main-navbar">
+            <div class="container">
+                <!-- menu -->
+                <ul class="main-menu">
+                    <li><a href="../index.html">Trang chủ</a></li>
+                    <li><a href="profile.html">Hồ sơ</a></li>
+                    <li>
+                        <a href="../listproduct.html">Danh mục sản phẩm
                 <span class="new">New</span>
               </a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="#">Giày</a>
-                  <ul class="sub-menu-1">
-                    <li><a href="#">Adidas</a></li>
-                    <li><a href="#">Nike</a></li>
-                    <li><a href="#">Jordan</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#">Điện tử</a>
-                  <ul class="sub-menu-1">
-                    <li><a href="#">Điện thoại di động</a></li>
-                    <li><a href="#">Máy tính xách tay</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Quần áo</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">Yêu thích</a>
-            </li>
-            <li><a href="#">Đăng bán</a></li>
-          </ul>
-        </div>
-      </nav>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Giày</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Jordan</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Điện tử</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="#">Điện thoại di động</a></li>
+                                    <li><a href="#">Máy tính xách tay</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Quần áo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Yêu thích</a>
+                    </li>
+                    <li><a href="postproduct.html">Đăng bán</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <!-- Header section end -->
 
     <!-- main content -->
 
     <div class="main-content">
-      <div class="signup-page container">
-        <div class="wrap-login text-center">
-          <form method="POST" id="signup-form" class="login-form">
-            <span class="login-form-title p-tb-15">
+        <div class="signup-page container">
+            <div class="wrap-login text-center">
+                <form method="POST" id="signup-form" class="login-form">
+                    <span class="login-form-title p-tb-15">
               Cập nhật tài khoản
             </span>
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Name is required"
-            >
-              <span class="label-input">Họ tên</span>
-              <input
-                type="text"
-                class="input"
-                name="name"
-                id="name"
-                placeholder="Nhập họ tên"
-              />
-              <span class="focus-input" data-symbol="&#xf10c;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Name is required">
+                        <span class="label-input">Họ tên</span>
+                        <input type="text" class="input" name="name" id="name" placeholder="Nhập họ tên" />
+                        <span class="focus-input" data-symbol="&#xf10c;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Email is required"
-            >
-              <span class="label-input">Email</span>
-              <input
-                class="input"
-                type="email"
-                name="email"
-                placeholder="Nhập email"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf15a;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Email is required">
+                        <span class="label-input">Email</span>
+                        <input class="input" type="email" name="email" placeholder="Nhập email" required />
+                        <span class="focus-input" data-symbol="&#xf15a;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Address is required"
-            >
-              <span class="label-input">Địa chỉ</span>
-              <input
-                type="text"
-                class="input"
-                name="address"
-                id="address"
-                placeholder="Nhập địa chỉ"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf299;"></span>
-            </div>
-            <div class="text-center p-tb-20">
-              <i class="fa fa-arrow-left" style="color: #007bff;"></i>
-              <a href="#">
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Address is required">
+                        <span class="label-input">Địa chỉ</span>
+                        <input type="text" class="input" name="address" id="address" placeholder="Nhập địa chỉ" required />
+                        <span class="focus-input" data-symbol="&#xf299;"></span>
+                    </div>
+                    <div class="text-center p-tb-20">
+                        <i class="fa fa-arrow-left" style="color: #007bff;"></i>
+                        <a href="profile.html">
                 Quay lại
               </a>
-            </div>
-            <div class="container-login-form-btn p-b-25">
-              <div class="wrap-login-form-btn">
-                <div class="login-form-bgbtn"></div>
-                <button class="login-form-btn">
+                    </div>
+                    <div class="container-login-form-btn p-b-25">
+                        <div class="wrap-login-form-btn">
+                            <div class="login-form-bgbtn"></div>
+                            <button class="login-form-btn">
                   Cập nhật
                 </button>
-              </div>
-            </div>
-            <!-- 
+                        </div>
+                    </div>
+                    <!-- 
                     
                     <div class="form-group">
                       <input
@@ -192,104 +153,96 @@
                     <p class="loginhere">
                         Đã có tài khoản ? <a href="#" class="loginhere-link">Đăng nhập</a>
                       </p> -->
-          </form>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- main content end -->
 
     <!-- Footer section -->
     <section class="footer-section">
-      <div class="container">
-        <div class="footer-logo text-center">
-          <a href="../index.html"
-            ><img
-              src="../images/logo-light.png"
-              alt="logo"
-              width="220px"
-              height="50px"
-          /></a>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget about-widget">
-              <h2>Thanh toán</h2>
-              <p>
-                Công ty Auction Online chúng tôi hỗ trợ thanh toán với nhiều
-                hình thức khác nhau
-              </p>
-              <img src="../images/cards.png" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget about-widget">
-              <h2>Về Auction Online</h2>
-              <ul>
-                <li><a href="">Giới thiệu Auction Online</a></li>
-                <li><a href="">Tuyển dụng</a></li>
-                <li><a href="">Chính sách bảo mật thanh toán</a></li>
-                <li><a href="">Chính sách bảo mật thông tin cá nhân</a></li>
-                <li><a href="">Điều khoản sử dụng</a></li>
-                <li><a href="">Vận chuyển</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget about-widget">
-              <h2>TIN TỨC</h2>
-              <div class="fw-latest-post-widget">
-                <div class="lp-item">
-                  <div class="lp-thumb set-bg">
-                    <img src="../images/blog-thumbs/1.jpg" alt="" />
-                  </div>
-                  <div class="lp-content">
-                    <h6>what shoes to wear</h6>
-                    <span>Oct 21, 2019</span>
-                    <a href="#" class="readmore">Read More</a>
-                  </div>
-                </div>
-                <div class="lp-item">
-                  <div class="lp-thumb set-bg">
-                    <img src="../images/blog-thumbs/2.jpg" alt="" />
-                  </div>
-                  <div class="lp-content">
-                    <h6>trends this year</h6>
-                    <span>Oct 21, 2019</span>
-                    <a href="#" class="readmore">Read More</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget contact-widget">
-              <h2>Thông tin</h2>
-              <div class="con-info">
-                <span>Công ty:</span>
-                <p>Auction Online</p>
-              </div>
-              <div class="con-info">
-                <span>Địa chỉ.</span>
-                <p>227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh</p>
-              </div>
-              <div class="con-info">
-                <span>Hotline:</span>
-                <p>+84 1800 1900</p>
-              </div>
-              <div class="con-info">
-                <span>Email:</span>
-                <p>info@auctiononline.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="social-links-warp">
         <div class="container">
-          <div class="social-links text-center">
-            <a href="" class="instagram"
-              ><i class="fa fa-instagram"></i><span>instagram</span></a
+            <div class="footer-logo text-center">
+                <a href="../index.html"><img src="../images/logo-light.png" alt="logo" width="220px" height="50px" /></a>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <h2>Thanh toán</h2>
+                        <p>
+                            Công ty Auction Online chúng tôi hỗ trợ thanh toán với nhiều hình thức khác nhau
+                        </p>
+                        <img src="../images/cards.png" alt="" />
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <h2>Về Auction Online</h2>
+                        <ul>
+                            <li><a href="">Giới thiệu Auction Online</a></li>
+                            <li><a href="">Tuyển dụng</a></li>
+                            <li><a href="">Chính sách bảo mật thanh toán</a></li>
+                            <li><a href="">Chính sách bảo mật thông tin cá nhân</a></li>
+                            <li><a href="">Điều khoản sử dụng</a></li>
+                            <li><a href="">Vận chuyển</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget about-widget">
+                        <h2>TIN TỨC</h2>
+                        <div class="fw-latest-post-widget">
+                            <div class="lp-item">
+                                <div class="lp-thumb set-bg">
+                                    <img src="../images/blog-thumbs/1.jpg" alt="" />
+                                </div>
+                                <div class="lp-content">
+                                    <h6>what shoes to wear</h6>
+                                    <span>Oct 21, 2019</span>
+                                    <a href="#" class="readmore">Read More</a>
+                                </div>
+                            </div>
+                            <div class="lp-item">
+                                <div class="lp-thumb set-bg">
+                                    <img src="../images/blog-thumbs/2.jpg" alt="" />
+                                </div>
+                                <div class="lp-content">
+                                    <h6>trends this year</h6>
+                                    <span>Oct 21, 2019</span>
+                                    <a href="#" class="readmore">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="footer-widget contact-widget">
+                        <h2>Thông tin</h2>
+                        <div class="con-info">
+                            <span>Công ty:</span>
+                            <p>Auction Online</p>
+                        </div>
+                        <div class="con-info">
+                            <span>Địa chỉ.</span>
+                            <p>227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh</p>
+                        </div>
+                        <div class="con-info">
+                            <span>Hotline:</span>
+                            <p>+84 1800 1900</p>
+                        </div>
+                        <div class="con-info">
+                            <span>Email:</span>
+                            <p>info@auctiononline.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="social-links-warp">
+            <div class="container">
+                <div class="social-links text-center">
+                    <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a
             >
             <a href="" class="google-plus"
               ><i class="fa fa-google-plus"></i><span>g+plus</span></a
