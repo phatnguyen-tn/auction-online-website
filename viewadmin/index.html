@@ -53,12 +53,12 @@
             <h3 class="menu-title">Quản lý</h3>
             <!-- /.menu-title -->
             <li class="menu-item">
-              <a href="#">
+              <a href="listcategory.html">
                 <i class="menu-icon fa fa-laptop"></i>Quản lý danh mục</a
               >
             </li>
             <li class="menu-item">
-              <a href="#">
+              <a href="listproduct.html">
                 <i class="menu-icon fa fa-table"></i>Quản lý sản phẩm</a
               >
             </li>
@@ -75,11 +75,11 @@
               <ul class="sub-menu children dropdown-menu">
                 <li>
                   <i class="menu-icon fa fa-th"></i
-                  ><a href="forms-basic.html">Danh sách người dùng</a>
+                  ><a href="listuser.html">Danh sách người dùng</a>
                 </li>
                 <li>
                   <i class="menu-icon fa fa-th"></i
-                  ><a href="forms-advanced.html">Yêu cầu nâng cấp</a>
+                  ><a href="listrequest.html">Yêu cầu nâng cấp</a>
                 </li>
               </ul>
             </li>
@@ -99,11 +99,11 @@
               <ul class="sub-menu children dropdown-menu">
                 <li>
                   <i class="menu-icon fa fa-line-chart"></i
-                  ><a href="charts-chartjs.html">Người dùng</a>
+                  ><a href="#">Người dùng</a>
                 </li>
                 <li>
                   <i class="menu-icon fa fa-area-chart"></i
-                  ><a href="charts-flot.html">Truy cập</a>
+                  ><a href="#">Truy cập</a>
                 </li>
               </ul>
             </li>
@@ -292,7 +292,169 @@
         </div>
       </div>
 
-      <div class="content mt-3"></div>
+      <div class="content mt-3">
+        <div class="col-sm-12">
+          <div
+            class="alert  alert-success alert-dismissible fade show"
+            role="alert"
+          >
+            <span class="badge badge-pill badge-success">Thành công</span> Bạn
+            có thể xem các thông tin quan trọng
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-flat-color-1">
+            <div class="card-body pb-0">
+              <div class="dropdown float-right">
+                <button
+                  class="btn bg-transparent dropdown-toggle theme-toggle text-light"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-cog"></i>
+                </button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton1"
+                >
+                  <div class="dropdown-menu-content">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+              <h4 class="mb-0">
+                <span class="count">954</span>
+              </h4>
+              <p class="text-light">Sản phẩm đang được bán</p>
+
+              <div class="chart-wrapper px-0" style="height:70px;" height="70">
+                <canvas id="widgetChart1"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-flat-color-2">
+            <div class="card-body pb-0">
+              <div class="dropdown float-right">
+                <button
+                  class="btn bg-transparent dropdown-toggle theme-toggle text-light"
+                  type="button"
+                  id="dropdownMenuButton2"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-cog"></i>
+                </button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton2"
+                >
+                  <div class="dropdown-menu-content">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+              <h4 class="mb-0">
+                <span class="count">1999</span>
+              </h4>
+              <p class="text-light">Người dùng</p>
+
+              <div class="chart-wrapper px-0" style="height:70px;" height="70">
+                <canvas id="widgetChart2"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-flat-color-3">
+            <div class="card-body pb-0">
+              <div class="dropdown float-right">
+                <button
+                  class="btn bg-transparent dropdown-toggle theme-toggle text-light"
+                  type="button"
+                  id="dropdownMenuButton3"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-cog"></i>
+                </button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton3"
+                >
+                  <div class="dropdown-menu-content">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+              <h4 class="mb-0">
+                <span class="count">54</span>
+              </h4>
+              <p class="text-light">Người dùng đang online</p>
+            </div>
+
+            <div class="chart-wrapper px-0" style="height:70px;" height="70">
+              <canvas id="widgetChart3"></canvas>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+
+        <div class="col-sm-6 col-lg-3">
+          <div class="card text-white bg-flat-color-4">
+            <div class="card-body pb-0">
+              <div class="dropdown float-right">
+                <button
+                  class="btn bg-transparent dropdown-toggle theme-toggle text-light"
+                  type="button"
+                  id="dropdownMenuButton4"
+                  data-toggle="dropdown"
+                >
+                  <i class="fa fa-cog"></i>
+                </button>
+                <div
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton4"
+                >
+                  <div class="dropdown-menu-content">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </div>
+              </div>
+              <h4 class="mb-0">
+                <span class="count">254</span>
+              </h4>
+              <p class="text-light">Sản phẩm đã giao dịch thành công</p>
+
+              <div class="chart-wrapper px-3" style="height:70px;" height="70">
+                <canvas id="widgetChart4"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.col-->
+      </div>
     </div>
     <!-- /#right-panel -->
 
