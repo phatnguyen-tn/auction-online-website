@@ -1,360 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Auction Online</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="font-awesome/iconic/css/material-design-iconic-font.min.css"
-    />
+    <link rel="stylesheet" type="text/css" href="font-awesome/iconic/css/material-design-iconic-font.min.css" />
     <link rel="stylesheet" type="text/css" href="css/util.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <!-- Header section start -->
     <header class="header-section">
         <div class="header-top">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-2 text-center text-lg-left">
-                <!-- logo -->
-                <a href="./index.html" class="site-logo">
-                  <img
-                    src="images/logo.PNG"
-                    alt="logo"
-                    width="162px"
-                    height="31px"
-                  />
-                </a>
-              </div>
-              <div class="col-xl-6 col-lg-5">
-                <form class="header-search-form">
-                  <input type="text" placeholder="Tìm kiếm" />
-                  <button><i class="fa fa-search"></i></button>
-                </form>
-              </div>
-              <div class="col-xl-4 col-lg-5">
-                <div class="user-panel">
-                  <div class="up-item">
-                    <i class="fa fa-user"></i>
-                    <a href="#">Đăng nhập</a> hoặc <a href="#">Đăng ký</a>
-                  </div>
-                  <div class="up-item">
-                    <div class="shopping-card">
-                      <i class="fa fa-shopping-cart"></i>
-                      <span>0</span>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-2 text-center text-lg-left">
+                        <!-- logo -->
+                        <a href="/" class="site-logo">
+                            <img src="images/logo.PNG" alt="logo" width="162px" height="31px" />
+                        </a>
                     </div>
-                    <a href="#">Giỏ hàng</a>
-                  </div>
+                    <div class="col-xl-6 col-lg-5">
+                        <form class="header-search-form">
+                            <input type="text" placeholder="Tìm kiếm" />
+                            <button><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="user-panel">
+                            <div class="up-item">
+                                <i class="fa fa-user"></i>
+                                <a href="/login.html">Đăng nhập</a> hoặc <a href="/registration.html">Đăng ký</a>
+                            </div>
+                            <div class="up-item">
+                                <div class="shopping-card">
+                                    <i class="fa fa-shopping-cart"></i>
+                                    <span>0</span>
+                                </div>
+                                <a href="#">Giỏ hàng</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
         <nav class="main-navbar">
-          <div class="container">
-            <!-- menu -->
-            <ul class="main-menu">
-              <li><a href="#">Trang chủ</a></li>
-              <li><a href="#">Hồ sơ</a></li>
-              <li>
-                <a href="#"
-                  >Danh mục sản phẩm
+            <div class="container">
+                <!-- menu -->
+                <ul class="main-menu">
+                    <li><a href="/index.html">Trang chủ</a></li>
+                    <li><a href="#">Hồ sơ</a></li>
+                    <li>
+                        <a href="#">Danh mục sản phẩm
                   <span class="new">New</span>
                 </a>
-                <ul class="sub-menu">
-                  <li>
-                    <a href="#">Giày</a>
-                    <ul class="sub-menu-1">
-                      <li><a href="#">Adidas</a></li>
-                      <li><a href="#">Nike</a></li>
-                      <li><a href="#">Jordan</a></li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#">Điện tử</a>
-                    <ul class="sub-menu-1">
-                      <li><a href="#">Điện thoại di động</a></li>
-                      <li><a href="#">Máy tính xách tay</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Quần áo</a></li>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="#">Giày</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="#">Adidas</a></li>
+                                    <li><a href="#">Nike</a></li>
+                                    <li><a href="#">Jordan</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Điện tử</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="#">Điện thoại di động</a></li>
+                                    <li><a href="#">Máy tính xách tay</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Quần áo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Yêu thích</a>
+                    </li>
+                    <li><a href="#">Đăng bán</a></li>
                 </ul>
-              </li>
-              <li>
-                <a href="#">Yêu thích</a>
-              </li>
-              <li><a href="#">Đăng bán</a></li>
-            </ul>
-          </div>
+            </div>
         </nav>
-      </header>
-      <!-- Header section end -->
+    </header>
+    <!-- Header section end -->
 
     <!-- main content -->
 
     <div class="main-content">
-      <div class="login-page container" style="display: flex;">
-        <div class="wrap-login text-center">
-          <form
-            method="POST"
-            id="login-form"
-            class="login-form validate-form"
-            style="display: block"
-          >
-            <span class="login-form-title p-tb-15">
+        <div class="login-page container" style="display: flex;">
+            <div class="wrap-login text-center">
+                <form method="POST" id="login-form" class="login-form validate-form" style="display: block">
+                    <span class="login-form-title p-tb-15">
               Đăng nhập
             </span>
 
-            <div
-              class="wrap-input text-left validate-input"
-              data-validate="Username is required"
-            >
-              <span class="label-input">Tài khoản</span>
-              <input
-                class="input"
-                type="text"
-                name="username"
-                placeholder="Nhập tài khoản"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf206;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input" data-validate="Username is required">
+                        <span class="label-input">Tài khoản</span>
+                        <input class="input" type="text" name="username" placeholder="Nhập tài khoản" required />
+                        <span class="focus-input" data-symbol="&#xf206;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Mật khẩu</span>
-              <input
-                class="input"
-                type="password"
-                name="password"
-                placeholder="Nhập mật khẩu"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf190;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Mật khẩu</span>
+                        <input class="input" type="password" name="password" placeholder="Nhập mật khẩu" required />
+                        <span class="focus-input" data-symbol="&#xf190;"></span>
+                    </div>
 
-            <div class="text-right p-tb-20">
-              <a href="#" class="forget-pw-btn">
+                    <div class="text-right p-tb-20">
+                        <a href="/forgetpassword.html" class="forget-pw-btn">
                 Quên mật khẩu?
               </a>
-            </div>
+                    </div>
 
-            <div class="container-login-form-btn">
-              <div class="wrap-login-form-btn">
-                <div class="login-form-bgbtn"></div>
-                <button class="login-form-btn">
+                    <div class="container-login-form-btn">
+                        <div class="wrap-login-form-btn">
+                            <div class="login-form-bgbtn"></div>
+                            <button class="login-form-btn">
                   Đăng nhập
                 </button>
-              </div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class=" text-center p-t-54 p-b-20">
-              <span>
+                    <div class=" text-center p-t-54 p-b-20">
+                        <span>
                 Hoặc đăng nhập bằng cách
               </span>
-            </div>
+                    </div>
 
-            <div class="flex-c-m">
-              <a href="#" class="login-social-item bg1">
-                <i class="fa fa-facebook"></i>
-              </a>
+                    <div class="flex-c-m">
+                        <a href="#" class="login-social-item bg1">
+                            <i class="fa fa-facebook"></i>
+                        </a>
 
-              <a href="#" class="login-social-item bg2">
-                <i class="fa fa-twitter"></i>
-              </a>
+                        <a href="#" class="login-social-item bg2">
+                            <i class="fa fa-twitter"></i>
+                        </a>
 
-              <a href="#" class="login-social-item bg3">
-                <i class="fa fa-google"></i>
-              </a>
-            </div>
+                        <a href="#" class="login-social-item bg3">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </div>
 
-            <div class="flex-col-c p-t-65">
-              <span class=" p-b-17">
+                    <div class="flex-col-c p-t-65">
+                        <span class=" p-b-17">
                 Hoặc đăng ký tài khoản
               </span>
 
-              <a href="#" class="p-b-15 signup-btn">
+                        <a href="/registration.html" class="p-b-15 signup-btn">
                 Đăng ký
               </a>
+                    </div>
+                </form>
             </div>
-          </form>
         </div>
-      </div>
-      <div class="forgetpassword-page container" style="display: none;">
-        <div class="wrap-login text-center">
-          <form method="POST" id="forgetpassword-form" class="login-form">
-            <span class="login-form-title p-tb-15">
+        <div class="forgetpassword-page container" style="display: none;">
+            <div class="wrap-login text-center">
+                <form method="POST" id="forgetpassword-form" class="login-form">
+                    <span class="login-form-title p-tb-15">
               Quên mật khẩu
             </span>
-            <div
-              class="wrap-input text-left validate-input"
-              data-validate="Username is required"
-            >
-              <span class="label-input">Tài khoản</span>
-              <input
-                class="input"
-                type="text"
-                name="username"
-                placeholder="Nhập tài khoản"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf206;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input" data-validate="Username is required">
+                        <span class="label-input">Tài khoản</span>
+                        <input class="input" type="text" name="username" placeholder="Nhập tài khoản" required />
+                        <span class="focus-input" data-symbol="&#xf206;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Email</span>
-              <input
-                class="input"
-                type="email"
-                name="email"
-                placeholder="Nhập email"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf15a;"></span>
-            </div>
-            <div class="text-center p-tb-20">
-              <i class="fa fa-arrow-left" style="color: #007bff;"></i>
-              <a href="#" class="back-login-btn">
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Email</span>
+                        <input class="input" type="email" name="email" placeholder="Nhập email" required />
+                        <span class="focus-input" data-symbol="&#xf15a;"></span>
+                    </div>
+                    <div class="text-center p-tb-20">
+                        <i class="fa fa-arrow-left" style="color: #007bff;"></i>
+                        <a href="#" class="back-login-btn">
                 Quay lại
               </a>
-            </div>
-            <div class="container-login-form-btn p-b-25">
-              <div class="wrap-login-form-btn">
-                <div class="login-form-bgbtn"></div>
-                <button class="login-form-btn">
+                    </div>
+                    <div class="container-login-form-btn p-b-25">
+                        <div class="wrap-login-form-btn">
+                            <div class="login-form-bgbtn"></div>
+                            <button class="login-form-btn">
                   Lấy lại mật khẩu
                 </button>
-              </div>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </form>
         </div>
-      </div>
-      <div class="signup-page container" style="display: none;">
-        <div class="wrap-login text-center">
-          <form method="POST" id="signup-form" class="login-form">
-            <span class="login-form-title p-tb-15">
+        <div class="signup-page container" style="display: none;">
+            <div class="wrap-login text-center">
+                <form method="POST" id="signup-form" class="login-form">
+                    <span class="login-form-title p-tb-15">
               Đăng ký
             </span>
-            <div
-              class="wrap-input text-left validate-input"
-              data-validate="Username is required"
-            >
-              <span class="label-input">Tài khoản</span>
-              <input
-                class="input"
-                type="text"
-                name="username"
-                placeholder="Nhập tài khoản"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf206;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input" data-validate="Username is required">
+                        <span class="label-input">Tài khoản</span>
+                        <input class="input" type="text" name="username" placeholder="Nhập tài khoản" required />
+                        <span class="focus-input" data-symbol="&#xf206;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Mật khẩu</span>
-              <input
-                type="password"
-                class="input"
-                name="password"
-                id="password"
-                placeholder="Mật khẩu"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf190;"></span>
-              <span
-                toggle="#password"
-                class="zmdi zmdi-eye field-icon toggle-password"
-              ></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Mật khẩu</span>
+                        <input type="password" class="input" name="password" id="password" placeholder="Mật khẩu" required />
+                        <span class="focus-input" data-symbol="&#xf190;"></span>
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Nhập lại mật khẩu</span>
-              <input
-                type="password"
-                class="input"
-                name="re_password"
-                id="re_password"
-                placeholder="Nhập lại mật khẩu"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf190;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Nhập lại mật khẩu</span>
+                        <input type="password" class="input" name="re_password" id="re_password" placeholder="Nhập lại mật khẩu" required />
+                        <span class="focus-input" data-symbol="&#xf190;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Họ tên</span>
-              <input
-                type="text"
-                class="input"
-                name="name"
-                id="name"
-                placeholder="Nhập họ tên"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf10c;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Họ tên</span>
+                        <input type="text" class="input" name="name" id="name" placeholder="Nhập họ tên" required />
+                        <span class="focus-input" data-symbol="&#xf10c;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Email</span>
-              <input
-                class="input"
-                type="email"
-                name="email"
-                placeholder="Nhập email"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf15a;"></span>
-            </div>
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Email</span>
+                        <input class="input" type="email" name="email" placeholder="Nhập email" required />
+                        <span class="focus-input" data-symbol="&#xf15a;"></span>
+                    </div>
 
-            <div
-              class="wrap-input text-left validate-input p-t-5"
-              data-validate="Password is required"
-            >
-              <span class="label-input">Địa chỉ</span>
-              <input
-                type="text"
-                class="input"
-                name="address"
-                id="address"
-                placeholder="Nhập địa chỉ"
-                required
-              />
-              <span class="focus-input" data-symbol="&#xf299;"></span>
-            </div>
-            <div class="form-group">
-                <input
-                  type="checkbox"
-                  name="agree-term"
-                  id="agree-term"
-                  class="agree-term"
-                />
-                <label for="agree-term" class="label-agree-term"
-                  ><span><span></span></span>Tôi đã đọc và đồng ý với
+                    <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
+                        <span class="label-input">Địa chỉ</span>
+                        <input type="text" class="input" name="address" id="address" placeholder="Nhập địa chỉ" required />
+                        <span class="focus-input" data-symbol="&#xf299;"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                        <label for="agree-term" class="label-agree-term"><span><span></span></span>Tôi đã đọc và đồng ý với
                   <a href="#" class="term-service">Điều khoản sử dụng</a></label
                 >
               </div>
