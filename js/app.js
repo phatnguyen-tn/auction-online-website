@@ -56,10 +56,50 @@ $(document).ready(function () {
 	/*------------------
 		  sign up button
 	  --------------------*/
-	  $('.signup-btn').on('click', function () {
+	$('.signup-btn').on('click', function () {
 		$('.login-page').css('display', 'none');
 		$('.forgetpassword-page').css('display', 'none');
 		$('.signup-page').css('display', 'flex');
 	});
+
+	/*------------------
+		  verify bid
+	  --------------------*/
+
+
+
+	const ui = {
+		confirm: async (message) => createConfirm(message)
+	}
+
+	const createConfirm = (message) => {
+		return new Promise((complete, failed) => {
+			$('#confirmMessage').html(message);
+
+			$('#confirmYes').off('click');
+			$('#confirmNo').off('click');
+
+			$('#confirmYes').on('click', () => { $('.confirm').hide(); complete(true); });
+			$('#confirmNo').on('click', () => { $('.confirm').hide(); complete(false); });
+
+			$('.confirm').show();
+		});
+	}
+
+	const save = async () => {
+		const confirm = await ui.confirm(`
+			<p class = 'p-b-10'>Bạn có chắc muốn ra giá?</p>
+			<p>Giá hiện tại: 1,000,000 vnđ</p>
+			<p> Bước giá: 10, 000 vnđ</p>
+			<p>Giá đề nghị: 1,010,000 vnđ</p>
+			<span>Giá của bạn</span>	
+			<input type='number' step='10000' class='b-d-l'>
+			`);
+	}
+	$('.btn-bid-product').on('click', function () {
+		save();
+	});
+
+	
 
 });

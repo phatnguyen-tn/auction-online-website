@@ -1666,6 +1666,62 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 }
 
 /*//////////////////////////////////////////////////////////////////
+[ verify ]*/
+
+b-d-l{
+  border: 1px solid #9f9fa0;
+}
+
+input[type="button"]{
+  display: inline;
+  padding: 5px 10px;
+  margin: 10px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #ddd;
+  border: 1px solid #ccc;
+}
+
+input[type="button"]:hover{
+  background: #ccc;
+}
+
+.confirm {
+  display: none;
+}
+
+.confirm > div:first-of-type {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0px;
+  left: 0px;
+}
+
+.confirm > div:last-of-type {
+  padding: 10px 20px;
+  background: white;
+  position: absolute;
+  width: auto;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.confirm > div:last-of-type div:first-of-type {
+  min-width: 150px;
+  padding: 10px;
+}
+
+.confirm > div:last-of-type div:last-of-type {
+  text-align: right;
+}
+
+/*//////////////////////////////////////////////////////////////////
 [ feedback sell ]*/
 
 .feedback-section {
@@ -1708,7 +1764,8 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   background: #fffbf8;
 }
 
-.fb-ratings-overview-score , .fb-ratings-star-wrapper{
+.fb-ratings-overview-score,
+.fb-ratings-star-wrapper {
   color: #ee4d2d;
 }
 
@@ -1722,18 +1779,18 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   line-height: 2rem;
   min-width: 6.25rem;
   text-align: center;
-  padding: 0 .625rem;
+  padding: 0 0.625rem;
   background-color: #fff;
-  border: 1px solid #d9d9d9;  
+  border: 1px solid #d9d9d9;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   text-decoration: none;
-  color: rgba(0,0,0,.8);
+  color: rgba(0, 0, 0, 0.8);
   text-transform: capitalize;
   border-radius: 2px;
-  margin-bottom: .3125rem;
+  margin-bottom: 0.3125rem;
   margin-top: 1.2rem;
 }
 
@@ -1748,13 +1805,13 @@ input[type="checkbox"]:not(old):checked + label > span:before {
   width: 100%;
 }
 
-.fb-ratings-list-item{
+.fb-ratings-list-item {
   display: flex;
   flex-wrap: nowrap;
   padding: 10px;
-  border-bottom: 1px solid rgba(0,0,0,.09);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
 
-.fb-ratings-filter-item-content{
+.fb-ratings-filter-item-content {
   padding-left: 10px;
 }
