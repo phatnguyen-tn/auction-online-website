@@ -86,20 +86,38 @@ $(document).ready(function () {
 		});
 	}
 
-	const save = async () => {
-		const confirm = await ui.confirm(`
-			<p class = 'p-b-10'>Bạn có chắc muốn ra giá?</p>
-			<p>Giá hiện tại: 1,000,000 vnđ</p>
-			<p> Bước giá: 10, 000 vnđ</p>
-			<p>Giá đề nghị: 1,010,000 vnđ</p>
-			<span>Giá của bạn</span>	
-			<input type='number' step='10000' class='b-d-l'>
-			`);
+	const save = async (mess) => {
+		const confirm = await ui.confirm(mess);
 	}
 	$('.btn-bid-product').on('click', function () {
-		save();
+		const mess = `
+		<p class = 'p-b-10'>Bạn có chắc muốn ra giá?</p>
+		<p>Giá hiện tại: 1,000,000 vnđ</p>
+		<p> Bước giá: 10, 000 vnđ</p>
+		<p>Giá đề nghị: 1,010,000 vnđ</p>
+		<span>Giá của bạn</span>	
+		<input type='number' step='10000' class='b-d-l'>
+		`;
+		save(mess);
 	});
 
-	
+	$('.btn-cancel').on('click', function () {
+		const mess = `
+		<p class = 'p-b-10'>Bạn có chắc muốn hủy giao dịch?</p>
+		`
+		save(mess);
+	});
+
+	$('.btn-del').on('click', function () {
+		const mess = `
+		<p class = 'p-b-10'>Bạn có chắc muốn xoá sản phẩm?</p>
+		`
+		save(mess);
+	});
+
+	$('.show-contact').on('click', function(){
+		var numberPhone = `0936425244`;
+		$(this).html(numberPhone);
+	});
 
 });
