@@ -16,4 +16,12 @@ router.route('/login')
     .put()
     .delete()
 
+router.route('/register')
+    .get((req, res) => {
+        res.render('register')
+    })
+    .post()
+    .put()
+    .delete()
+
 module.exports = router;
