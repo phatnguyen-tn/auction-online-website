@@ -32,10 +32,12 @@
                     </div>
                     <div class="col-xl-4 col-lg-5">
                         <div class="user-panel">
+                            <% if (!locals.user) { %>
                             <div class="up-item">
                                 <i class="fa fa-user"></i>
                                 <a href="/login">Đăng nhập</a> hoặc <a href="/register">Đăng ký</a>
                             </div>
+                            <% } else { %>
                             <div class="up-item">
                                 <div class="shopping-card">
                                     <i class="fa fa-shopping-cart"></i>
@@ -43,47 +45,51 @@
                                 </div>
                                 <a href="#">Giỏ hàng</a>
                             </div>
+                            <div class="up-item">
+                                <i class="fa fa-user"></i>
+                                <a href="/logout">Đăng xuất </a>
+                            </div>
+                            <% } %>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <nav class="main-navbar">
-          <div class="container">
-              <!-- menu -->
-              <ul class="main-menu">
-                  <li><a href="index.html">Trang chủ</a></li>
-                  <li><a href="viewseller/profile.html">Hồ sơ</a></li>
-                  <li>
-                      <a href="listproduct.html">Danh mục sản phẩm
-              <span class="new">New</span>
-            </a>
-                      <ul class="sub-menu">
-                          <li>
-                              <a href="listproduct.html">Giày</a>
-                              <ul class="sub-menu-1">
-                                  <li><a href="listproduct.html">Adidas</a></li>
-                                  <li><a href="listproduct.html">Nike</a></li>
-                                  <li><a href="listproduct.html">Jordan</a></li>
-                              </ul>
-                          </li>
-                          <li>
-                              <a href="listproduct.html">Điện tử</a>
-                              <ul class="sub-menu-1">
-                                  <li><a href="listproduct.html">Điện thoại di động</a></li>
-                                  <li><a href="listproduct.html">Máy tính xách tay</a></li>
-                              </ul>
-                          </li>
-                          <li><a href="listproduct.html">Quần áo</a></li>
-                      </ul>
-                  </li>
-                  <li>
-                      <a href="./viewbidder/wishlist.html">Yêu thích</a>
-                  </li>
-                  <li><a href="./viewseller/postproduct.html">Đăng bán</a></li>
-              </ul>
-          </div>
-      </nav>
+            <div class="container">
+                <!-- menu -->
+                <ul class="main-menu">
+                    <li><a href="viewseller/profile.html">Hồ sơ</a></li>
+                    <li>
+                        <a href="listproduct.html">Danh mục sản phẩm
+                            <span class="new">New</span>
+                        </a>
+                        <ul class="sub-menu">
+                            <li>
+                                <a href="listproduct.html">Giày</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="listproduct.html">Adidas</a></li>
+                                    <li><a href="listproduct.html">Nike</a></li>
+                                    <li><a href="listproduct.html">Jordan</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="listproduct.html">Điện tử</a>
+                                <ul class="sub-menu-1">
+                                    <li><a href="listproduct.html">Điện thoại di động</a></li>
+                                    <li><a href="listproduct.html">Máy tính xách tay</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="listproduct.html">Quần áo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./viewbidder/wishlist.html">Yêu thích</a>
+                    </li>
+                    <li><a href="./viewseller/postproduct.html">Đăng bán</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <!-- Header section end -->
 
@@ -173,56 +179,40 @@
         <div class="social-links-warp">
             <div class="container">
                 <div class="social-links text-center">
-                    <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a
-            >
-            <a href="" class="google-plus"
-              ><i class="fa fa-google-plus"></i><span>g+plus</span></a
-            >
-            <a href="" class="pinterest"
-              ><i class="fa fa-pinterest"></i><span>pinterest</span></a
-            >
-            <a href="" class="facebook"
-              ><i class="fa fa-facebook"></i><span>facebook</span></a
-            >
-            <a href="" class="twitter"
-              ><i class="fa fa-twitter"></i><span>twitter</span></a
-            >
-            <a href="" class="youtube"
-              ><i class="fa fa-youtube"></i><span>youtube</span></a
-            >
-          </div>
+                    <a href="" class="instagram"><i class="fa fa-instagram"></i><span>instagram</span></a>
+                    <a href="" class="google-plus"><i class="fa fa-google-plus"></i><span>g+plus</span></a>
+                    <a href="" class="pinterest"><i class="fa fa-pinterest"></i><span>pinterest</span></a>
+                    <a href="" class="facebook"><i class="fa fa-facebook"></i><span>facebook</span></a>
+                    <a href="" class="twitter"><i class="fa fa-twitter"></i><span>twitter</span></a>
+                    <a href="" class="youtube"><i class="fa fa-youtube"></i><span>youtube</span></a>
+                </div>
 
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          <p class="text-white text-center mt-5">
-            Copyright &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            All rights reserved | This template is made with
-            <i class="fa fa-heart-o" aria-hidden="true"></i> by NTP and DPL
-          </p>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                <p class="text-white text-center mt-5">
+                    Copyright &copy;
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>
+                    All rights reserved | This template is made with
+                    <i class="fa fa-heart-o" aria-hidden="true"></i> by NTP and DPL
+                </p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </div>
         </div>
-      </div>
     </section>
     <!-- Footer section end -->
 
     <!-- javascript -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     <script src="js/app.js"></script>
-  </body>
+</body>
+
 </html>
