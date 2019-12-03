@@ -1,0 +1,12 @@
+{
+  "name": "-auction-online-website",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": "https://github.com/ntphat1711999/-auction-online-website.git",
+  "author": "long9ka <long9ka@gmail.com>",
+  "license": "MIT"
+}
