@@ -14,7 +14,14 @@ const UserSchema = new mongoose.Schema({
     isVerified: {
         type: Boolean,
         default: false
-    }
+    },
+    roles: [
+        {
+            type: String,
+            lowercase: true,
+            enum: ['guess', 'bidder', 'seller', 'admin']
+        }
+    ]
 })
 
 module.exports = mongoose.model('user', UserSchema);

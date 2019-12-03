@@ -47,8 +47,8 @@ app.use(session({
 }))
 
 // init flash
-//app.use(flash());
-//app.use(require('./middleware/flash'));
+app.use(flash());
+app.use(require('./middleware/flash'));
 
 // use passport
 //require('./config/passport')(passport);
@@ -56,7 +56,6 @@ app.use(session({
 //app.use(passport.session());
 
 // app.use('/user', require('./routes/user'));
-// app.use('/terms', require('./routes/terms'));
 app.use('/', require('./routes/index'));
 
 app.listen(config.PORT, console.log(`Server started on port ${config.PORT}`));
