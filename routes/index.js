@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const passport = require('passport');
+const validInput = require('../middleware/valid');
 
 router.route('/')
     .get((req, res) => {
@@ -26,7 +27,7 @@ router.route('/register')
     .get((req, res) => {
         res.render('register')
     })
-    .post(passport.authenticate('register', {
+    .post(validInput.validRegister, passport.authenticate('register', {
         successRedirect: '/',
         failureRedirect: '/register',
         failureFlash: true
