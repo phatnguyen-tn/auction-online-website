@@ -8,5 +8,10 @@
   },
   "repository": "https://github.com/ntphat1711999/-auction-online-website.git",
   "author": "long9ka <long9ka@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.7.13"
+  }
 }
