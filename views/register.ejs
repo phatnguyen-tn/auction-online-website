@@ -5,35 +5,39 @@
                 <span class="login-form-title p-tb-15">
                     Đăng ký
                 </span>
+
+                <!--Notification-->
+                <h5 style="color: red;"><%= error %></h5>
+
                 <div class="wrap-input text-left validate-input" data-validate="Username is required">
                     <span class="label-input">Tài khoản</span>
-                    <input class="input" type="text" name="username" placeholder="Nhập tài khoản" required />
+                    <input class="input" type="text" name="username" placeholder="Nhập tài khoản"/>
                     <span class="focus-input" data-symbol="&#xf206;"></span>
                 </div>
 
                 <div class="wrap-input text-left validate-input p-t-5" data-validate="Password is required">
                     <span class="label-input">Mật khẩu</span>
                     <input type="password" class="input" name="password" id="password" placeholder="Mật khẩu"
-                        required />
+                        />
                     <span class="focus-input" data-symbol="&#xf190;"></span>
                     <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                 </div>
 
                 <div class="wrap-input text-left validate-input p-t-5" data-validate="Name is required">
                     <span class="label-input">Họ tên</span>
-                    <input type="text" class="input" name="name" id="name" placeholder="Nhập họ tên" required />
+                    <input type="text" class="input" name="fullName" id="name" placeholder="Nhập họ tên" />
                     <span class="focus-input" data-symbol="&#xf10c;"></span>
                 </div>
                 
                 <div class="wrap-input text-left validate-input p-t-5" data-validate="Email is required">
                     <span class="label-input">Email</span>
-                    <input class="input" type="email" name="email" placeholder="Nhập email" required />
+                    <input class="input" type="email" name="email" placeholder="Nhập email" />
                     <span class="focus-input" data-symbol="&#xf15a;"></span>
                 </div>
 
                 <div class="wrap-input text-left validate-input p-t-5" data-validate="Address is required">
                     <span class="label-input">Địa chỉ</span>
-                    <input type="text" class="input" name="address" id="address" placeholder="Nhập địa chỉ" required />
+                    <input type="text" class="input" name="address" id="address" placeholder="Nhập địa chỉ" />
                     <span class="focus-input" data-symbol="&#xf299;"></span>
                 </div>
                 <div class="form-group">

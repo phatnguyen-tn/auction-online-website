@@ -51,9 +51,9 @@ app.use(flash());
 app.use(require('./middleware/flash'));
 
 // use passport
-//require('./config/passport')(passport);
-//app.use(passport.initialize());
-//app.use(passport.session());
+require('./config/passport')(passport);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // app.use('/user', require('./routes/user'));
 app.use('/', require('./routes/index'));

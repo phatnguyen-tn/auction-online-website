@@ -19,7 +19,7 @@ const UserSchema = new mongoose.Schema({
         {
             type: String,
             lowercase: true,
-            enum: ['guess', 'bidder', 'seller', 'admin']
+            enum: ['bidder', 'seller', 'admin']
         }
     ]
 })
