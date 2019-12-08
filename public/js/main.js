@@ -26,47 +26,14 @@ $(document).ready(function () {
 		$('.search-trigger').parent('.header-left').removeClass('open');
 	});
 
-	/*------------------
-		  verify 
-	  --------------------*/
-
-
-
-	const ui = {
-		confirm: async (message) => createConfirm(message)
-	}
-
-	const createConfirm = (message) => {
-		return new Promise((complete, failed) => {
-			$('#confirmMessage').html(message);
-
-			$('#confirmYes').off('click');
-			$('#confirmNo').off('click');
-
-			$('#confirmYes').on('click', () => { $('.confirm').hide(); complete(true); });
-			$('#confirmNo').on('click', () => { $('.confirm').hide(); complete(false); });
-
-			$('.confirm').show();
-		});
-	}
-
-	const save = async (mess) => {
-		const confirm = await ui.confirm(mess);
-	}
-
-	$('.btn-del').on('click', function () {
-		const mess = `<p class = 'p-b-10'>Bạn có chắc muốn xoá?</p>`;
-		save(mess);
-	});
-
-	$('.btn-des').on('click', function () {
-		const mess = `<p class = 'p-b-10'>Bạn có chắc muốn hạ cấp?</p>`;
-		save(mess);
-	});
-
-	$('.btn-argee').on('click', function () {
-		const mess = `<p class = 'p-b-10'>Bạn có chắc muốn đồng ý?</p>`;
-		save(mess);
-	});
+	$('#exampleModal').on('show.bs.modal', function (event) {
+		var button = $(event.relatedTarget); // Button that triggered the modal
+		var recipient = button.data('whatever'); // Extract info from data-* attributes
+		// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+		// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+		var modal = $(this);
+		modal.find('.modal-title').text(recipient);
+		modal.find('.modal-body input').val(recipient);
+	})
 
 });
