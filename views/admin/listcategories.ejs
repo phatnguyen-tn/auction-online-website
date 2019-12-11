@@ -28,12 +28,34 @@
             <button class="m-l-10 btn btn-outline-success">Cập nhật</button></a
           >
         </div>
-        <div class="d-inline w-50">
+        <div class="d-inline-block w-25">
           <strong class="card-title">Thêm: </strong>
-          <button class="m-l-10 btn btn-outline-success">
+          <button class="m-l-10 btn btn-outline-success add-cat">
             <i class="fa fa-plus"></i>
           </button>
         </div>
+        <form
+          method="POST"
+          class="add-cat-form input-group mb-3 mt-3"
+          style="display: none"
+        >
+          <input
+            type="text"
+            class="form-control"
+            id="newCat"
+            name="newCat"
+            placeholder="Tên danh mục mới"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-primary accept-add-cat"
+              type="submit"
+              id="button-addon2"
+            >
+              Xác nhận
+            </button>
+          </div>
+        </form>
       </div>
     </div>
     <div class="row">
@@ -65,7 +87,7 @@
                   >
                     Huỷ
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary accept-del">
                     Chấp nhận
                   </button>
                 </div>
@@ -81,6 +103,7 @@
                 <th>STT</th>
                 <th>Tên danh mục</th>
                 <th>Số lượng sản phẩm</th>
+                <th>Xem chi tiết</th>
                 <th>Xoá</th>
               </thead>
               <tbody>
@@ -89,6 +112,11 @@
                   <td><%= index+1 %></td>
                   <td><%= cat.catName %></td>
                   <td><%= cat.amount%></td>
+                  <td>
+                    <a href="/admin/listcategories/<%= cat._id %>">
+                      <button class="btn btn-outline-primary">Xem</button></a
+                    >
+                  </td>
                   <td>
                     <% if (cat.amount == 0) { %>
                     <button
@@ -105,24 +133,26 @@
                 <% }); %>
               </tbody>
             </table>
+            <%# Pagination %>
+            <nav class="d-flex justify-content-end">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#"
+                    >2 <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+            <%# Pagination end %>
           </div>
-          <nav class="d-flex justify-content-end mb-3">
-            <ul class="pagination">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item active">
-                <a class="page-link" href="#"
-                  >2 <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
         </div>
       </div>
     </div>

@@ -7,6 +7,6 @@ const CatSchema = new mongoose.Schema({
     amount: {
         type: Number
     }
-})
+});
 
 module.exports = mongoose.model('cat', CatSchema, 'categories');

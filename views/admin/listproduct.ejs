@@ -23,13 +23,9 @@
       <div class="card-header">
         <div class="d-inline-block w-50">
           <strong class="card-title">Cập nhật danh sách sản phẩm: </strong>
-          <button class="m-l-10 btn btn-outline-success">Cập nhật</button>
-        </div>
-        <div class="d-inline w-50">
-          <strong class="card-title">Thêm: </strong>
-          <button class="m-l-10 btn btn-outline-success">
-            <i class="fa fa-plus"></i>
-          </button>
+          <a href="/admin/listproduct">
+            <button class="m-l-10 btn btn-outline-success">Cập nhật</button></a
+          >
         </div>
       </div>
     </div>
@@ -77,23 +73,27 @@
               <thead>
                 <th>STT</th>
                 <th>Tên sản phẩm</th>
-                <th>Hình ảnh</th>
+                <th>Số lượng</th>
                 <th>Người bán</th>
+                <th>Giá hiện tại</th>
+                <th>Người ra giá</th>
+                <th>Xem chi tiết</th>
                 <th>Xoá</th>
               </thead>
               <tbody>
+                <% products.forEach(function(product, index){ %>
                 <tr>
-                  <td>1</td>
-                  <td>Laptop 1</td>
+                  <td><%= index+1 %></td>
+                  <td><%= product.name %></td>
+                  <td><%= product.amount%></td>
+                  <td><%= product.seller%></td>
+                  <td><%= product.currentPrice%></td>
+                  <td><%= product.bidder%></td>
                   <td>
-                    <img
-                      src="../images/laptop/laptop-macbookpro-2017.png"
-                      alt=""
-                      width="150px"
-                      height="150px"
-                    />
+                    <a href="/admin/listproduct/<%= product._id %>">
+                      <button class="btn btn-outline-primary">Xem</button></a
+                    >
                   </td>
-                  <td>seller1</td>
                   <td>
                     <button
                       type="button"
@@ -105,77 +105,28 @@
                     </button>
                   </td>
                 </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Laptop 2</td>
-                  <td>
-                    <img
-                      src="../images/laptop/laptop-xps15.png"
-                      alt=""
-                      width="150px"
-                      height="150px"
-                    />
-                  </td>
-                  <td>seller1</td>
-                  <td>
-                    <button
-                      type="button"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                      class="btn-del btn btn-outline-danger"
-                    >
-                      <i class="fa fa-minus"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>Laptop 3</td>
-                  <td>
-                    <img
-                      src="../images/laptop/laptop-macbookpro-2017.png"
-                      alt=""
-                      width="150px"
-                      height="150px"
-                    />
-                  </td>
-                  <td>seller2</td>
-                  <td>
-                    <button
-                      type="button"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                      class="btn-del btn btn-outline-danger"
-                    >
-                      <i class="fa fa-minus"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>Laptop 4</td>
-                  <td>
-                    <img
-                      src="../images/laptop/laptop-rog-strix.png"
-                      alt=""
-                      width="150px"
-                      height="150px"
-                    />
-                  </td>
-                  <td>seller1</td>
-                  <td>
-                    <button
-                      type="button"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                      class="btn-del btn btn-outline-danger"
-                    >
-                      <i class="fa fa-minus"></i>
-                    </button>
-                  </td>
-                </tr>
+                <% }); %>
               </tbody>
             </table>
+            <%# Pagination %>
+            <nav class="d-flex justify-content-end">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active">
+                  <a class="page-link" href="#"
+                    >2 <span class="sr-only">(current)</span></a
+                  >
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+            <%# Pagination end %>
           </div>
         </div>
       </div>

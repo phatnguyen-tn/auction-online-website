@@ -36,4 +36,12 @@ $(document).ready(function () {
 		modal.find('.modal-body input').val(recipient);
 	})
 
+	$('.add-cat').on('click', function(){
+		$('.add-cat-form').css('display', 'flex');
+	})
+
+	$('.accept-add-cat').on('click', function(){
+		$('.add-cat-form').css('display', 'none');
+	})
+
 });
