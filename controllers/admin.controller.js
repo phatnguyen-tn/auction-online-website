@@ -2,21 +2,29 @@ var User = require('../models/User');
 var Cat = require('../models/cat.model');
 var Product = require('../models/product.model');
 
+// render admin page
 module.exports.index = function (req, res) {
     res.render('admin/index', { layout: 'admin/layoutadmin' });
 }
 
+// render list categories
 module.exports.listCat = async function (req, res) {
     var cats = await Cat.find();
     var countCat = await Cat.countDocuments();
+    var page = parseInt(req.query.page) || 1;
     var perPage = 10;
+    var start = (page - 1) * perPage;
+    var end = page * perPage;
     var totalPage = Math.ceil(countCat / perPage);
     res.render('admin/listcategories', {
         layout: 'admin/layoutadmin',
-        cats: cats
+        cats: cats.slice(start, end),
+        currentPage: page,
+        totalPage: totalPage
     });
 }
 
+// add new categories
 module.exports.postListCat = function (req, res) {
     var newCat = req.body.newCat;
     var temp = new Cat();

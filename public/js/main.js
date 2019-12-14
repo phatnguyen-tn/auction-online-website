@@ -34,14 +34,18 @@ $(document).ready(function () {
 		var modal = $(this);
 		modal.find('.modal-title').text(recipient);
 		modal.find('.modal-body input').val(recipient);
-	})
+	});
 
 	$('.add-cat').on('click', function(){
 		$('.add-cat-form').css('display', 'flex');
-	})
+	});
 
 	$('.accept-add-cat').on('click', function(){
 		$('.add-cat-form').css('display', 'none');
-	})
+	});
+
+	$('.btn-del').on('click', function(){
+		$('.catName-del').val($(this).closest('.cat').children('.catName').html());
+	});
 
 });
