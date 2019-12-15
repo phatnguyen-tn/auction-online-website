@@ -36,8 +36,7 @@
         </div>
         <form
           method="POST"
-          class="add-cat-form input-group mb-3 mt-3"
-          style="display: none"
+          class="add-cat-form input-group mb-3 mt-3 d-none"
         >
           <input
             type="text"
@@ -88,7 +87,7 @@
                     Huỷ
                   </button>
                   <form action="/admin/listcategories/delete" method="post">
-                    <input type="hidden" class="catName-del" name="catName-del" value="">
+                    <input type="hidden" class="catName-del" name="catName" value="">
                     <button type="submit" class="btn btn-primary accept-del">
                       Chấp nhận
                     </button>
@@ -117,7 +116,7 @@
                   <td><%= cat.amount%></td>
                   <td>
                     <a href="/admin/listcategories/<%= cat._id %>">
-                      <button class="btn btn-outline-primary">Xem</button></a
+                      <button class="btn btn-primary">Xem</button></a
                     >
                   </td>
                   <td>
@@ -126,7 +125,7 @@
                       type="button"
                       data-toggle="modal"
                       data-target="#exampleModal"
-                      class="btn-del btn btn-outline-danger"
+                      class="btn-del btn btn-danger"
                     >
                       <i class="fa fa-minus"></i>
                     </button>

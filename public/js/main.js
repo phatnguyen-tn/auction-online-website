@@ -37,7 +37,7 @@ $(document).ready(function () {
 	});
 
 	$('.add-cat').on('click', function(){
-		$('.add-cat-form').css('display', 'flex');
+		$('.add-cat-form').toggleClass('d-none');
 	});
 
 	$('.accept-add-cat').on('click', function(){
