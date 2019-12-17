@@ -82,17 +82,17 @@ router.route('/user/post')
     .put()
     .delete()
 
-router.route('/:name')
-    .get(controller.productdetail)
-    .post()
-    .put()
-    .delete()
+// router.route('/:name')
+//     .get(controller.productdetail)
+//     .post()
+//     .put()
+//     .delete()
 
-router.route('/:name/review')
-    .get(controller.productdetail)
-    .post()
-    .put()
-    .delete()
+// router.route('/:name/review')
+//     .get(controller.productdetail)
+//     .post()
+//     .put()
+//     .delete()
 
 
 module.exports = router;

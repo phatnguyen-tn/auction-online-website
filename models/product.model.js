@@ -4,8 +4,8 @@ const ProductSchema = new mongoose.Schema({
     name: {
         type: String
     },
-    cats:{
-        type: String
+    category:{
+        type: Array
     },
     amount: {
         type: Number
@@ -17,8 +17,8 @@ const ProductSchema = new mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    imageLink: {
-        type: String
+    images: {
+        type: Array
     },
     currentPrice: {
         type: Number,

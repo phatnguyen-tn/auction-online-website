@@ -1,0 +1,51 @@
+<div class="breadcrumbs">
+  <div class="col-sm-4">
+    <div class="page-header float-left">
+      <div class="page-title">
+        <h1>Chi tiết danh mục</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="page-header float-right">
+      <div class="page-title">
+        <ol class="breadcrumb text-right">
+          <li><a href="/admin">Trang chủ</a></li>
+          <li><a href="/admin/listcategories">Quản lý danh mục</a></li>
+          <li class="active">Chi tiết danh mục</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content mt-3">
+  <div class="animated">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong class="card-title">Chỉnh sửa danh mục</strong>
+          </div>
+          <div class="card-body">
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="catName">Tên danh mục</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="catName"
+                  name="catName"
+                  value="<%= cat.name%>"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Lưu
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

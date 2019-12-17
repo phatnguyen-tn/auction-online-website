@@ -58,6 +58,10 @@ iframe {border: none;}
 	display: none;
 }
 
+.bg-w{
+	background-color: #fff;
+}
+
 /*//////////////////////////////////////////////////////////////////
 [ FONT SIZE ]*/
 .fs-1 {font-size: 1px;}
