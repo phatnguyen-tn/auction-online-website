@@ -7,10 +7,10 @@
     <title>Auction Online</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/iconic/css/material-design-iconic-font.min.css" />
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="css/util.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/font-awesome/iconic/css/material-design-iconic-font.min.css" />
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="/css/util.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 
 <body>
@@ -22,11 +22,11 @@
                     <div class="col-lg-2 text-center text-lg-left">
                         <!-- logo -->
                         <a href="/" class="site-logo">
-                            <img src="images/logo.PNG" alt="logo" width="162px" height="31px" />
+                            <img src="/images/logo.PNG" alt="logo" width="162px" height="31px" />
                         </a>
                     </div>
                     <div class="col-xl-6 col-lg-5">
-                        <form class="header-search-form">
+                        <form method="GET" action="/search" class="header-search-form">
                             <input type="text" placeholder="Tìm kiếm" />
                             <button><i class="fa fa-search"></i></button>
                         </form>
@@ -60,6 +60,7 @@
             <div class="container">
                 <!-- menu -->
                 <ul class="main-menu">
+                    <li><a href="/">Trang chủ</a></li>
                     <li><a href="/profile">Hồ sơ</a></li>
                     <li>
                         <a href="/products">Danh mục sản phẩm
@@ -84,9 +85,6 @@
                             <li><a href="listproduct.html">Quần áo</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="./viewbidder/wishlist.html">Yêu thích</a>
-                    </li>
                     <li><a href="./viewseller/postproduct.html">Đăng bán</a></li>
                 </ul>
             </div>
@@ -102,7 +100,7 @@
     <section class="footer-section">
         <div class="container">
             <div class="footer-logo text-center">
-                <a href="./"><img src="./images/logo-light.png" alt="logo" width="220px" height="50px" /></a>
+                <a href="./"><img src="/images/logo-light.png" alt="logo" width="220px" height="50px" /></a>
             </div>
             <div class="row">
                 <div class="col-lg-3 col-sm-6">
@@ -111,7 +109,7 @@
                         <p>
                             Công ty Auction Online chúng tôi hỗ trợ thanh toán với nhiều hình thức khác nhau
                         </p>
-                        <img src="images/cards.png" alt="" />
+                        <img src="/images/cards.png" alt="" />
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
@@ -133,7 +131,7 @@
                         <div class="fw-latest-post-widget">
                             <div class="lp-item">
                                 <div class="lp-thumb set-bg">
-                                    <img src="images/blog-thumbs/1.jpg" alt="" />
+                                    <img src="/images/blog-thumbs/1.jpg" alt="" />
                                 </div>
                                 <div class="lp-content">
                                     <h6>what shoes to wear</h6>
@@ -143,7 +141,7 @@
                             </div>
                             <div class="lp-item">
                                 <div class="lp-thumb set-bg">
-                                    <img src="images/blog-thumbs/2.jpg" alt="" />
+                                    <img src="/images/blog-thumbs/2.jpg" alt="" />
                                 </div>
                                 <div class="lp-content">
                                     <h6>trends this year</h6>
@@ -213,7 +211,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-    <script src="js/app.js"></script>
+    <script src="/js/app.js"></script>
 </body>
 
 </html>

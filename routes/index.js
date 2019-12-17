@@ -45,6 +45,7 @@ router.route('/logout')
     .put()
     .delete()
 
+// list products
 router.route('/products')
     .get(controller.listproduct)
     .post()
@@ -56,5 +57,42 @@ router.route('/products/:id')
     .post()
     .put()
     .delete()
+
+router.route('/products/bidhistory/:id')
+    .get(controller.productdetail)
+    .post()
+    .put()
+    .delete()
+
+router.route('/user')
+    .get(controller.user)
+    .post()
+    .put()
+    .delete()
+
+router.route('/user/update')
+    .get(controller.updateProfile)
+    .post()
+    .put()
+    .delete()
+
+router.route('/user/post')
+    .get(controller.post)
+    .post(controller.postProduct)
+    .put()
+    .delete()
+
+router.route('/:name')
+    .get(controller.productdetail)
+    .post()
+    .put()
+    .delete()
+
+router.route('/:name/review')
+    .get(controller.productdetail)
+    .post()
+    .put()
+    .delete()
+
 
 module.exports = router;
