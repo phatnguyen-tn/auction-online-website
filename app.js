@@ -57,6 +57,7 @@ app.use(passport.session());
 
 // app.use('/user', require('./routes/user'));
 app.use('/', require('./routes/index'));
+app.use('/user', require('./routes/user.route'));
 app.use('/admin', require('./routes/admin.route'));
 
 app.listen(config.PORT, console.log(`Server started on http://localhost:${config.PORT}`));

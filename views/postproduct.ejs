@@ -1,30 +1,60 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.7/css/fileinput.min.css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.1/js/fileinput.min.js"></script>
+
+<script
+  src="https://cdn.tiny.cloud/1/er3jle0ey3awkybppbmddax0l2mudhq8ct2uhhmvogt27rrp/tinymce/5/tinymce.min.js"
+  referrerpolicy="origin"
+></script>
+<script>
+  tinymce.init({ selector: "textarea" });
+</script>
+
 <div class="main-content">
   <div class="registration-page container p-tb-40">
     <div class="post-content">
-      <form method="POST" id="post-form" class="post-form">
-        <h2 class="post-form-title text-center">Đăng sản phẩm</h2>
+      <form method="POST" id="post-form" class="post-form" enctype="multipart/form-data">
+        <input type="hidden" name="category" />
+        <h1 class="post-form-title text-center">Đăng sản phẩm</h1>
         <div class="row p-t-15">
           <div class="col-6">
             <div class="form-group">
-              <span class="label-input">Tên sản phẩm</span>
+              <label for="name" class="label-input">Tên sản phẩm</label>
               <input
                 type="text"
                 class="form-input"
-                name="nameProduct"
-                id="nameProduct"
+                name="name"
+                id="name"
                 placeholder="Nhập tên sản phẩm"
               />
             </div>
           </div>
           <div class="col-6">
             <div class="form-group">
-              <span class="label-input">Giá khởi điểm (đơn vị: vnđ)</span>
+              <label for="selectCat" class="label-input"> Chọn danh mục </label>
+              <select class="form-input" name="selectCat" id="selectcat">
+                <optgroup label="Giay">
+                  <option value="">Giay adidas</option>
+                  <option value="">Giay nike</option>
+                  <option value="">Giay jordan</option>
+                  <option value="">Giay rebook</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-group">
+              <label for="startingPrice" class="label-input"
+                >Giá khởi điểm (đơn vị: vnđ)</label
+              >
               <input
                 type="number"
                 class="form-input"
                 step="10000"
-                name="startingPriceProduct"
-                id="startingPriceProduct"
+                name="startingPrice"
+                id="startingPrice"
                 min="10000"
                 placeholder="Nhập giá khởi điểm (vnđ)"
               />
@@ -32,13 +62,15 @@
           </div>
           <div class="col-6">
             <div class="form-group">
-              <span class="label-input">Bước giá (đơn vị: vnđ)</span>
+              <label for="stepPrice" class="label-input"
+                >Bước giá (đơn vị: vnđ)</label
+              >
               <input
                 type="number"
                 class="form-input"
                 step="10000"
-                name="stepPriceProduct"
-                id="stepPriceProduct"
+                name="stepPrice"
+                id="stepPrice"
                 min="10000"
                 placeholder="Nhập bước giá (vnđ)"
               />
@@ -46,7 +78,9 @@
           </div>
           <div class="col-6">
             <div class="form-group">
-              <span class="label-input">Giá mua ngay (đơn vị: vnđ)</span>
+              <label for="bestPrice" class="label-input"
+                >Giá mua ngay (đơn vị: vnđ)</label
+              >
               <input
                 type="number"
                 step="10000"
@@ -60,10 +94,31 @@
           </div>
           <div class="col-6">
             <div class="form-group">
-              <span class="label-input">Mô tả chi tiết sản phẩm</span>
+              <label class="label-input">Tự động gia hạn</label>
+              <input
+                type="radio"
+                name="extend"
+                value="yes"
+                class="m-l-20 d-inline"
+              />
+              <span class="fs-16">Có</span> <br />
+              <input
+                type="radio"
+                name="extend"
+                value="no"
+                class="m-l-20 d-inline"
+              />
+              <span class="fs-16">Không</span> <br />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="description" class="label-input"
+                >Mô tả chi tiết sản phẩm</label
+              >
               <textarea
-                name="descriptionProduct"
-                id="descriptionProduct"
+                name="description"
+                id="description"
                 cols="30"
                 rows="10"
                 class="form-input w-100"
@@ -71,31 +126,21 @@
               ></textarea>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-12">
             <div class="form-group">
-              <span class="label-input">Đính kèm ảnh sản phẩm</span>
+              <label for="file" class="label-input"
+                >Đính kèm ảnh sản phẩm</label
+              >
               <input
+                id="input-b3"
+                name="input-b3[]"
                 type="file"
-                name="fileProduct"
-                id="fileProduct"
-                class="form-input"
+                class="file"
+                data-show-upload="false"
+                data-show-caption="true"
+                data-msg-placeholder="Select {files} for upload..."
                 multiple
               />
-              <p class="label-input">Tự động gia hạn</p>
-              <input
-                type="radio"
-                name="extendProduct"
-                value="yes"
-                class="m-l-20 d-inline"
-              />
-              <span class="fs-16">Có</span> <br />
-              <input
-                type="radio"
-                name="extendProduct"
-                value="no"
-                class="m-l-20 d-inline"
-              />
-              <span class="fs-16">Không</span> <br />
             </div>
           </div>
         </div>
