@@ -1,332 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Auction Online</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="../font-awesome/css/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="../css/util.css" />
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  </head>
-
-  <body>
-    <!-- Header section start -->
-    <header class="header-section">
-      <div class="header-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-2 text-center text-lg-left">
-              <!-- logo -->
-              <a href="../index.html" class="site-logo">
-                <img
-                  src="../images/logo.PNG"
-                  alt="logo"
-                  width="162px"
-                  height="31px"
-                />
-              </a>
-            </div>
-            <div class="col-xl-6 col-lg-5">
-              <form class="header-search-form">
-                <input type="text" placeholder="Tìm kiếm" />
-                <button><i class="fa fa-search"></i></button>
-              </form>
-            </div>
-            <div class="col-xl-4 col-lg-5">
-              <div class="user-panel">
-                <div class="up-item">
-                  <i class="fa fa-user"></i>
-                  <a href="../login.html">Đăng nhập</a> hoặc
-                  <a href="../registration.html">Đăng ký</a>
-                </div>
-                <div class="up-item">
-                  <div class="shopping-card">
-                    <i class="fa fa-shopping-cart"></i>
-                    <span>0</span>
-                  </div>
-                  <a href="#">Giỏ hàng</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <nav class="main-navbar">
-        <div class="container">
-          <!-- menu -->
-          <ul class="main-menu">
-            <li><a href="../index.html">Trang chủ</a></li>
-            <li><a href="profile.html">Hồ sơ</a></li>
-            <li>
-              <a href="../listproduct.html"
-                >Danh mục sản phẩm
-                <span class="new">New</span>
-              </a>
-              <ul class="sub-menu">
-                <li>
-                  <a href="../listproduct.html">Giày</a>
-                  <ul class="sub-menu-1">
-                    <li><a href="../listproduct.html">Adidas</a></li>
-                    <li><a href="../listproduct.html">Nike</a></li>
-                    <li><a href="../listproduct.html">Jordan</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="../listproduct.html">Điện tử</a>
-                  <ul class="sub-menu-1">
-                    <li>
-                      <a href="../listproduct.html">Điện thoại di động</a>
-                    </li>
-                    <li><a href="../listproduct.html">Máy tính xách tay</a></li>
-                  </ul>
-                </li>
-                <li><a href="../listproduct.html">Quần áo</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="wishlist.html">Yêu thích</a>
-            </li>
-            <li><a href="../viewseller/postproduct.html">Đăng bán</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <!-- Header section end -->
-
-    <!-- main content -->
-
-    <div class="main-content">
-      <div class="page-top-info">
-        <div class="container">
-          <h4>Danh sách yêu thích</h4>
-        </div>
-      </div>
-      <section class="profile-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div id="accordion" class="accordion-area">
-                <div class="panel">
-                  <div
-                    id="collapse1"
-                    class="collapse show"
-                    aria-labelledby="headingOne"
-                    data-parent="#accordion"
-                  >
-                    <div class="panel-body">
-                      <h3>Macbook Pro 2017</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-macbookpro-2017.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a> <br />
-                            Ngày đăng: 1/11/2019 <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="p-r-25">Xoá</a>
-                          <a href="../productdetail.html"
-                            >Xem chi tiết sản phẩm</a
-                          >
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 29,000,000 vnđ <br />
-                            Giá mua ngay: 49,000,000 vnđ
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="panel-body">
-                      <h3>Dell XPS15</h3>
-                      <div class="row">
-                        <div class="col-3">
-                          <img
-                            src="../images/laptop/laptop-xps15.png"
-                            alt=""
-                            width="200px"
-                            height="200px"
-                          />
-                        </div>
-                        <div class="col-5 p-t-20">
-                          <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a> <br />
-                            Ngày đăng: 1/11/2019 <br />
-                            Thời gian còn lại: 2 ngày nữa
-                          </p>
-                          <a href="#" class="p-r-25">Xoá</a>
-                          <a href="#">Xem chi tiết sản phẩm</a>
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 19,000,000 vnđ <br />
-                            Giá mua ngay: 39,000,000 vnđ
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+<div class="main-content">
+  <div class="page-top-info">
+    <div class="container">
+      <h4>Danh sách yêu thích</h4>
     </div>
-
-    <!-- main content end -->
-
-    <!-- Footer section -->
-    <section class="footer-section">
-      <div class="container">
-        <div class="footer-logo text-center">
-          <a href="../index.html"
-            ><img
-              src="../images/logo-light.png"
-              alt="logo"
-              width="220px"
-              height="50px"
-          /></a>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget about-widget">
-              <h2>Thanh toán</h2>
-              <p>
-                Công ty Auction Online chúng tôi hỗ trợ thanh toán với nhiều
-                hình thức khác nhau
-              </p>
-              <img src="../images/cards.png" alt="" />
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget about-widget">
-              <h2>Về Auction Online</h2>
-              <ul>
-                <li><a href="">Giới thiệu Auction Online</a></li>
-                <li><a href="">Tuyển dụng</a></li>
-                <li><a href="">Chính sách bảo mật thanh toán</a></li>
-                <li><a href="">Chính sách bảo mật thông tin cá nhân</a></li>
-                <li><a href="">Điều khoản sử dụng</a></li>
-                <li><a href="">Vận chuyển</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget about-widget">
-              <h2>TIN TỨC</h2>
-              <div class="fw-latest-post-widget">
-                <div class="lp-item">
-                  <div class="lp-thumb set-bg">
-                    <img src="../images/blog-thumbs/1.jpg" alt="" />
-                  </div>
-                  <div class="lp-content">
-                    <h6>what shoes to wear</h6>
-                    <span>Oct 21, 2019</span>
-                    <a href="#" class="readmore">Read More</a>
+  </div>
+  <section class="profile-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div id="accordion" class="accordion-area">
+            <div class="panel">
+              <div
+                id="collapse1"
+                class="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordion"
+              >
+                <div class="panel-body">
+                  <h3>Macbook Pro 2017</h3>
+                  <div class="row">
+                    <div class="col-3">
+                      <img
+                        src="../images/laptop/laptop-macbookpro-2017.png"
+                        alt=""
+                        width="200px"
+                        height="200px"
+                      />
+                    </div>
+                    <div class="col-5 p-t-20">
+                      <p>
+                        Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a> <br />
+                        Ngày đăng: 1/11/2019 <br />
+                        Thời gian còn lại: 2 ngày nữa
+                      </p>
+                      <a href="#" class="p-r-25">Xoá</a>
+                      <a href="../productdetail.html">Xem chi tiết sản phẩm</a>
+                    </div>
+                    <div class="col-4 p-t-20">
+                      <p>
+                        Giá hiện tại: 29,000,000 vnđ <br />
+                        Giá mua ngay: 49,000,000 vnđ
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="lp-item">
-                  <div class="lp-thumb set-bg">
-                    <img src="../images/blog-thumbs/2.jpg" alt="" />
-                  </div>
-                  <div class="lp-content">
-                    <h6>trends this year</h6>
-                    <span>Oct 21, 2019</span>
-                    <a href="#" class="readmore">Read More</a>
+                <div class="panel-body">
+                  <h3>Dell XPS15</h3>
+                  <div class="row">
+                    <div class="col-3">
+                      <img
+                        src="../images/laptop/laptop-xps15.png"
+                        alt=""
+                        width="200px"
+                        height="200px"
+                      />
+                    </div>
+                    <div class="col-5 p-t-20">
+                      <p>
+                        Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a> <br />
+                        Ngày đăng: 1/11/2019 <br />
+                        Thời gian còn lại: 2 ngày nữa
+                      </p>
+                      <a href="#" class="p-r-25">Xoá</a>
+                      <a href="#">Xem chi tiết sản phẩm</a>
+                    </div>
+                    <div class="col-4 p-t-20">
+                      <p>
+                        Giá hiện tại: 19,000,000 vnđ <br />
+                        Giá mua ngay: 39,000,000 vnđ
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-sm-6">
-            <div class="footer-widget contact-widget">
-              <h2>Thông tin</h2>
-              <div class="con-info">
-                <span>Công ty:</span>
-                <p>Auction Online</p>
-              </div>
-              <div class="con-info">
-                <span>Địa chỉ.</span>
-                <p>227 Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh</p>
-              </div>
-              <div class="con-info">
-                <span>Hotline:</span>
-                <p>+84 1800 1900</p>
-              </div>
-              <div class="con-info">
-                <span>Email:</span>
-                <p>info@auctiononline.com</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="social-links-warp">
-        <div class="container">
-          <div class="social-links text-center">
-            <a href="" class="instagram"
-              ><i class="fa fa-instagram"></i><span>instagram</span></a
-            >
-            <a href="" class="google-plus"
-              ><i class="fa fa-google-plus"></i><span>g+plus</span></a
-            >
-            <a href="" class="pinterest"
-              ><i class="fa fa-pinterest"></i><span>pinterest</span></a
-            >
-            <a href="" class="facebook"
-              ><i class="fa fa-facebook"></i><span>facebook</span></a
-            >
-            <a href="" class="twitter"
-              ><i class="fa fa-twitter"></i><span>twitter</span></a
-            >
-            <a href="" class="youtube"
-              ><i class="fa fa-youtube"></i><span>youtube</span></a
-            >
-          </div>
-
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-          <p class="text-white text-center mt-5">
-            Copyright &copy;
-            <script>
-              document.write(new Date().getFullYear());
-            </script>
-            All rights reserved | This template is made with
-            <i class="fa fa-heart-o" aria-hidden="true"></i> by NTP and DPL
-          </p>
-          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-        </div>
-      </div>
-    </section>
-    <!-- Footer section end -->
-
-    <!-- javascript -->
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"
-    ></script>
-    <script src="../js/app.js"></script>
-  </body>
-</html>
+    </div>
+  </section>
+</div>

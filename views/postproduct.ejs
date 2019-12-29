@@ -15,7 +15,12 @@
 <div class="main-content">
   <div class="registration-page container p-tb-40">
     <div class="post-content">
-      <form method="POST" id="post-form" class="post-form" enctype="multipart/form-data">
+      <form
+        method="POST"
+        id="post-form"
+        class="post-form"
+        enctype="multipart/form-data"
+      >
         <input type="hidden" name="category" />
         <h1 class="post-form-title text-center">Đăng sản phẩm</h1>
         <div class="row p-t-15">
@@ -35,12 +40,13 @@
             <div class="form-group">
               <label for="selectCat" class="label-input"> Chọn danh mục </label>
               <select class="form-input" name="selectCat" id="selectcat">
-                <optgroup label="Giay">
-                  <option value="">Giay adidas</option>
-                  <option value="">Giay nike</option>
-                  <option value="">Giay jordan</option>
-                  <option value="">Giay rebook</option>
+                <% cats.forEach(function(cat){ %>
+                <optgroup label="<%= cat.name%>">
+                  <% cat.child.forEach(function(child){ %>
+                    <option value=""><%= child%></option>
+                  <% });%>
                 </optgroup>
+                <% });%>
               </select>
             </div>
           </div>
@@ -146,7 +152,7 @@
         </div>
         <div class="text-center fs-20">
           <i class="fa fa-arrow-left" style="color: #007bff;"></i>
-          <a href="profile.html">
+          <a href="/user">
             Quay lại
           </a>
         </div>

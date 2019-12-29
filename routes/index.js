@@ -45,6 +45,12 @@ router.route('/logout')
     .put()
     .delete()
 
+router.route('/wishlist')
+    .get(controller.wishlist)
+    .post()
+    .put()
+    .delete()
+
 // list products
 router.route('/products')
     .get(controller.listproduct)

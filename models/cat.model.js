@@ -6,6 +6,12 @@ const CatSchema = new mongoose.Schema({
     },
     amount: {
         type: Number
+    },
+    child:{
+        type: [String]
+    },
+    amountChild: {
+        type: [Number]
     }
 });
 

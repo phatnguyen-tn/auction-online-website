@@ -4,7 +4,7 @@ const ProductSchema = new mongoose.Schema({
     name: {
         type: String
     },
-    category:{
+    category: {
         type: Array
     },
     amount: {
@@ -20,12 +20,22 @@ const ProductSchema = new mongoose.Schema({
     images: {
         type: Array
     },
+    discription: {
+        type: String
+    },
     currentPrice: {
         type: Number,
         default: 10000
     },
-    bidder: {
-        type: String
+    stepPrice: {
+        type: Number
+    },
+    bestPrice: {
+        type: Number
+    },
+    status: {
+        type: String,
+        default: 'bidding'
     }
 });
 

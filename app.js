@@ -55,6 +55,8 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+require('./middleware/locals.middleware')(app);
+
 // app.use('/user', require('./routes/user'));
 app.use('/', require('./routes/index'));
 app.use('/user', require('./routes/user.route'));

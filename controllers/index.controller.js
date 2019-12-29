@@ -5,3 +5,7 @@ module.exports.listproduct = function(req, res){
 module.exports.productdetail = function(req, res){
     res.render('productdetail');
 }
+
+module.exports.wishlist = function (req, res) {  
+    res.render('wishlist');
+}
