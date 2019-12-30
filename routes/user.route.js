@@ -1,9 +1,12 @@
 const router = require('express').Router();
 
+//middleware auth
+const auth = require('../middleware/auth.middleware');
+
 const controller = require('../controllers/user.controller');
 
 router.route('/')
-    .get(controller.user)
+    .get(auth, controller.user)
     .post()
     .put()
     .delete()
