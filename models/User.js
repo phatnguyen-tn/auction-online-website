@@ -15,13 +15,15 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
-    roles: [
-        {
-            type: String,
-            lowercase: true,
-            enum: ['bidder', 'seller', 'admin']
-        }
-    ],
+    roles: {
+        type: String,
+        lowercase: true,
+        enum: ['bidder', 'seller', 'admin']
+    },
+    profileId: {
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'profile'
+    },
     request: {
         type: Boolean,
         default: false
