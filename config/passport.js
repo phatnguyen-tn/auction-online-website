@@ -84,7 +84,7 @@ module.exports = (passport) => {
                                 username,
                                 password,
                                 profileId: newProfile.id,
-                                roles: ['bidder']
+                                roles: 'bidder'
                             })
                             // bcrypt
                             bcrypt.genSalt(10, (err, salt) => {

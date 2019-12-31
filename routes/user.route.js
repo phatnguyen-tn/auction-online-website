@@ -1,5 +1,9 @@
 const router = require('express').Router();
 
+//middleware auth
+const auth = require('../middleware/auth.middleware');
+
+//multer
 const multer  = require('multer')
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -9,13 +13,12 @@ const storage = multer.diskStorage({
       cb(null, file.originalname)
     }
   })
-
 const upload = multer({ storage });
 
 const controller = require('../controllers/user.controller');
 
 router.route('/')
-    .get(controller.user)
+    .get(auth, controller.user)
     .post()
     .put()
     .delete()
