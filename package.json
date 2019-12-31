@@ -4,7 +4,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon --inspect app.js"
   },
   "repository": "https://github.com/ntphat1711999/-auction-online-website.git",
   "author": "long9ka <long9ka@gmail.com>",
@@ -18,7 +18,9 @@
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.0",
     "express-validator": "^6.3.0",
+    "moment": "^2.24.0",
     "mongoose": "^5.7.13",
+    "multer": "^1.4.2",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   }

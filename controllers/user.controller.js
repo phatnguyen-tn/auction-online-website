@@ -16,8 +16,16 @@ module.exports.post = async function(req, res){
     });
 }
 
-module.exports.postProduct = function(req, res){
-    var tmp = new Product();
-    tmp.name = req.body.name;
-    res.redirect('/user');
+module.exports.postProduct =  function(req, res){
+    // var tmp = new Product();
+    // tmp.name = req.body.name;
+    // tmp.category = req.body.cat;
+    // res.redirect('/user');
+    var tmp = req.body;
+    req.body.avatar = [];
+    req.files.forEach(function(file){
+        req.body.avatar.push(file.path.split('\\').slice(1).join('/'));
+    });
+    // req.body.avatar = req.files.path.split('\\').slice(1).join('/');
+    res.send(req.body);
 }

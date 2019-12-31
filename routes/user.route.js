@@ -1,5 +1,17 @@
 const router = require('express').Router();
 
+const multer  = require('multer')
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, './public/uploads/' )
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname)
+    }
+  })
+
+const upload = multer({ storage });
+
 const controller = require('../controllers/user.controller');
 
 router.route('/')
@@ -16,7 +28,7 @@ router.route('/update')
 
 router.route('/post')
     .get(controller.post)
-    .post(controller.postProduct)
+    .post(upload.array('avatar', 10), controller.postProduct)
     .put()
     .delete()
 
