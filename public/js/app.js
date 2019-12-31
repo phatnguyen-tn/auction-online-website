@@ -149,4 +149,12 @@ $(document).ready(function () {
 		// window.open(window.location.href + `?sort=${value}`, '_parent');
 	});
 
+	function checkThreePhoto() {
+		var $fileUpload = $('.avatar');
+		var count = parseInt($fileUpload.get(0).files.length)
+		if (count < 3) {
+			alert("Đăng ít nhất 3 ảnh và nhiều nhất 10 ảnh");
+		}
+	}
+
 });

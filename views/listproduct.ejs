@@ -83,10 +83,7 @@
                     <span class="topBidder">Admin</span>
                   </div>
                   <div class="price">
-                    <span>Ngày đăng:</span>
-                    <span><%= product.sellDate.getDate() - 1%>/</span>
-                    <span><%= product.sellDate.getMonth() + 1%>/</span>
-                    <span><%= product.sellDate.getFullYear()%></span>
+                    <span>Ngày đăng: <%= product.sellDate%></span>
                   </div>
                   <div class="price">
                     <p>Còn lại: <%= product.sellDate%></p>

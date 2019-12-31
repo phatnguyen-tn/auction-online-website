@@ -51,6 +51,7 @@
           </div>
           <input
             type="hidden"
+            class="selectCatChild"
             name="selectCatChild"
             value="<%= cats[0].name%>"
           />
@@ -66,6 +67,7 @@
                 name="startingPrice"
                 id="startingPrice"
                 min="10000"
+                value="10000"
                 placeholder="Nhập giá khởi điểm (vnđ)"
               />
             </div>
@@ -82,6 +84,7 @@
                 name="stepPrice"
                 id="stepPrice"
                 min="10000"
+                value="10000"
                 placeholder="Nhập bước giá (vnđ)"
               />
             </div>
@@ -97,7 +100,7 @@
                 class="form-input"
                 name="bestPrice"
                 id="bestPrice"
-                min="100000"
+                value="0"
                 placeholder="Nhập giá mua ngày (vnđ)"
               />
             </div>
@@ -145,7 +148,7 @@
                 id="avatar"
                 name="avatar"
                 type="file"
-                class="file"
+                class="file avatar"
                 data-show-upload="false"
                 data-show-caption="true"
                 data-msg-placeholder="Select {files} for upload..."
@@ -163,7 +166,7 @@
         <div class="container-login-form-btn p-tb-25">
           <div class="wrap-login-form-btn  w-25">
             <div class="login-form-bgbtn"></div>
-            <button class="login-form-btn">
+            <button type="submit" class="login-form-btn">
               Đăng sản phẩm
             </button>
           </div>
