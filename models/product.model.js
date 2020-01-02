@@ -11,7 +11,10 @@ const ProductSchema = new mongoose.Schema({
         type: String
     },
     sellDate: {
-        type: String
+        type: Date
+    },
+    expDate:{
+        type: Date
     },
     images: {
         type: Array
@@ -36,6 +39,10 @@ const ProductSchema = new mongoose.Schema({
     status: {
         type: String,
         default: 'bidding'
+    },
+    historyBidId:{
+        type: mongoose.SchemaTypes.ObjectId,
+        ref: 'Historybid'
     }
 });
 

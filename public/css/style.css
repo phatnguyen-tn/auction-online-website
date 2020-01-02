@@ -1668,11 +1668,11 @@ input[type="checkbox"]:not(old):checked + label > span:before {
 /*//////////////////////////////////////////////////////////////////
 [ verify ]*/
 
-b-d-l{
+b-d-l {
   border: 1px solid #9f9fa0;
 }
 
-input[type="button"]{
+input[type="button"] {
   display: inline;
   padding: 5px 10px;
   margin: 10px 5px;
@@ -1682,7 +1682,7 @@ input[type="button"]{
   border: 1px solid #ccc;
 }
 
-input[type="button"]:hover{
+input[type="button"]:hover {
   background: #ccc;
 }
 
@@ -1815,3 +1815,7 @@ input[type="button"]:hover{
 .fb-ratings-filter-item-content {
   padding-left: 10px;
 }
+
+/* ============================================================================== */
+
+

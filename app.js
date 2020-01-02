@@ -61,5 +61,6 @@ require('./middleware/locals.middleware')(app);
 app.use('/', require('./routes/index'));
 app.use('/user', require('./routes/user.route'));
 app.use('/admin', require('./routes/admin.route'));
+app.use('/products', require('./routes/product.route'));
 
 app.listen(config.PORT, console.log(`Server started on http://localhost:${config.PORT}`));
