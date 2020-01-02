@@ -7,10 +7,7 @@ module.exports.user = async function (req, res) {
     try {
         const user = await User.findById(req.user.id);
         if (user) {
-            res.render('profile', { 
-                user: user,
-                avatar: user.facebook.avatar || user.google.avatar || user.local.profile.avatar
-            });
+            res.render('profile', { user: user });
         }
     } catch (error) {
         console.error(error.message);
@@ -18,7 +15,7 @@ module.exports.user = async function (req, res) {
 }
 
 module.exports.updateProfile = function (req, res) {
-    res.render('updateProfile');
+    res.render('updateProfile', { user: req.user });
 }
 
 module.exports.post = async function (req, res) {

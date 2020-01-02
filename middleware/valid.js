@@ -1,6 +1,23 @@
 const { check } = require('express-validator');
 
 module.exports = {
+    validUpdateProfile: [
+        check('name')
+            .not()
+            .isEmpty()
+            .withMessage('Họ tên bắt buộc')
+            .trim()
+            .isLength({ max: 60 })
+            .withMessage('Tên nhiều nhất 60 ký tự')
+            .isLength({ min: 5 })
+            .withMessage('Họ tên ít nhất 5 ký tự'),
+        check('email')
+            .notEmpty()
+            .withMessage('Email không được rỗng')
+            .isEmail()
+            .normalizeEmail()
+            .withMessage('Email không phù hợp')
+    ],
     validRegister: [
         check('username')
             .isLength({ max: 20 })
@@ -33,21 +50,6 @@ module.exports = {
             .not()
             .isEmpty()
             .withMessage('Địa chỉ bắt buộc')
-    ],
-    validUpdateProfile: [
-        check('name')
-            .not()
-            .isEmpty()
-            .withMessage('Full name is required')
-            .trim()
-            .isLength({ max: 60 })
-            .withMessage('Full name must be <60 chars long')
-            .isLength({ min: 5 })
-            .withMessage('Full name be at least 5 chars long'),
-        check('birthday')
-            .not()
-            .isEmpty()
-            .withMessage('Birthday is required')
     ],
     validChangePassword: [
         check('password')
