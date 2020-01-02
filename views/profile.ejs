@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row">
         <div class="col-4 profile-picture text-center">
-          <img src="../images/profilepicture.png" alt="" width="200px" height="200px" />
+          <img src="../images/avatar/<%= avatar %>" alt="" width="200px" height="200px" />
           <a href="updateprofile.html" class="update-profile-btn">
             <h5 class="m-t-10 font-weight-bold">
               <i class="fa fa-plus"></i> Cập nhật thông tin
@@ -18,18 +18,18 @@
         <div class="col-4">
           <div class="info-profile fs-18">
             <h6 class="d-inline font-weight-bold fs-18">Họ tên:</h6>
-            <span><%= profile.fullName %></span>
+            <span><%= user.local.profile.name || user.facebook.name || user.google.name %></span>
             <br />
             <h6 class="d-inline font-weight-bold fs-18">Điểm đánh giá:</h6>
             <span>86 điểm</span> <br />
             <h6 class="d-inline font-weight-bold fs-18">Email:</h6>
-            <span><%= profile.email %></span> <br />
+            <span><%= user.local.profile.email || user.facebook.email || user.google.email %></span> <br />
             <h6 class="d-inline font-weight-bold fs-18">Phân quyền:</h6>
-            <% if (user.roles === 'bidder') { %>
+            <% if (user.type === 'bidder') { %>
             <span>Người dùng (Ra giá)</span>
-            <% } else if (user.roles === 'seller') { %>
+            <% } else if (user.type === 'seller') { %>
             <span>Người bán</span>
-            <% } else if (user.roles === 'seller') { %>
+            <% } else if (user.type === 'seller') { %>
             <span>Quản trị viên</span>
             <% } %>
             <form action="" method="post" class="p-t-15">
@@ -51,12 +51,14 @@
             <i class="fa fa-shopping-bag"></i>Tổng số sản phẩm đã mua:19
           </p>
           <p><i class="fa fa-money"></i>Tổng số sản phẩm đã bán:16</p>
+          <!--
           <div class="p-t-30 p-l-20">
             <p><i class="fa fa-phone"></i>Số điện thoại liên hệ</p>
             <button class="show-contact btn btn-primary fs-20">
               ***6425244
             </button>
             <p>(Nhấn để hiện số)</p>
+          -->
           </div>
         </div>
         <div class="col-12">

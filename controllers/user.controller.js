@@ -6,12 +6,11 @@ const moment = require('moment');
 
 module.exports.user = async function (req, res) {
     try {
-        const user = await User.findById(req.user.id).populate('profileId');
+        const user = await User.findById(req.user.id);
         if (user) {
-            console.log(user);
-            res.render('profile', {
-                user: req.user,
-                profile: user.profileId
+            res.render('profile', { 
+                user: user,
+                avatar: user.facebook.avatar || user.google.avatar || user.local.profile.avatar
             });
         }
     } catch (error) {
