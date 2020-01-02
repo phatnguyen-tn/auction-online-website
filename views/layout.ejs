@@ -82,10 +82,10 @@
               <ul class="sub-menu">
                 <% locals.cats.forEach(function(cat){ %>
                 <li>
-                  <a href="/products?q=Giày"><%= cat.name%></a>
+                  <a href="/products?cat=<%=cat.name%>"><%= cat.name%></a>
                   <ul class="sub-menu-1">
                     <% cat.child.forEach(function(child){ %>
-                        <li><a href="/products?q=Giày&Adidas"><%= child%></a></li>
+                        <li><a href="/products?cat=<%= child%>"><%= child%></a></li>
                     <% }); %>
                   </ul>
                 </li>

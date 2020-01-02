@@ -2,7 +2,6 @@ const router = require('express').Router();
 
 const passport = require('passport');
 const validInput = require('../middleware/valid');
-const controller = require('../controllers/index.controller');
 
 router.route('/')
     .get((req, res) => {
@@ -71,26 +70,7 @@ router.route('/logout')
     .delete()
 
 router.route('/wishlist')
-    .get(controller.wishlist)
-    .post()
-    .put()
-    .delete()
-
-// list products
-router.route('/products')
-    .get(controller.listproduct)
-    .post()
-    .put()
-    .delete()
-
-router.route('/products/:id')
-    .get(controller.productdetail)
-    .post()
-    .put()
-    .delete()
-
-router.route('/products/bidhistory/:id')
-    .get(controller.productdetail)
+    .get()
     .post()
     .put()
     .delete()

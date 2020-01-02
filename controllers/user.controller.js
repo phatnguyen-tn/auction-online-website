@@ -1,5 +1,6 @@
 const Cat = require('../models/cat.model');
 const Product = require('../models/product.model');
+const Historybid = require('../models/historybid.model');
 const User = require('../models/User');
 const moment = require('moment');
 
@@ -41,7 +42,8 @@ module.exports.postProduct = async function (req, res) {
         doc.save();
     });
     tmp.seller = req.user.username;
-    tmp.sellDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+    tmp.sellDate = moment();
+    tmp.expDate = moment().add(5, 'minutes');
     tmp.images = req.body.avatar;
     tmp.discription = req.body.discription;
     tmp.currentPrice = req.body.currentPrice;
@@ -49,6 +51,9 @@ module.exports.postProduct = async function (req, res) {
     tmp.bestPrice = req.body.bestPrice;
     tmp.extend = req.body.extend;
     tmp.status = 'bidding';
+    var historybid = new Historybid();
+    historybid.save();
+    tmp.historyBidId = historybid.id;
     tmp.save();
     res.redirect('/user');
 }

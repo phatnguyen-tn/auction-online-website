@@ -9,7 +9,34 @@
   referrerpolicy="origin"
 ></script>
 <script>
-  tinymce.init({ selector: "textarea" });
+  tinymce.init({
+    selector: "textarea",
+    height: 400,
+    plugins: "paste image link autolink lists table media",
+    menubar: false,
+    toolbar: [
+      "undo redo | bold italic underline strikethrough | numlist bullist | alignleft aligncenter alignright",
+      "forecolor backcolor",
+      "table link image media"
+    ]
+  });
+
+  function checkPost() {
+    var startPrice = parseInt($("#startingPrice").val());
+    var bestPrice = parseInt($("#bestPrice").val());
+    console.log(startPrice, bestPrice);
+    if (bestPrice && startPrice > bestPrice) {
+      alert("Giá mua ngay phải lớn hơn giá ban đầu");
+      return false;
+    }
+    var $fileUpload = $(".avatar");
+    var count = parseInt($fileUpload.get(0).files.length);
+    if (count < 3) {
+      alert("Đăng ít nhất 3 ảnh và nhiều nhất 10 ảnh");
+      return false;
+    }
+    return true;
+  }
 </script>
 
 <div class="main-content">
@@ -19,6 +46,7 @@
         method="POST"
         id="post-form"
         class="post-form"
+        onsubmit="return checkPost();"
         enctype="multipart/form-data"
       >
         <h1 class="post-form-title text-center">Đăng sản phẩm</h1>

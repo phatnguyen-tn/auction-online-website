@@ -131,30 +131,10 @@ $(document).ready(function () {
 	});
 
 	$('.sorting-select').on('change', function () {
-		var value = $(this).children("option:selected").val();
-		switch (value) {
-			case 1:
-
-				break;
-			case 2:
-				break;
-			case 3:
-				break;
-			case 4:
-				break;
-			default:
-				break;
-		}
-		$(this).children("option:selected").attr('selected');
-		// window.open(window.location.href + `?sort=${value}`, '_parent');
+		var url = window.location.href;
+        url = url.split('?')[0];
+        url += '?sort=' + $(this).val();
+        window.open(url, '_self');
 	});
-
-	function checkThreePhoto() {
-		var $fileUpload = $('.avatar');
-		var count = parseInt($fileUpload.get(0).files.length)
-		if (count < 3) {
-			alert("Đăng ít nhất 3 ảnh và nhiều nhất 10 ảnh");
-		}
-	}
 
 });
