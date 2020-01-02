@@ -7,15 +7,11 @@ const ProductSchema = new mongoose.Schema({
     category: {
         type: Array
     },
-    amount: {
-        type: Number
-    },
     seller: {
         type: String
     },
     sellDate: {
-        type: Date,
-        default: Date.now()
+        type: String
     },
     images: {
         type: Array
@@ -32,6 +28,10 @@ const ProductSchema = new mongoose.Schema({
     },
     bestPrice: {
         type: Number
+    },
+    extend:{
+        type: String,
+        default: 'no'
     },
     status: {
         type: String,

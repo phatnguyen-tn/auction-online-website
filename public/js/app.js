@@ -115,9 +115,46 @@ $(document).ready(function () {
 		save(mess);
 	});
 
-	$('.show-contact').on('click', function(){
+	function hideInfo(info) {
+		return res = '******' + info;
+	}
+
+	$('.show-contact').on('click', function () {
 		var numberPhone = `0936425244`;
 		$(this).html(numberPhone);
 	});
+
+	$('#selectcat').on('change', function () {
+		// var value = $(this).val();
+		var label = $(this.options[this.selectedIndex]).closest('optgroup').prop('label');
+		$('.selectCatChild').val(label);
+	});
+
+	$('.sorting-select').on('change', function () {
+		var value = $(this).children("option:selected").val();
+		switch (value) {
+			case 1:
+
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			default:
+				break;
+		}
+		$(this).children("option:selected").attr('selected');
+		// window.open(window.location.href + `?sort=${value}`, '_parent');
+	});
+
+	function checkThreePhoto() {
+		var $fileUpload = $('.avatar');
+		var count = parseInt($fileUpload.get(0).files.length)
+		if (count < 3) {
+			alert("Đăng ít nhất 3 ảnh và nhiều nhất 10 ảnh");
+		}
+	}
 
 });

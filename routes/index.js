@@ -53,6 +53,14 @@ router.route('/register')
     .put()
     .delete()
 
+router.route('/password_reset')
+    .get((req, res) => {
+        res.render('passwordreset')
+    })
+    .post()
+    .put()
+    .delete()
+
 router.route('/logout')
     .get((req, res) => {
         req.logout();

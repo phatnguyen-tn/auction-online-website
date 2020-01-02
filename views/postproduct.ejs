@@ -21,7 +21,6 @@
         class="post-form"
         enctype="multipart/form-data"
       >
-        <input type="hidden" name="category" />
         <h1 class="post-form-title text-center">Đăng sản phẩm</h1>
         <div class="row p-t-15">
           <div class="col-6">
@@ -43,13 +42,19 @@
                 <% cats.forEach(function(cat){ %>
                 <optgroup label="<%= cat.name%>">
                   <% cat.child.forEach(function(child){ %>
-                    <option value=""><%= child%></option>
+                  <option value="<%= child%>"><%= child%></option>
                   <% });%>
                 </optgroup>
                 <% });%>
               </select>
             </div>
           </div>
+          <input
+            type="hidden"
+            class="selectCatChild"
+            name="selectCatChild"
+            value="<%= cats[0].name%>"
+          />
           <div class="col-6">
             <div class="form-group">
               <label for="startingPrice" class="label-input"
@@ -62,6 +67,7 @@
                 name="startingPrice"
                 id="startingPrice"
                 min="10000"
+                value="10000"
                 placeholder="Nhập giá khởi điểm (vnđ)"
               />
             </div>
@@ -78,6 +84,7 @@
                 name="stepPrice"
                 id="stepPrice"
                 min="10000"
+                value="10000"
                 placeholder="Nhập bước giá (vnđ)"
               />
             </div>
@@ -93,7 +100,7 @@
                 class="form-input"
                 name="bestPrice"
                 id="bestPrice"
-                min="100000"
+                value="0"
                 placeholder="Nhập giá mua ngày (vnđ)"
               />
             </div>
@@ -138,10 +145,10 @@
                 >Đính kèm ảnh sản phẩm</label
               >
               <input
-                id="input-b3"
-                name="input-b3[]"
+                id="avatar"
+                name="avatar"
                 type="file"
-                class="file"
+                class="file avatar"
                 data-show-upload="false"
                 data-show-caption="true"
                 data-msg-placeholder="Select {files} for upload..."
@@ -159,7 +166,7 @@
         <div class="container-login-form-btn p-tb-25">
           <div class="wrap-login-form-btn  w-25">
             <div class="login-form-bgbtn"></div>
-            <button class="login-form-btn">
+            <button type="submit" class="login-form-btn">
               Đăng sản phẩm
             </button>
           </div>
