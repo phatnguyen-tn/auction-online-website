@@ -22,13 +22,12 @@ const path = require('path');
 const storageUpdateProfile = multer.diskStorage({
   destination: './public/images/users/',
   filename: (req, file, cb) => {
-    console.log(file.originalname);
-    cb(null, 'ahihi.jpg');
+    cb(null, req.user.id + path.extname(file.originalname));
   }
 })
 const uploadAvt = multer({
   storage: storageUpdateProfile
-}).single('avatar')
+});
 
 const controller = require('../controllers/user.controller');
 
@@ -43,9 +42,7 @@ router.route('/')
 
 router.route('/update')
   .get(auth, controller.updateProfile)
-  .post(auth, validInput.validUpdateProfile, async (req, res, next) => {
-    const xxx = new FormData(req.body);
-    console.log(xxx);
+  .post(auth, uploadAvt.single('avatar'), validInput.validUpdateProfile, async (req, res, next) => {
     // input valid
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -67,12 +64,6 @@ router.route('/update')
         req.flash('error', 'Không tồn tại người dùng');
         return res.redirect('back');
       }
-      uploadAvt(req, res, err => {
-        if (err) {
-          req.flash('error', 'Không thể cập nhật ảnh đại diện');
-          return res.redirect('back');
-        }  
-      })
       req.flash('success', 'Thay đổi profile thành công');
       res.redirect('back');
       next();
