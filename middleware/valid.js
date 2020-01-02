@@ -16,7 +16,7 @@ module.exports = {
             .not()
             .isIn(['12345', '123456', 'password'])
             .withMessage('mật khẩu không được đơn giản, vd: 12345, 123456, ...'),
-        check('fullName')
+        check('name')
             .not()
             .isEmpty()
             .withMessage('Họ tên bắt buộc')
@@ -35,7 +35,7 @@ module.exports = {
             .withMessage('Địa chỉ bắt buộc')
     ],
     validUpdateProfile: [
-        check('fullName')
+        check('name')
             .not()
             .isEmpty()
             .withMessage('Full name is required')

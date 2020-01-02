@@ -24,6 +24,23 @@ router.route('/login')
     .put()
     .delete()
 
+router.get('/login/facebook', passport.authenticate('facebook', {
+    scope: 'email',
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}))
+
+router.get('/login/google', passport.authenticate('google', {
+    scope: [
+        'https://www.googleapis.com/auth/plus.login',
+        'https://www.googleapis.com/auth/userinfo.email'
+    ],
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+}))
+
 router.route('/register')
     .get((req, res) => {
         res.render('register')
