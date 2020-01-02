@@ -30,11 +30,10 @@ const UserSchema = new mongoose.Schema({
         profile: {
             avatar: {
                 type: String,
-                default: 'default_avt'
+                default: 'default_avt.jpg'
             },
             email: {
                 type: String,
-                unique: true,
                 trim: true,
                 lowercase: true
             },

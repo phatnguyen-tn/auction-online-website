@@ -3,6 +3,9 @@ const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const bcrypt = require('bcryptjs');
 
+// download avt
+const downloader = require('image-downloader');
+
 const User = require('../models/User');
 
 // validating input
@@ -41,9 +44,14 @@ module.exports = (passport) => {
                             id: profile.id,
                             email: profile._json.email,
                             name: profile._json.name,
-                            avatar: profile._json.picture,
+                            avatar: 'google.' + profile.id + '.jpg',
                             isVerified: profile._json.email_verified
                         }
+                    })
+                    // download & store avt
+                    downloader({
+                        url: profile._json.picture,
+                        dest: './public/images/avatar/' + newUser.google.avatar
                     })
                     await newUser.save();
                     return done(null, newUser);
@@ -60,7 +68,7 @@ module.exports = (passport) => {
         {
             clientID: '456309121713655',
             clientSecret: 'c1b9fa178b8f6003bcbef610a699acfb',
-            profileFields: ['email', 'displayName', 'photos'],
+            profileFields: ['email', 'displayName', 'picture.type(large)'],
             callbackURL: 'http://localhost:5000/login/facebook'
         },
         async (accessToken, refreshToken, profile, done) => {
@@ -78,8 +86,13 @@ module.exports = (passport) => {
                             id: profile.id,
                             email: profile._json.email,
                             name: profile._json.name,
-                            avatar: profile._json.picture.data.url
+                            avatar: 'facebook.' + profile.id + '.jpg'
                         }
+                    })
+                    // download & store avt
+                    downloader({
+                        url: profile._json.picture.data.url,
+                        dest: './public/images/avatar/' + newUser.facebook.avatar
                     })
                     await newUser.save();
                     return done(null, newUser);
