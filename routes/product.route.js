@@ -7,6 +7,12 @@ router.route('/')
     .put()
     .delete()
 
+router.route('/search')
+    .get()
+    .post()
+    .put()
+    .delete()
+
 router.route('/bidhistory/:id')
     .get(controller.historybid)
     .post()

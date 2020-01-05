@@ -132,9 +132,20 @@ $(document).ready(function () {
 
 	$('.sorting-select').on('change', function () {
 		var url = window.location.href;
-        url = url.split('?')[0];
-        url += '?sort=' + $(this).val();
-        window.open(url, '_self');
+		url = url.split('?')[0];
+		url += '?sort=' + $(this).val();
+		window.open(url, '_self');
 	});
+
+	var sellDate = $('.sellDate').html();
+	function checkInNMinutes(date) {
+		// var check1 = date.indexOf('Trong');
+		// var check2 = date.indexOf('phút');
+		// var check3 = date.indexOf('trước');
+		// if (check1 + check2 + check3) {
+		// 	$('.nameP').append('<span class="new">mới</span>');
+		// }
+	}
+	checkInNMinutes(sellDate);
 
 });

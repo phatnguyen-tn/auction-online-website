@@ -129,6 +129,20 @@ li {
   width: 42px;
 }
 
+.new{ 
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: #f51167;
+  line-height: 1;
+  text-transform: uppercase;
+  left: calc(50% - 21px);
+  padding: 5px 9px 1px;
+  border-radius: 15px;
+  width: 42px;
+}
+
 .main-menu li:hover .sub-menu {
   visibility: visible;
   opacity: 1;

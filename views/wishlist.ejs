@@ -8,73 +8,36 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <div id="accordion" class="accordion-area">
-            <div class="panel">
-              <div
-                id="collapse1"
-                class="collapse show"
-                aria-labelledby="headingOne"
-                data-parent="#accordion"
-              >
-                <div class="panel-body">
-                  <h3>Macbook Pro 2017</h3>
-                  <div class="row">
-                    <div class="col-3">
-                      <img
-                        src="../images/laptop/laptop-macbookpro-2017.png"
-                        alt=""
-                        width="200px"
-                        height="200px"
-                      />
-                    </div>
-                    <div class="col-5 p-t-20">
-                      <p>
-                        Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a> <br />
-                        Ngày đăng: 1/11/2019 <br />
-                        Thời gian còn lại: 2 ngày nữa
-                      </p>
-                      <a href="#" class="p-r-25">Xoá</a>
-                      <a href="../productdetail.html">Xem chi tiết sản phẩm</a>
-                    </div>
-                    <div class="col-4 p-t-20">
-                      <p>
-                        Giá hiện tại: 29,000,000 vnđ <br />
-                        Giá mua ngay: 49,000,000 vnđ
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="panel-body">
-                  <h3>Dell XPS15</h3>
-                  <div class="row">
-                    <div class="col-3">
-                      <img
-                        src="../images/laptop/laptop-xps15.png"
-                        alt=""
-                        width="200px"
-                        height="200px"
-                      />
-                    </div>
-                    <div class="col-5 p-t-20">
-                      <p>
-                        Cung cấp bởi: <a href="#">Nguyễn Văn Ba</a> <br />
-                        Ngày đăng: 1/11/2019 <br />
-                        Thời gian còn lại: 2 ngày nữa
-                      </p>
-                      <a href="#" class="p-r-25">Xoá</a>
-                      <a href="#">Xem chi tiết sản phẩm</a>
-                    </div>
-                    <div class="col-4 p-t-20">
-                      <p>
-                        Giá hiện tại: 19,000,000 vnđ <br />
-                        Giá mua ngay: 39,000,000 vnđ
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          <% wishlist.forEach(function(product, index){ %>
+          <div class="panel-body">
+            <h3><%= product.name%></h3>
+            <div class="row m-tb-25">
+              <div class="col-3">
+                <img src="<%= "/" + product.images[0]%>" alt="" width="200px"
+                height="200px" />
+              </div>
+              <div class="col-5 p-t-20">
+                <p>
+                  Cung cấp bởi:
+                  <a href="/user/<%= product.seller%>"><%= product.seller%></a>
+                  <br />
+                  Ngày đăng: <%= sellDate[index]%> <br />
+                  Thời gian còn lại: <%= expDate[index]%>
+                </p>
+                <br>
+                <a href="/products/<%= product.id%>">Xem chi tiết sản phẩm</a>
+              </div>
+              <div class="col-4">
+                <form action="/user/wishlist/del" method="POST">
+                  <input type="text" name="id" hidden value="<%= product.id%>">
+                  <button class="btn btn-danger" type="submit">
+                    <i class="fa fa-times"></i>
+                  </button>
+                </form>
               </div>
             </div>
           </div>
+          <%});%>
         </div>
       </div>
     </div>

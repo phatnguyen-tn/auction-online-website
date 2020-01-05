@@ -80,4 +80,16 @@ router.route('/post')
   .put()
   .delete()
 
+router.route('/wishlist')
+  .get(auth, controller.wishlist)
+  .post()
+  .put()
+  .delete()
+
+router.route('/wishlist/del')
+  .get()
+  .post(auth, controller.delwishlist)
+  .put()
+  .delete()
+
 module.exports = router;

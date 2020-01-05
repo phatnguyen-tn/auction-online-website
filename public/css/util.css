@@ -58,6 +58,10 @@ iframe {border: none;}
 	display: none;
 }
 
+.color-time{
+	color:#ee4d2d;
+}
+
 .bg-w{
 	background-color: #fff;
 }

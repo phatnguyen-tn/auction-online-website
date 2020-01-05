@@ -28,6 +28,7 @@ moment.updateLocale('en', {
     }
 });
 
+// Maske Infomation
 function maskInfo(value) {
     var maskedValue = value;
     if (value && value.length > 5) {
@@ -39,15 +40,18 @@ function maskInfo(value) {
     return maskedValue;
 }
 
+// Check Expired Product
 function isExpired(date) {
     var end = moment(date);
     return end.diff(moment());
 }
 
+// Auto Extend Expired Date
 function autoExtend(date) {
-    return date.add(5, 'minutes');
+    return date.add(10, 'minutes');
 }
 
+// Search Category in Array Cats
 function searchCat(cats, cat) {
     for (let index = 0; index < cats.length; index++) {
         const element = cats[index];
@@ -56,10 +60,11 @@ function searchCat(cats, cat) {
     }
 }
 
+// Find Product By ID
 function findProductById(products, id) {
     for (let index = 0; index < products.length; index++) {
         const element = products[index];
-        if (element.id === id) return element;    
+        if (element.id === id) return element;
     }
 }
 
@@ -100,8 +105,8 @@ function filterProduct(array, condition) {
 }
 
 // find top bidder
-function findTopBidder(list){
-    return list.reduce(function(element1, element2){
+function findTopBidder(list) {
+    return list.reduce(function (element1, element2) {
         return element1.price > element2.price ? element1 : element2;
     }, 0);
 }
@@ -109,27 +114,28 @@ function findTopBidder(list){
 module.exports.listproduct = function (req, res) {
     try {
         // Update products
-        Product.find(function (err, doc) {
-            doc.forEach(async function (element) {
-                if (element.extend === 'yes') {
-                    autoExtend(element.expDate);
-                }
-                if (element.status == 'bidding' && isExpired(element.expDate) <= 0) {
-                    element.status = 'done';
+        var products = res.locals.products;
+        products.forEach(function (product) {
+            var expDate = product.expDate;
+            var temp = Product.findOne({ _id: product._id },async function (err, doc) {
+                // if (doc.extend === 'yes') {
+                //     doc.expDate = autoExtend(expDate);
+                // }
+                if (doc.status == 'bidding' && isExpired(expDate) <= 0) {
+                    doc.status = 'done';
                     // Update category
-                    await Cat.findOne({ name: element.category[0] }, function (err, doc) {
-                        doc.amount--;
-                        var value = doc.amountChild[doc.child.indexOf(element.category[1])];
+                    await Cat.findOne({ name: doc.category[0] }, function (err, doc1) {
+                        doc1.amount--;
+                        var value = doc1.amountChild[doc1.child.indexOf(doc.category[1])];
                         value = value - 1;
-                        doc.amountChild.set(doc.child.indexOf(element.category[1]), value);
-                        doc.save();
+                        doc1.amountChild.set(doc1.child.indexOf(doc.category[1]), value);
+                        doc1.save();
                     });
+                    doc.save();
                 }
             });
-        })
-        Product.updateMany({ status: 'done' }, Product);
+        });
         // Filter products
-        var products = res.locals.products;
         if (req.query.sort) {
             products = filterProduct(products, parseInt(req.query.sort));
         }
@@ -153,7 +159,7 @@ module.exports.listproduct = function (req, res) {
         });
         var topBidder = [];
         var sellDate = [];
-        var dateExp = [];
+        var dateExp = [];   
         products.forEach(function (product) {
             var temp = moment(product.sellDate);
             sellDate.push(temp.fromNow());
@@ -176,7 +182,8 @@ module.exports.listproduct = function (req, res) {
             dateExp: dateExp,
             currentPage: page,
             totalPage: totalPage,
-            topBidder: topBidder
+            topBidder: topBidder,
+            user: req.user
         });
     } catch (error) {
         console.log(error);
@@ -185,10 +192,11 @@ module.exports.listproduct = function (req, res) {
 
 module.exports.historybid = function (req, res) {
     var product = findProductById(res.locals.products, req.params.id);
-    product.historyBidId.turn.forEach(function(element){
+    product.historyBidId.turn.forEach(function (element) {
         element.username = maskInfo(element.username);
     });
     res.render('historybid', {
+        user: req.user,
         product: product
     });
 }
@@ -196,10 +204,14 @@ module.exports.historybid = function (req, res) {
 module.exports.productdetail = function (req, res) {
     var product = findProductById(res.locals.products, req.params.id);
     res.render('productdetail', {
+        user: req.user,
         product: product
     });
 }
 
-module.exports.wishlist = function (req, res) {
-    res.render('wishlist');
+module.exports.addWishList = function (req, res) {
+    User.findById(req.user.id, function (err, doc) {
+        doc.wishlist.push(req.body.idProduct);
+        doc.save();
+    });
 }

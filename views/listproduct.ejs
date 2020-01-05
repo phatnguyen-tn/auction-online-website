@@ -75,29 +75,36 @@
               <div class="single-product">
                 <img class="img-fluid" src="<%= product.images[0]%>" alt="" />
                 <div class="product-details">
-                  <h6><%= product.name%></h6>
+                  <div class="nameP">
+                    <h6 class="d-inline m-r-5"><%= product.name%></h6>
+                  </div>
                   <br />
                   <div class="price">
-                    <h6>
+                    <span>Giá hiện tại: </span>
+                    <strong>
                       <%= new
                       Intl.NumberFormat('ja-JP').format(product.currentPrice)%>
-                      vnđ (hiện tại)
-                    </h6>
-                    <!-- <h6 class="l-through">$210.00</h6> -->
+                      (vnđ)
+                    </strong>
+                    <%#
+                    <h6 class="l-through">$210.00</h6>
+                    %>
                   </div>
                   <div class="price">
-                    <span>Giá cao nhất: <%= topBidder[index].price%> </span>
-                    <span class="topBidder"
-                      ><%= topBidder[index].username%></span
+                    <span>Người giữ giá: </span>
+                    <strong class="topBidder"
+                      ><%= topBidder[index].username%></strong
                     >
                   </div>
                   <div class="price">
                     <span>Ngày đăng: </span>
-                    <span class="sellDate"><%= sellDate[index]%></span>
+                    <span class="sellDate color-time"
+                      ><%= sellDate[index]%></span
+                    >
                   </div>
                   <div class="price">
                     <span>Còn lại:</span>
-                    <span class="dateExp"><%= dateExp[index]%></span>
+                    <span class="dateExp color-time"><%= dateExp[index]%></span>
                   </div>
                   <div class="price">
                     <p>

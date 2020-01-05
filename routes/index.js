@@ -69,10 +69,4 @@ router.route('/logout')
     .put()
     .delete()
 
-router.route('/wishlist')
-    .get()
-    .post()
-    .put()
-    .delete()
-
 module.exports = router;

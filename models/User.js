@@ -41,6 +41,9 @@ const UserSchema = new mongoose.Schema({
             type: String,
             trim: true
         }
+    },
+    wishlist: {
+        type: [String]
     }
 })
 
