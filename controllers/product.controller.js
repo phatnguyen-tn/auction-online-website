@@ -115,28 +115,29 @@ function findTopBidder(list) {
 module.exports.listproduct = function (req, res) {
     try {
         // Update products
-        var products = res.locals.products;
-        products.forEach(function (product) {
-            var expDate = product.expDate;
-            var temp = Product.findOne({ _id: product._id }, async function (err, doc) {
-                // if (doc.extend === 'yes') {
-                //     doc.expDate = autoExtend(expDate);
-                // }
-                if (doc.status == 'bidding' && isExpired(expDate) <= 0) {
-                    doc.status = 'done';
-                    // Update category
-                    await Cat.findOne({ name: doc.category[0] }, function (err, doc1) {
-                        doc1.amount--;
-                        var value = doc1.amountChild[doc1.child.indexOf(doc.category[1])];
-                        value = value - 1;
-                        doc1.amountChild.set(doc1.child.indexOf(doc.category[1]), value);
-                        doc1.save();
-                    });
-                    doc.save();
-                }
-            });
-        });
+        // var products = res.locals.products;
+        // products.forEach(function (product) {
+        //     var expDate = product.expDate;
+        //     var temp = Product.findOne({ _id: product._id }, async function (err, doc) {
+        //         // if (doc.extend === 'yes') {
+        //         //     doc.expDate = autoExtend(expDate);
+        //         // }
+        //         if (doc.status == 'bidding' && isExpired(expDate) <= 0) {
+        //             doc.status = 'done';
+        //             // Update category
+        //             await Cat.findOne({ name: doc.category[0] }, function (err, doc1) {
+        //                 doc1.amount--;
+        //                 var value = doc1.amountChild[doc1.child.indexOf(doc.category[1])];
+        //                 value = value - 1;
+        //                 doc1.amountChild.set(doc1.child.indexOf(doc.category[1]), value);
+        //                 doc1.save();
+        //             });
+        //             doc.save();
+        //         }
+        //     });
+        // });
         // Filter products
+        var products = res.locals.products;
         if (req.query.sort) {
             products = filterProduct(products, parseInt(req.query.sort));
         }

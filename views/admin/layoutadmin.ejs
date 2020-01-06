@@ -239,19 +239,18 @@
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-              >
+              > 
                 <img
-                  class="user-avatar rounded-circle"
-                  src="/images/profilepicture.png"
-                  alt="User Avatar"
-                />
+                class="user-avatar rounded-circle"
+              src="/images/users/<%= user.id %>.jpg"
+              alt=""
+              width="30px"
+              height="30px"
+              onerror="this.src='/images/users/default_avt.jpg'"
+          />
               </a>
-
               <div class="user-menu dropdown-menu">
-                <a class="nav-link" href="#"
-                  ><i class="fa fa-user"></i> Thông tin</a
-                >
-                <a class="nav-link" href="/login"
+                <a class="nav-link" href="/logout"
                   ><i class="fa fa-power-off"></i> Đăng xuất</a
                 >
               </div>

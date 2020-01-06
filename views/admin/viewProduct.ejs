@@ -42,33 +42,33 @@
                   <td class="bg-w"><%= product.name%></td>
                 </tr>
                 <tr>
-                    <td>Loại sản phẩm</td>
-                    <td class="bg-w"><%= product.category%></td>
-                  </tr>
-                  <tr>
-                    <td>Số lượng</td>
-                    <td class="bg-w"><%= product.amount%></td>
-                  </tr>
-                  <tr>
-                    <td>Người bán</td>
-                    <td class="bg-w"><%= product.seller%></td>
-                  </tr>
-                  <tr>
-                    <td>Ngày đăng bán</td>
-                    <td class="bg-w"><%= product.sellDate%></td>
-                  </tr>
-                  <tr>
-                    <td>Hình ảnh</td>
-                    <td class="bg-w"><%= product.images%></td>
-                  </tr>
-                  <tr>
-                    <td>Giá hiện tại</td>
-                    <td class="bg-w"><%= product.currentPrice%></td>
-                  </tr>
-                  <tr>
-                    <td>Người ra giá</td>
-                    <td class="bg-w"><%= product.bidder%></td>
-                  </tr>
+                  <td>Loại sản phẩm</td>
+                  <td class="bg-w"><%= product.category%></td>
+                </tr>
+                <tr>
+                  <td>Người bán</td>
+                  <td class="bg-w"><%= product.seller%></td>
+                </tr>
+                <tr>
+                  <td>Ngày đăng bán</td>
+                  <td class="bg-w"><%= product.sellDate%></td>
+                </tr>
+                <tr>
+                  <td>Hình ảnh</td>
+                  <td class="bg-w">
+                  <% product.images.forEach(function(image){ %>
+                    <%= image%> <br>
+                  <%});%>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Giá hiện tại</td>
+                  <td class="bg-w"><%= product.currentPrice%></td>
+                </tr>
+                <tr>
+                  <td>Người ra giá</td>
+                  <td class="bg-w"><%= product.topBidder%></td>
+                </tr>
               </tbody>
             </table>
           </div>

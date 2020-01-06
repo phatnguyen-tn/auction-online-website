@@ -51,20 +51,20 @@ router.route('/email/verify')
   .get(auth, (req, res) => res.render('verifyemail', { user: req.user }))
   .post(auth, async (req, res) => {
     try {
-        const token = await Token.findOneAndRemove({
-            userId: req.user.id,
-            payload: req.body.code
-        });
-        if (!token) {
-            req.flash('error', 'Mã xác nhận không đúng');
-            return res.redirect('back');
-        }
-        await User.findByIdAndUpdate(req.user.id, { isVerified: true });
-        res.redirect('/');
+      const token = await Token.findOneAndRemove({
+        userId: req.user.id,
+        payload: req.body.code
+      });
+      if (!token) {
+        req.flash('error', 'Mã xác nhận không đúng');
+        return res.redirect('back');
+      }
+      await User.findByIdAndUpdate(req.user.id, { isVerified: true });
+      res.redirect('/');
     } catch (error) {
-        console.error(error.message);
+      console.error(error.message);
     }
-})
+  })
 
 router.route('/email/verify/resend')
   .get(auth, async (req, res) => {
@@ -124,6 +124,16 @@ router.route('/update')
       console.error(error.message);
     }
   })
+  .put()
+  .delete()
+
+router.route('/changepassword')
+  .get(auth, (req, res) => {
+    res.render('changepassword', {
+      user: req.user
+    })
+  })
+  .post()
   .put()
   .delete()
 

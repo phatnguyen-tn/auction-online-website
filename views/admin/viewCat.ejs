@@ -45,12 +45,22 @@
               <thead>
                 <th>STT</th>
                 <th>Tên sản phẩm</th>
-                <th>Số lượng sản phẩm</th>
                 <th>Người bán</th>
                 <th>Xem chi tiết</th>
-                <th>Xoá</th>
               </thead>
-              <tbody></tbody>
+              <tbody>
+              <% products.forEach(function(product, index){ %>
+                <tr>
+                    <td> <%= index+1%></td>
+                    <td> <%= product.name%></td>
+                    <td> <%= product.seller%></td>
+                    <td>
+                      <a href="/admin/products/<%= product._id %>">
+                      <button class="btn btn-primary">Xem</button></a
+                    </td>
+                </tr>
+              <%});%>
+              </tbody>
             </table>
             <%# Pagination %>
             <nav class="d-flex justify-content-end">

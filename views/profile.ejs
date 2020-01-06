@@ -150,18 +150,13 @@
                   </div>
                   <div class="col-5 p-t-20">
                     <p>
-                      Cung cấp bởi: <a href="/user/<%= product.seller%>"><%= product.seller%></a> <br />
-                      Ngày đăng: <%= sellDateWP[index]%> <br />
-                      Thời gian còn lại: <%= expDateWP[index]%>
-                    </p>
-                    <a href="#" class="btn-del p-r-25">Đánh giá</a>
-                    <a href="../productdetail.html">Xem chi tiết sản phẩm</a>
-                  </div>
-                  <div class="col-4 p-t-20">
-                    <p>
-                      Giá mua: 29,000,000 vnđ <br />
+                      Giá mua: <%= new
+                      Intl.NumberFormat('ja-JP').format(product.currentPrice)%> (vnđ) <br />
                       Kết quả: Thành công
                     </p>
+                  </div>
+                  <div class="col-4 p-t-20">
+                    <a href="/user/review/<%= product.seller%>" class="btn-del p-r-25">Đánh giá người bán</a>
                   </div>
                 </div>
                 <% });%>
@@ -264,7 +259,7 @@
                           </p>
                         </div>
                         <div class="col-4 p-t-20">                    
-                          <a href="/review/<%= product.topBidder%>" class="p-r-25"
+                          <a href="/user/review/<%= product.topBidder%>" class="p-r-25"
                             >Đánh giá người mua</a
                           >
                         </div>

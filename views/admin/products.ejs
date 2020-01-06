@@ -58,9 +58,12 @@
                   >
                     Huỷ
                   </button>
-                  <button type="button" class="btn btn-primary">
-                    Chấp nhận
-                  </button>
+                  <form action="" method="POST">
+                    <input type="hidden" name="id" id="iddel" value="">
+                    <button type="button" class="btn btn-primary del-product">
+                      Chấp nhận
+                    </button>
+                  </form>
                 </div>
               </div>
             </div>
@@ -78,32 +81,19 @@
               <thead>
                 <th>STT</th>
                 <th>Tên sản phẩm</th>
-                <th>Số lượng</th>
                 <th>Người bán</th>
                 <th>Xem chi tiết</th>
-                <th>Xoá</th>
               </thead>
               <tbody>
                 <% products.forEach(function(product, index){ %>
                 <tr>
                   <td><%= index+1 %></td>
                   <td><%= product.name %></td>
-                  <td><%= product.amount%></td>
                   <td><%= product.seller%></td>
                   <td>
                     <a href="/admin/products/<%= product._id %>">
                       <button class="btn btn-primary">Xem</button></a
                     >
-                  </td>
-                  <td>
-                    <button
-                      type="button"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                      class="btn-del btn btn-danger"
-                    >
-                      <i class="fa fa-minus"></i>
-                    </button>
                   </td>
                 </tr>
                 <% }); %>

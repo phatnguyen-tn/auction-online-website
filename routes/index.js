@@ -4,6 +4,18 @@ const passport = require('passport');
 const validInput = require('../middleware/valid');
 const captcha = require('../middleware/recaptcha');
 
+function fiveMostBidProduct() {
+
+}
+
+function fiveLatestProduct() {
+
+}
+
+function fiveMostPriceProduct() {
+
+}
+
 router.route('/')
     .get((req, res) => {
         res.render('index', { user: req.user });
@@ -55,7 +67,9 @@ router.route('/register')
 
 router.route('/password_reset')
     .get((req, res) => {
-        res.render('passwordreset')
+        res.render('passwordreset', {
+            user: req.user
+        })
     })
     .post()
     .put()

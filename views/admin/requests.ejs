@@ -53,14 +53,14 @@
                 <% for(let i = 0; i < users.length; i++){ %>
                 <tr>
                   <td><%= i+1%></td>
-                  <td><%= users[i].username%></td>
+                  <td><%= users[i].authId%></td>
                   <td>
-                    <a href="/admin/requests/refuse/<%= users[i]._id%>">
+                    <a href="/admin/requests/accept/<%= users[i]._id%>">
                       <button type="button" class="btn-argee btn btn-primary">
                         <i class="fa fa-check"></i>
                       </button>
                     </a>
-                    <a href="/admin/requests/accept/<%= users[i]._id%>">
+                    <a href="/admin/requests/refust/<%= users[i]._id%>">
                       <button type="button" class="btn-argee btn btn-danger">
                         <i class="fa fa-times"></i>
                       </button>

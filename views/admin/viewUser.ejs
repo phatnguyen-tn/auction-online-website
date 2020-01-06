@@ -1,0 +1,67 @@
+<div class="breadcrumbs">
+  <div class="col-sm-4">
+    <div class="page-header float-left">
+      <div class="page-title">
+        <h1>Chi tiết người dùng</h1>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8">
+    <div class="page-header float-right">
+      <div class="page-title">
+        <ol class="breadcrumb text-right">
+          <li><a href="/admin">Trang chủ</a></li>
+          <li><a href="/admin/users">Quản lý người dùng</a></li>
+          <li class="active">Chi tiết người dùng</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content mt-3">
+  <div class="animated">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header">
+            <strong class="card-title">Chi tiết người dùng</strong>
+          </div>
+          <div class="card-body">
+            <table
+              id="bootstrap-data-table-export"
+              class="table table-striped table-bordered"
+            >
+              <colgroup>
+                <col style="width: 25%" />
+                <col />
+              </colgroup>
+              <tbody>
+                <tr>
+                  <td>Tên người dùng</td>
+                  <td class="bg-w"><%= user1.profile.name%></td>
+                </tr>
+                <tr>
+                  <td>Email</td>
+                  <td class="bg-w"><%= user1.profile.email%></td>
+                </tr>
+                <tr>
+                  <td>Địa chỉ</td>
+                  <td class="bg-w"><%= user1.profile.address%></td>
+                </tr>
+                <tr>
+                  <td>Quyền</td>
+                  <td class="bg-w"><%= user1.type%></td>
+                </tr>
+                <tr>
+                  <td>Điểm đánh giá</td>
+                  <td class="bg-w"><%= user1.reviews.point%></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

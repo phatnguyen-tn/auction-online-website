@@ -27,14 +27,6 @@
             <button class="m-l-10 btn btn-outline-success">Cập nhật</button></a
           >
         </div>
-        <div class="d-inline w-50">
-          <strong class="card-title">Thêm: </strong>
-          <a href="/admin/users/add">
-            <button class="m-l-10 btn btn-outline-success">
-              <i class="fa fa-plus"></i>
-            </button></a
-          >
-        </div>
       </div>
     </div>
     <div class="row">
@@ -89,38 +81,30 @@
                 <th>Quyền</th>
                 <th>Xem thông tin</th>
                 <th>Hạ cấp</th>
-                <th>Xoá</th>
               </thead>
               <tbody>
                 <% users.forEach(function(user, index){ %>
                 <tr>
                   <td><%= index+1 %></td>
-                  <td><%= user.username %></td>
-                  <td><%= user.roles[user.roles.length - 1]%></td>
+                  <td><%= user.authId %></td>
+                  <td><%= user.type%></td>
                   <td>
                     <a href="/admin/users/<%= user._id %>">
                       <button class="btn btn-primary">Xem</button></a
                     >
                   </td>
                   <td>
-                    <% if(user.roles.length > 1) {%>
-                    <button
+                    <% if(user.type === 'seller') {%>
+                      <a href="/admin/users/des/<%= user.id%>">
+                        <button
                       type="button"
                       class="btn-del btn btn-danger"
                     >
                       Hạ cấp
                     </button>
+                        </a>
+                    
                     <% } %>
-                  </td>
-                  <td>
-                    <button
-                      type="button"
-                      data-toggle="modal"
-                      data-target="#exampleModal"
-                      class="btn-del btn btn-danger"
-                    >
-                      <i class="fa fa-minus"></i>
-                    </button>
                   </td>
                 </tr>
                 <% }); %>

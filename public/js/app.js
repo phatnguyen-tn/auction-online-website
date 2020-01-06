@@ -163,4 +163,14 @@ $(document).ready(function () {
 		$('.bidPrice').val($('.quantity').val());
 	});
 
+	function checkNewPassword(){
+		if($('#re_newPassword').val() == $('#newPassword').val()){
+			return true;
+		}
+		else {
+			alert("Mật khẩu nhập lại phải trùng mật khẩu mới");
+			return false;
+		}
+	}
+
 });

@@ -46,6 +46,8 @@ $(document).ready(function () {
 
 	$('.btn-del').on('click', function () {
 		$('.catName-del').val($(this).closest('.cat').children('.catName').html());
+		$('#iddel').val($('#idProduct').val());
 	});
+
 
 });

@@ -67,14 +67,6 @@ module.exports.user = async function (req, res) {
         var winProduct = products.filter(function (product) {
             return (product.topBidder === req.user.authId && product.status === 'done');
         });
-        var sellDateWP = [];
-        var expDateWP = [];
-        winProduct.forEach(function(product){
-            var temp1 = moment(product.sellDate);
-            sellDateWP.push(temp1.fromNow());
-            var temp2 = moment(product.expDate);
-            expDateWP.push(temp2.fromNow());
-        });
 
         var sellProduct = products.filter(function(product){
             return (product.seller === req.user.authId);
@@ -92,8 +84,6 @@ module.exports.user = async function (req, res) {
                 expDate: expDate,
                 sellDateBP: sellDateBP,
                 expDateBP: expDateBP,
-                sellDateWP: sellDateWP,
-                expDateWP: expDateWP,
                 biddingProduct: biddingProduct,
                 winProduct: winProduct,
                 sellProduct: sellProduct,

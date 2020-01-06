@@ -14,7 +14,7 @@
       type="text/css"
       href="/font-awesome/iconic/css/material-design-iconic-font.min.css"
     />
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
     <link rel="stylesheet" href="/font-awesome/css/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="/css/util.css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -39,11 +39,15 @@
             </div>
             <div class="col-xl-6 col-lg-5">
               <form method="GET" action="/products" class="header-search-form">
-                <input type="text" name="name" placeholder="Tìm kiếm tên sản phẩm" />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Tìm kiếm tên sản phẩm"
+                />
                 <button><i class="fa fa-search"></i></button>
               </form>
             </div>
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-4 col-lg-5 text-right">
               <div class="user-panel">
                 <% if (!locals.user) { %>
                 <div class="up-item">
@@ -52,16 +56,35 @@
                   <a href="/register">Đăng ký</a>
                 </div>
                 <% } else { %>
-                <!-- <div class="up-item">
-                                <div class="shopping-card">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span>0</span>
-                                </div>
-                                <a href="#">Giỏ hàng</a>
-                            </div> -->
                 <div class="up-item">
-                  <i class="fa fa-user"></i>
-                  <a href="/logout">Đăng xuất </a>
+                  <div class="dropdown show">
+                    <a
+                      class="dropdown-toggle"
+                      href="#"
+                      role="button"
+                      id="dropdownMenuLink"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <img
+                        src="/images/users/<%= user.id %>.jpg"
+                        alt=""
+                        width="30px"
+                        height="30px"
+                        onerror="this.src='/images/users/default_avt.jpg'"
+                      />
+                    </a>
+
+                    <div
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownMenuLink"
+                    >
+                      <a class="dropdown-item" href="/user/changepassword">Đổi mật khẩu</a>
+                      <a class="dropdown-item" href="/user">Thông tin</a>
+                      <a class="dropdown-item" href="/logout">Đăng xuất</a>
+                    </div>
+                  </div>
                 </div>
                 <% } %>
               </div>
@@ -86,7 +109,7 @@
                   <a href="/products?cat=<%=cat.name%>"><%= cat.name%></a>
                   <ul class="sub-menu-1">
                     <% cat.child.forEach(function(child){ %>
-                        <li><a href="/products?cat=<%= child%>"><%= child%></a></li>
+                    <li><a href="/products?cat=<%= child%>"><%= child%></a></li>
                     <% }); %>
                   </ul>
                 </li>
