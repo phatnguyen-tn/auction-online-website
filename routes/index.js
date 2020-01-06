@@ -16,7 +16,7 @@ router.route('/login')
     .get((req, res) => {
         res.render('login')
     })
-    .post(captcha, passport.authenticate('login', {
+    .post(passport.authenticate('login', {
         successRedirect: '/',
         failureRedirect: '/login',
         failureFlash: true
@@ -45,7 +45,7 @@ router.route('/register')
     .get((req, res) => {
         res.render('register')
     })
-    .post(validInput.validRegister, passport.authenticate('register', {
+    .post(captcha, validInput.validRegister, passport.authenticate('register', {
         successRedirect: '/',
         failureRedirect: '/register',
         failureFlash: true

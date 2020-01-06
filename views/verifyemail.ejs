@@ -1,0 +1,37 @@
+<div class="main-content">
+    <div class="signup-page container">
+        <div class="wrap-login text-center">
+            <form method="POST" id="signup-form" class="login-form">
+                <span class="login-form-title p-tb-15">
+                    Xác thực email
+                </span>
+
+                <!--Notification-->
+                <h5 style="color: rgb(27, 206, 27)"><%= success %></h5>
+                <!--Notification-->
+                <h5 style="color: red;"><%= error %></h5>
+
+                <div class="wrap-input text-left validate-input p-t-5" data-validate="Address is required">
+
+                    <span class="label-input">Mã xác nhận</span>
+                    <input type="text" class="input" name="code" id="address" placeholder="Nhập mã" autocomplete="off"/>
+                    <span class="focus-input" data-symbol="&#xf299;"></span>
+                </div>
+                <div class="text-right p-tb-20">
+                    <a href="/user/email/verify/resend" class="forget-pw-btn">
+                        Gửi lại email
+                    </a>
+                </div>
+
+                <div class="container-login-form-btn p-b-25">
+                    <div class="wrap-login-form-btn">
+                        <div class="login-form-bgbtn"></div>
+                        <button type="submit" class="login-form-btn">
+                            Xác nhận
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -73,6 +73,7 @@ module.exports = (passport) => {
                     const newUser = new User({
                         method: 'facebook',
                         authId: profile.id,
+                        isVerified: true,
                         profile: {
                             name: profile._json.name,
                             email: profile._json.email
