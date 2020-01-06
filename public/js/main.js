@@ -36,15 +36,15 @@ $(document).ready(function () {
 		modal.find('.modal-body input').val(recipient);
 	});
 
-	$('.add-cat').on('click', function(){
+	$('.add-cat').on('click', function () {
 		$('.add-cat-form').toggleClass('d-none');
 	});
 
-	$('.accept-add-cat').on('click', function(){
+	$('.accept-add-cat').on('click', function () {
 		$('.add-cat-form').css('display', 'none');
 	});
 
-	$('.btn-del').on('click', function(){
+	$('.btn-del').on('click', function () {
 		$('.catName-del').val($(this).closest('.cat').children('.catName').html());
 	});
 

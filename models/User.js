@@ -44,6 +44,20 @@ const UserSchema = new mongoose.Schema({
     },
     wishlist: {
         type: [String]
+    },
+    isRequest: {
+        type: Boolean,
+        default: false
+    },
+    reviews: {
+        type: {
+            point: Number,
+            turn: [{like: Boolean, comment: String}]
+        },
+        default:{
+            point: 100,
+            turn: []
+        }
     }
 })
 

@@ -4,6 +4,7 @@ const moment = require('moment');
 const Historybid = require('../models/historybid.model');
 const Product = require('../models/product.model');
 const Cat = require('../models/cat.model');
+const User = require('../models/User');
 
 moment.updateLocale('en', {
     relativeTime: Object
@@ -117,7 +118,7 @@ module.exports.listproduct = function (req, res) {
         var products = res.locals.products;
         products.forEach(function (product) {
             var expDate = product.expDate;
-            var temp = Product.findOne({ _id: product._id },async function (err, doc) {
+            var temp = Product.findOne({ _id: product._id }, async function (err, doc) {
                 // if (doc.extend === 'yes') {
                 //     doc.expDate = autoExtend(expDate);
                 // }
@@ -155,21 +156,21 @@ module.exports.listproduct = function (req, res) {
         }
         // Filter bidding product
         products = products.filter(function (product) {
-            return product.status === 'bidding';
+            return (product.status === 'bidding');
         });
         var topBidder = [];
         var sellDate = [];
-        var dateExp = [];   
+        var dateExp = [];
         products.forEach(function (product) {
             var temp = moment(product.sellDate);
             sellDate.push(temp.fromNow());
             var temp1 = moment(product.expDate);
             dateExp.push(temp1.fromNow());
             topBidder.push(findTopBidder(product.historyBidId.turn));
-        })
+        });
         topBidder.forEach(function (element) {
             element.username = maskInfo(element.username);
-        })
+        });
         var countProduct = products.length;
         var page = parseInt(req.query.page) || 1;
         if (page < 1) page = 1;
@@ -201,17 +202,97 @@ module.exports.historybid = function (req, res) {
     });
 }
 
-module.exports.productdetail = function (req, res) {
-    var product = findProductById(res.locals.products, req.params.id);
-    res.render('productdetail', {
-        user: req.user,
-        product: product
+function findProductByCat(products, cat, id) {
+    return products.filter(function (product) {
+        return (product.category[1] === cat && product.id !== id);
     });
 }
 
-module.exports.addWishList = function (req, res) {
-    User.findById(req.user.id, function (err, doc) {
-        doc.wishlist.push(req.body.idProduct);
+module.exports.productdetail = function (req, res) {
+    var products = res.locals.products;
+    var id = req.params.id;
+    var product = findProductById(products, id);
+    var productByCat = [];
+    productByCat = findProductByCat(products, product.category[1], id);
+    productByCat.slice(0, 5);
+    seller = maskInfo(product.seller);
+    topBidder = maskInfo(product.topBidder)
+    var temp = moment(product.sellDate);
+    var sellDate = temp.fromNow();
+    var temp1 = moment(product.expDate);
+    var expDate = temp1.fromNow();
+    res.render('productdetail', {
+        user: req.user,
+        product: product,
+        sellDate: sellDate,
+        expDate: expDate,
+        relatedProduct: productByCat,
+        seller: seller,
+        topBidder: topBidder
+    });
+}
+
+function checkBidded(list, username) {
+    for (let index = 0; index < list.length; index++) {
+        const element = list[index];
+        if (element.username === username) {
+            return { flag: true, index: index };
+        }
+    }
+    return { flag: false, index: -1 };
+}
+
+module.exports.bid = async function (req, res) {
+    var price = req.query.bidPrice;
+    var id = req.params.id;
+    var url = "/products/" + id;
+    await Product.findById(id, async function (err, doc) {
+        var temp = {};
+        temp.username = req.user.authId;
+        temp.price = price;
+        temp.bidDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+        doc.topBidder = temp.username;
+        doc.currentPrice = temp.price;
+        if (price === doc.bestPrice && doc.bestPrice !== 0) {
+            doc.status = "done";
+            doc.save();
+            res.redirect(url);
+        }
+        await Historybid.findById(doc.historyBidId, function (err, element) {
+            var list = element.turn;
+            var check = checkBidded(list, temp.username);
+            if (check.flag) {
+                element.turn.set(check.index, temp);
+            }
+            else {
+                element.turn.push(temp);
+            }
+            element.save();
+        });
         doc.save();
     });
+    res.redirect(url);
+}
+
+module.exports.blockbid = async function (req, res) {
+    var username = req.query.username;
+    var id = req.params.id;
+    await Product.findById(id, async function (err, doc) {
+        if (req.user.authId !== doc.seller) {
+            res.redirect('/products/bidhistory/' + id);
+        }
+        doc.block = username;
+        await Historybid.findById(doc.historyBidId, function (err, element) {
+            var list = element.turn;
+            var check = checkBidded(list, temp.username);
+            if (check.flag) {
+                element.turn.slice(check.index, 1);
+            }
+            doc.currentPrice = element[element.turn.length].price;
+            doc.topBidder = element[element.turn.length].username;
+            element.save();
+        });
+        doc.save();
+    });
+    res.redirect('/products/bidhistory/' + id);
 }

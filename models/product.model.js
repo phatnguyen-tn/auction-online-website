@@ -19,7 +19,7 @@ const ProductSchema = new mongoose.Schema({
     images: {
         type: Array
     },
-    discription: {
+    description: {
         type: String
     },
     currentPrice: {
@@ -32,6 +32,9 @@ const ProductSchema = new mongoose.Schema({
     bestPrice: {
         type: Number
     },
+    topBidder:{
+        type: String
+    },
     extend:{
         type: String,
         default: 'no'
@@ -43,6 +46,10 @@ const ProductSchema = new mongoose.Schema({
     historyBidId:{
         type: mongoose.SchemaTypes.ObjectId,
         ref: 'Historybid'
+    },
+    block:{
+        type: [String],
+        default: []
     }
 });
 

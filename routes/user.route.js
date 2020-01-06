@@ -74,9 +74,15 @@ router.route('/update')
   .put()
   .delete()
 
+router.route('/upgraderole')
+  .get(auth, controller.upgradeRole)
+  .post()
+  .put()
+  .delete()
+
 router.route('/post')
   .get(auth, controller.post)
-  .post(upload.array('avatar', 10), controller.postProduct)
+  .post(auth, upload.array('avatar', 10), controller.postProduct)
   .put()
   .delete()
 
@@ -85,6 +91,13 @@ router.route('/wishlist')
   .post()
   .put()
   .delete()
+
+router.route('/wishlist/add/:id')
+  .get(auth, controller.addWishList)
+  .post()
+  .put()
+  .delete()
+
 
 router.route('/wishlist/del')
   .get()

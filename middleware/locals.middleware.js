@@ -6,7 +6,9 @@ module.exports = function(app){
         const cats = await Cat.find();
         const products = await Product.find().populate('historyBidId');
         res.locals.cats = cats;
-        res.locals.products = products;
+        res.locals.products = products.filter(function(product){
+            return product.status === 'bidding';
+        });
         next();
     });
 }
