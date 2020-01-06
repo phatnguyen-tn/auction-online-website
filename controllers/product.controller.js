@@ -193,12 +193,15 @@ module.exports.listproduct = function (req, res) {
 
 module.exports.historybid = function (req, res) {
     var product = findProductById(res.locals.products, req.params.id);
+    var username = [];
     product.historyBidId.turn.forEach(function (element) {
+        username.push(element.username);
         element.username = maskInfo(element.username);
     });
     res.render('historybid', {
         user: req.user,
-        product: product
+        product: product,
+        username: username
     });
 }
 
@@ -252,7 +255,7 @@ module.exports.bid = async function (req, res) {
         temp.price = price;
         temp.bidDate = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
         doc.topBidder = temp.username;
-        doc.currentPrice = temp.price;
+        doc.currentPrice = parseInt(temp.price);
         if (price === doc.bestPrice && doc.bestPrice !== 0) {
             doc.status = "done";
             doc.save();
@@ -275,24 +278,60 @@ module.exports.bid = async function (req, res) {
 }
 
 module.exports.blockbid = async function (req, res) {
-    var username = req.query.username;
-    var id = req.params.id;
+    var username = req.body.username;
+    var id = req.body.id;
     await Product.findById(id, async function (err, doc) {
         if (req.user.authId !== doc.seller) {
             res.redirect('/products/bidhistory/' + id);
         }
-        doc.block = username;
+        var block = doc.block;
+        block.push(username)
+        doc.block = block;
         await Historybid.findById(doc.historyBidId, function (err, element) {
             var list = element.turn;
-            var check = checkBidded(list, temp.username);
+            var temp = username;
+            var check = checkBidded(list, temp);
             if (check.flag) {
-                element.turn.slice(check.index, 1);
+                var newList = list.splice(check.index, 1);
+                element.turn = list;
             }
-            doc.currentPrice = element[element.turn.length].price;
-            doc.topBidder = element[element.turn.length].username;
+            if (list.length) {
+                doc.currentPrice = list[list.length - 1].price;
+                doc.topBidder = list[list.length - 1].username;
+            }
+            else {
+                doc.topBidder = "";
+            }
             element.save();
         });
         doc.save();
     });
     res.redirect('/products/bidhistory/' + id);
+}
+
+module.exports.edit = function (req, res) {
+    var id = req.params.id;
+    var product = res.locals.products;
+    product = product.filter(function (product) {
+        return (product.id === id);
+    });
+    if (req.user.authId !== product.seller) {
+        res.redirect('/user');
+    }
+    res.render('editproduct', {
+        user: req.user,
+        product: product
+    });
+}
+
+module.exports.postEdit = async function (req, res) {
+    var text = req.body.description;
+    var id = req.body.id;
+    var time = moment().format("dddd, MMMM Do YYYY, h:mm:ss a");
+    text = '<br><h4><i class="fa fa-edit">' + time + "</i><br><br></h4>" + text;
+    await Product.findById(id, function (err, doc) {
+        doc.description += text;
+        doc.save();
+    });
+    res.redirect('/user');
 }
