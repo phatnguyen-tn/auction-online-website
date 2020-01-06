@@ -52,26 +52,26 @@ module.exports = {
             .withMessage('Địa chỉ bắt buộc')
     ],
     validChangePassword: [
-        check('password')
+        check('oldPassword')
             .not()
             .isEmpty()
-            .withMessage('Password is required'),
+            .withMessage('mật khẩu bắt buộc'),
         check('newPassword')
             .not()
             .isEmpty()
-            .withMessage('New Password is required')
+            .withMessage('mật khẩu mới bắt buộc')
             .isLength({ min: 5 })
-            .withMessage('The password must be at least 5 chars long')
+            .withMessage('mật khẩu mới ít nhất 5 ký tự')
             .matches(/\d/)
-            .withMessage('The password must contain a number')
+            .withMessage('mật khẩu mới phải chứa 1 chữ số')
             .not()
             .isIn(['12345', '123456', 'password'])
-            .withMessage('Do not use a common word as the password ex: 12345, 123456, ...'),
-        check('confirmPassword')
+            .withMessage('mật khẩu không được đơn giản, vd: 12345, 123456, ...'),
+        check('re_newPassword')
             .custom((value, { req }) => {
                 if (value !== req.body.newPassword) {
                     // throw error if passwords do not match
-                    throw new Error("Confirm Password don't match");
+                    throw new Error("Nhập lại mật  khẩu mới không đúng");
                 } else {
                     return value;
                 }
