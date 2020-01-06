@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const token = require('../config/token-generator');
+const bcrypt = require('bcryptjs');
 
 //middleware auth
 const auth = require('../middleware/auth.middleware');
@@ -133,7 +134,32 @@ router.route('/changepassword')
       user: req.user
     })
   })
-  .post()
+  .post(auth, validInput.validChangePassword, async (req, res) => {
+
+    // input valid
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      req.flash('error', errors.array()[0].msg);
+      return res.redirect('back');
+    }
+
+    const { oldPassword, newPassword } = req.body;
+
+    try {
+      const isMatch = await bcrypt.compare(oldPassword, req.user.secret);
+      if (!isMatch) {
+        req.flash('error', 'Mật khẩu không đúng');
+        return res.redirect('back');
+      }
+      const salt = await bcrypt.genSalt(10);
+      const hashPassword = await bcrypt.hash(newPassword, salt);
+      await User.findByIdAndUpdate(req.user.id, { secret: hashPassword });
+      req.flash('success', 'Đổi mật khẩu thành công');
+      res.redirect('back');
+    } catch (error) {
+      console.error(error.message);
+    }
+  })
   .put()
   .delete()
 
