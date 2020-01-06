@@ -1,5 +1,6 @@
 const config = require('../config/config');
 const moment = require('moment');
+const transporter = require('../config/transporter');
 
 const Historybid = require('../models/historybid.model');
 const Product = require('../models/product.model');
@@ -261,6 +262,29 @@ module.exports.bid = async function (req, res) {
             doc.status = "done";
             doc.save();
             res.redirect(url);
+            // send seller
+            const user = await User.findOne({ authId: doc.seller });
+            await transporter.sendMail({
+                from: `"Auction" <${config.EMAIL_USER}>`,
+                to: user.profile.email,
+                subject: 'Xác thực email',
+                html: `
+                        <h1>Xin chào ${user.profile.name}</h1>
+                        <br>
+                        Tài khoản ${req.user.profile.email} đã đấu giá thành công sản phẩm của bạn
+                    `
+            });
+            // send bidder
+            await transporter.sendMail({
+                from: `"Auction" <${config.EMAIL_USER}>`,
+                to: req.user.profile.email,
+                subject: 'Xác thực email',
+                html: `
+                        <h1>Xin chào ${req.user.profile.name}</h1>
+                        <br>
+                        Bạn đã đấu giá thành công
+                    `
+            });
         }
         await Historybid.findById(doc.historyBidId, function (err, element) {
             var list = element.turn;
@@ -306,6 +330,18 @@ module.exports.blockbid = async function (req, res) {
             element.save();
         });
         doc.save();
+    });
+    // send email
+    const user = await User.findOne({ authId: username });
+    await transporter.sendMail({
+        from: `"Auction" <${config.EMAIL_USER}>`,
+        to: user.profile.email,
+        subject: 'Xác thực email',
+        html: `
+                <h1>Xin chào ${user.profile.name}</h1>
+                <br>
+                Bạn đã bị chặn tính năng đấu giá
+            `
     });
     res.redirect('/products/bidhistory/' + id);
 }
