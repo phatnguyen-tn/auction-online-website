@@ -2,6 +2,7 @@ const router = require('express').Router();
 
 const passport = require('passport');
 const validInput = require('../middleware/valid');
+const captcha = require('../middleware/recaptcha');
 
 router.route('/')
     .get((req, res) => {
@@ -15,7 +16,7 @@ router.route('/login')
     .get((req, res) => {
         res.render('login')
     })
-    .post(passport.authenticate('login', {
+    .post(captcha, passport.authenticate('login', {
         successRedirect: '/',
         failureRedirect: '/login',
         failureFlash: true
