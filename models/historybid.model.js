@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 
 var historybidSchema = new mongoose.Schema({
     turn: {
-        type: [Object]
+        type: [{
+            bidDate: String,
+            username: String,
+            price: Number
+        }]
     }
 });
 

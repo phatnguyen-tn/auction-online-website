@@ -21,7 +21,10 @@
                 <th>Thời điểm</th>
                 <th>Người mua</th>
                 <th>Giá</th>
-                <th>Từ chối đấu giá</th>
+                <% if(user) { %>
+                  <% if(user.authId === product.seller) { %>
+                    <th>Từ chối đấu giá</th>
+                  <%}}%>
               </tr>
             </thead>
             <tbody>
@@ -31,14 +34,21 @@
                   <h3>Chưa có lượt đấu giá</h3>
                 </td>
               </tr>
-              <% } else { product.historyBidId.turn.forEach(function(element){ %>
+              <% } else { product.historyBidId.turn.forEach(function(element, index){ %>
               <tr>
                 <td><%= element.bidDate%></td>
                 <td><%= element.username%></td>
                 <td><%= element.price%></td>
+                <% if(user) { %>
+                  <% if(user.authId === product.seller) { %>
                 <td>
-                  <button class="btn btn-danger">Từ chối</button>
+                  <form action="/products/block" method="POST">
+                    <input type="hidden" name="id" value="<%= product.id%>">
+                    <input type="hidden" name="username" value="<%= username[index]%>">
+                    <button type="submit" class="btn btn-danger">Từ chối</button>
+                  </form>
                 </td>
+                <%}}%>
               </tr>
               <% });};%>
             </tbody>

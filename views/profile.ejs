@@ -189,11 +189,12 @@
                     data-parent="#accordion"
                   >
                     <div class="panel-body">
-                      <h3>Dell XPS15</h3>
-                      <div class="row">
+                      <% sellProduct.forEach(function(product){%>
+                        <h3>Dell XPS15</h3>
+                        <div class="row">
                         <div class="col-3">
                           <img
-                            src="../images/laptop/laptop-xps15.png"
+                            src="<%= "/" + product.images[0]%>"
                             alt=""
                             width="200px"
                             height="200px"
@@ -201,23 +202,26 @@
                         </div>
                         <div class="col-5 p-t-20">
                           <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn A</a> <br />
-                            Ngày đăng: 1/11/2019 <br />
-                            Thời gian còn lại: 2 ngày nữa
+                            Giá hiện tại: <%= new
+                                Intl.NumberFormat('ja-JP').format(product.currentPrice)%> (vnđ) <br />
+                            Người ra giá cao hiện tại: <%= product.topBidder%>
                           </p>
-                          <a href="#" class="btn-del p-r-25">Xoá</a>
-                          <a href="../productdetail.html"
-                            >Thêm chi tiết sản phẩm</a
+                          <a href="/products/<%= product.id%>"
+                            >Xem chi tiết sản phẩm</a
                           >
                         </div>
                         <div class="col-4 p-t-20">
-                          <p>
-                            Giá hiện tại: 19,000,000 vnđ <br />
-                            Giá mua ngay: 39,000,000 vnđ <br />
-                            Người ra giá cao hiện tại: Nguyễn Văn C
-                          </p>
+                          <a href="/products/edit/<%= product.id%>" class="btn-del p-r-25">
+                            <button class="btn btn-primary">
+                              <i class="fa fa-plus"></i>
+                              Bổ sung thông tin
+                            </button>
+                          </a>
                         </div>
                       </div>
+                      <%});%>
+
+                      
                     </div>
                   </div>
                 </div>
@@ -241,11 +245,12 @@
                     data-parent="#accordion"
                   >
                     <div class="panel-body">
-                      <h3>Dell XPS15</h3>
-                      <div class="row">
+                      <% selledProduct.forEach(function(product){ %>
+                        <h3><%= product.name%></h3>
+                        <div class="row">
                         <div class="col-3">
                           <img
-                            src="../images/laptop/laptop-xps15.png"
+                            src="<%= product.images[0]%>"
                             alt=""
                             width="200px"
                             height="200px"
@@ -253,23 +258,18 @@
                         </div>
                         <div class="col-5 p-t-20">
                           <p>
-                            Cung cấp bởi: <a href="#">Nguyễn Văn A</a> <br />
-                            Ngày đăng: 1/11/2019
+                            Giá bán: <%= new
+                                Intl.NumberFormat('ja-JP').format(product.currentPrice)%> (vnđ) <br />
+                            Người mua: <%= product.topBidder%>
                           </p>
-                          <a href="feedback.html" class="p-r-25"
+                        </div>
+                        <div class="col-4 p-t-20">                    
+                          <a href="/review/<%= product.topBidder%>" class="p-r-25"
                             >Đánh giá người mua</a
                           >
-                          <a href="../productdetail.html" class="btn-cancel"
-                            >Huỷ giao dịch</a
-                          >
-                        </div>
-                        <div class="col-4 p-t-20">
-                          <p>
-                            Giá bán: 19,000,000 vnđ <br />
-                            Người mua: Nguyễn Văn C
-                          </p>
                         </div>
                       </div>
+                      <%});%>     
                     </div>
                   </div>
                 </div>

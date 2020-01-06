@@ -15,9 +15,15 @@ router.route('/bidhistory/:id')
     .put()
     .delete()
 
-router.route('/block/:username')
-    .get(auth, controller.blockbid)
-    .post()
+router.route('/block')
+    .get()
+    .post(auth, controller.blockbid)
+    .put()
+    .delete()
+
+router.route('/edit/:id')
+    .get(auth, controller.edit)
+    .post(auth, controller.postEdit)
     .put()
     .delete()
 
