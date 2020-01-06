@@ -52,7 +52,7 @@ const UserSchema = new mongoose.Schema({
     reviews: {
         type: {
             point: Number,
-            turn: [{like: Boolean, comment: String}]
+            turn: Array
         },
         default:{
             point: 100,

@@ -101,7 +101,10 @@
               <% if(user.reviews.point > 80 && product.block.indexOf(user.authId) === -1) { %>
               <button type="button" data-toggle="modal"
               data-target="#exampleModal" class="site-btn btn-bid-product btn-bid" >ĐẶT GIÁ</button>
-            <% }} else { %>
+            <% } else { %>
+              <button type="button" data-toggle="modal"
+            data-target="#exampleModal" class="site-btn btn-bid-product btn-bid" disabled>ĐẶT GIÁ</button>
+            <%} } else { %>
             <button type="button" data-toggle="modal"
             data-target="#exampleModal" class="site-btn btn-bid-product btn-bid" disabled>ĐẶT GIÁ</button>
             <% } %>

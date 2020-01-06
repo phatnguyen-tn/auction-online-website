@@ -32,11 +32,6 @@
               <i class="fa fa-pencil" aria-hidden="true"></i>
             </a>
           </div>
-          <% if (!products.length) {%>
-          <div class="card-body">
-            <h5>Không có sản phẩm</h5>
-          </div>
-          <% } else {%>
           <div class="card-body">
             <table
               id="bootstrap-data-table-export"
@@ -44,20 +39,15 @@
             >
               <thead>
                 <th>STT</th>
-                <th>Tên sản phẩm</th>
-                <th>Người bán</th>
-                <th>Xem chi tiết</th>
+                <th>Tên danh mục con</th>
+                <th>Số lượng</th>
               </thead>
               <tbody>
-              <% products.forEach(function(product, index){ %>
+              <% cat.child.forEach(function(element, index){ %>
                 <tr>
                     <td> <%= index+1%></td>
-                    <td> <%= product.name%></td>
-                    <td> <%= product.seller%></td>
-                    <td>
-                      <a href="/admin/products/<%= product._id %>">
-                      <button class="btn btn-primary">Xem</button></a
-                    </td>
+                    <td> <%= element%></td>
+                    <td> <%= cat.amountChild[index]%></td>
                 </tr>
               <%});%>
               </tbody>
@@ -69,7 +59,7 @@
                 <li class="page-item disabled">
                   <a
                     class="page-link"
-                    href="/admin/listcategories?page=<%= currentPage-1 %>"
+                    href="/admin/categories/<%= cat.id%>?page=<%= currentPage-1 %>"
                     >Previous</a
                   >
                 </li>
@@ -77,14 +67,14 @@
                 <li class="page-item">
                   <a
                     class="page-link"
-                    href="/admin/listcategories?page=<%= currentPage-1 %>"
+                    href="/admin/categories/<%= cat.id%>?page=<%= currentPage-1 %>"
                     >Previous</a
                   >
                 </li>
                 <% } %> <% for(let i = 1; i <= totalPage; i++) { %> <% if (i ==
                 currentPage) { %>
                 <li class="page-item active">
-                  <a class="page-link" href="#"
+                  <a class="page-link" href="/admin/categories/<%= cat.id%>"
                     ><%= i %><span class="sr-only">(current)</span></a
                   >
                 </li>
@@ -92,7 +82,7 @@
                 <li class="page-item">
                   <a
                     class="page-link"
-                    href="/admin/listcategories?page=<%= i %>"
+                    href="/admin/categories/<%= cat.id%>?page=<%= i %>"
                   >
                     <%= i %></a
                   >
@@ -101,7 +91,7 @@
                 <li class="page-item disabled">
                   <a
                     class="page-link"
-                    href="/admin/listcategories?page=<%= currentPage+1 %>"
+                    href="/admin/categories/<%= cat.id%>?page=<%= currentPage+1 %>"
                     >Next</a
                   >
                 </li>
@@ -109,7 +99,7 @@
                 <li class="page-item">
                   <a
                     class="page-link"
-                    href="/admin/listcategories?page=<%= currentPage+1 %>"
+                    href="/admin/categories/<%= cat.id%>?page=<%= currentPage+1 %>"
                     >Next</a
                   >
                 </li>
@@ -118,7 +108,6 @@
             </nav>
             <%# Pagination end %>
           </div>
-          <% } %>
         </div>
       </div>
     </div>

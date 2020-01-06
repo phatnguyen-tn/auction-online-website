@@ -34,6 +34,13 @@ router.route('/categories/edit/:id')
     .post(authAD, controller.posteditCat)
     .put()
     .delete()
+
+router.route('/categories/addchild/:id')
+    .get()
+    .post(authAD, controller.addChild)
+    .put()
+    .delete()
+
 // Manage product list
 router.route('/products')
     .get(authAD, controller.listProduct)

@@ -17,12 +17,13 @@
           <h3>Nguời bán: <%= product.seller%></h3>
           <table class="history-bid table table-striped m-t-10">
             <thead>
-              <tr>
+              <tr class="text-center">
                 <th>Thời điểm</th>
                 <th>Người mua</th>
                 <th>Giá</th>
                 <% if(user) { %>
                   <% if(user.authId === product.seller) { %>
+                    <th>Xem người mua</th>
                     <th>Từ chối đấu giá</th>
                   <%}}%>
               </tr>
@@ -35,12 +36,15 @@
                 </td>
               </tr>
               <% } else { product.historyBidId.turn.forEach(function(element, index){ %>
-              <tr>
+              <tr class="text-center">
                 <td><%= element.bidDate%></td>
                 <td><%= element.username%></td>
                 <td><%= element.price%></td>
                 <% if(user) { %>
                   <% if(user.authId === product.seller) { %>
+                    <td>
+                      <a href="/user/<%= username[index]%>">Xem</a>
+                    </td>
                 <td>
                   <form action="/products/block" method="POST">
                     <input type="hidden" name="id" value="<%= product.id%>">

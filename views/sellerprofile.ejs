@@ -1,0 +1,124 @@
+<div class="main-content">
+    <div class="page-top-info">
+      <div class="container">
+        <h4>Hồ sơ cá nhân</h4>
+      </div>
+    </div>
+    <section class="profile-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 profile-picture text-center">
+            <img src="/images/users/<%= seller.id %>.jpg" alt="" width="200px" height="200px"
+              onerror="this.src='/images/users/default_avt.jpg'" />
+            <a href="/user/update" class="update-profile-btn">
+              <h5 class="m-t-10 font-weight-bold">
+                <i class="fa fa-plus"></i> Cập nhật thông tin
+              </h5>
+            </a>
+          </div>
+          <div class="col-8">
+            <div class="info-profile fs-18">
+              <h6 class="d-inline font-weight-bold fs-18">Họ tên:</h6>
+              <span><%= seller.profile.name %></span>
+              <br />
+              <h6 class="d-inline font-weight-bold fs-18">Điểm đánh giá:</h6>
+              <span><%= seller.reviews.point%> điểm</span> <br />
+              <h6 class="d-inline font-weight-bold fs-18">Email:</h6>
+              <span><%= seller.profile.email %></span> 
+              <br />
+              <h6 class="d-inline font-weight-bold fs-18">Phân quyền:</h6>
+              <% if (seller.type === 'bidder') { %>
+              <span>Người dùng (Ra giá)</span>
+              <% } else if (seller.type === 'seller') { %>
+              <span>Người bán</span>
+              <% } else if (seller.type === 'admin') { %>
+              <span>Quản trị viên</span>
+              <% } %>
+              <div class="social-sharing">
+                <a href="" class="google-plus "><i class="fa fa-google-plus"></i></a>
+                <a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="" class="youtube"><i class="fa fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div id="accordion" class="accordion-area"> 
+                  <div class="panel">
+                    <div class="panel-header" id="headingSix">
+                      <button
+                        class="panel-link active"
+                        data-toggle="collapse"
+                        data-target="#collapse6"
+                        aria-expanded="false"
+                        aria-controls="collapse6"
+                      >
+                        Đánh giá
+                      </button>
+                    </div>
+                    <div
+                      id="collapse6"
+                      class="collapse"
+                      aria-labelledby="headingSix"
+                      data-parent="#accordion"
+                    >
+                      <div class="panel-body">
+                        <div class="fb-ratings">
+                          <div class="fb-ratings-header">
+                            TỔNG ĐIỂM ĐÁNH GIÁ
+                          </div>
+                          <div class="fb-ratings-overview">
+                            <div class="row">
+                              <div class="col-4">
+                                <div class="fb-ratings-overview-wrapper">
+                                  <div class="fb-ratings-overview-score">
+                                    <span class="fs-28 font-weight-bold"><%= seller.reviews.point%></span>
+                                    <span>trên 100 điểm</span>
+                                  </div>
+                                </div>
+                                <div class="fb-ratings-star-wrapper">
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star"></i>
+                                  <i class="fa fa-star-half-o"></i>
+                                </div>
+                              </div>
+                              
+                              </div>
+                            </div>
+                          </div>
+                          <div class="fb-ratings-list">
+                              <% seller.reviews.turn.forEach(function(element){ %>
+                                <div class="fb-ratings-list-item">
+                              <div class="fb-ratings-filter-item-avatar">
+                                
+                              </div>
+                              <div class="fb-ratings-filter-item-content">
+                                <strong><%= element.username%></strong>
+                                <p>
+                                  <% if(element.like) { %>
+                                    <i class="fa fa-thumbs-up">(+1)</i>
+                                  <%} else {%>
+                                    <i class="fa fa-thumbs-down">(-1)</i>
+                                  <%}%>
+                                </p>
+                                <p>
+                                 <%= element.comment%>
+                                </p>
+                                <br>
+                              </div>
+                            </div>
+                              <%});%>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+  </div>

@@ -34,10 +34,7 @@
             <i class="fa fa-plus"></i>
           </button>
         </div>
-        <form
-          method="POST"
-          class="add-cat-form input-group mb-3 mt-3 d-none"
-        >
+        <form method="POST" class="add-cat-form input-group mb-3 mt-3 d-none">
           <input
             type="text"
             class="form-control"
@@ -88,7 +85,12 @@
                     Huỷ
                   </button>
                   <form action="/admin/categories/delete" method="post">
-                    <input type="hidden" class="catName-del" name="catName" value="">
+                    <input
+                      type="hidden"
+                      class="catName-del"
+                      name="catName"
+                      value=""
+                    />
                     <button type="submit" class="btn btn-primary accept-del">
                       Chấp nhận
                     </button>
@@ -164,10 +166,7 @@
                 </li>
                 <% } else { %>
                 <li class="page-item">
-                  <a
-                    class="page-link"
-                    href="/admin/categories?page=<%= i %>"
-                  >
+                  <a class="page-link" href="/admin/categories?page=<%= i %>">
                     <%= i %></a
                   >
                 </li>

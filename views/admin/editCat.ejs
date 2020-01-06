@@ -25,7 +25,34 @@
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
-            <strong class="card-title">Chỉnh sửa danh mục</strong>
+            <div class="d-inline-block w-50">
+              <strong class="card-title">Chỉnh sửa danh mục</strong>
+            </div>
+            <div class="d-inline-block w-25">
+              <strong class="card-title">Thêm danh mục con: </strong>
+              <button class="m-l-10 btn btn-outline-success add-cat">
+                <i class="fa fa-plus"></i>
+              </button>
+            </div>
+            <form action="/admin/categories/addchild/<%= cat.id%>" method="POST" class="add-cat-form input-group mb-3 mt-3 d-none">
+              <input
+                type="text"
+                class="form-control"
+                id="newCat"
+                name="newCat"
+                placeholder="Tên danh mục mới"
+                required
+              />
+              <div class="input-group-append">
+                <button
+                  class="btn btn-outline-primary accept-add-cat"
+                  type="submit"
+                  id="button-addon2"
+                >
+                  Xác nhận
+                </button>
+              </div>
+            </form>
           </div>
           <div class="card-body">
             <form action="" method="POST">
@@ -38,8 +65,7 @@
                   name="catName"
                   value="<%= cat.name%>"
                 />
-              </div>
-              <% cat.child.%>
+              </div>         
               <button type="submit" class="btn btn-primary">
                 Lưu
               </button>

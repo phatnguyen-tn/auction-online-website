@@ -168,4 +168,16 @@ router.route('/wishlist/del')
   .put()
   .delete()
 
+router.route('/review/:username')
+  .get(auth, controller.review)
+  .post(auth, controller.postReview)
+  .put()
+  .delete()
+
+router.route('/:username')
+  .get(controller.viewUser)
+  .post()
+  .put()
+  .delete()
+
 module.exports = router;

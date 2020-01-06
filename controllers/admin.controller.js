@@ -71,9 +71,24 @@ module.exports.editCat = async function (req, res) {
     })
 }
 
+module.exports.addChild = async function(req, res){
+    var id = req.params.id;
+    var cat = await Cat.findById(id, function(err, doc){
+        var temp = doc.child;
+        temp.push(req.body.newCat);
+        var amountChild = doc.amountChild;
+        amountChild.push(0);
+        doc.child = temp;
+        doc.amountChild = amountChild;
+        doc.save();
+    });
+    res.redirect('/admin/categories');
+}
+
 module.exports.posteditCat = function (req, res) {
     var id = req.params.id;
     Cat.findById(id, function (err, doc) {
+        var oldName = doc.name;
         if (!err) {
             doc.name = req.body.catName;
             doc.save();
@@ -89,11 +104,7 @@ module.exports.posteditCat = function (req, res) {
 module.exports.get = async function (req, res) {
     var id = req.params.id;
     var cat = await Cat.findById(id);
-    var products = res.locals.products;
-    products = products.filter(function(product){
-        return product.category[0] === cat.name;
-    });
-    var countProduct = products.length;
+    var countProduct = cat.child.length;
     var page = parseInt(req.query.page) || 1;
     if (page < 1) page = 1;
     var start = (page - 1) * config.PER_PAGE;
@@ -103,7 +114,7 @@ module.exports.get = async function (req, res) {
         user: req.user,
         layout: 'admin/layoutadmin',
         cat: cat,
-        products: products.slice(start, end),
+        catChild: cat.child.slice(start, end), 
         currentPage: page,
         totalPage: totalPage
     });

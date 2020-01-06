@@ -53,12 +53,12 @@ module.exports.user = async function (req, res) {
             for (let index = 0; index < product.historyBidId.turn.length; index++) {
                 const element = product.historyBidId.turn[index];
                 if (element.username === req.user.authId)
-                return true;
+                    return true;
             }
         });
         var sellDateBP = [];
         var expDateBP = [];
-        biddingProduct.forEach(function(product){
+        biddingProduct.forEach(function (product) {
             var temp1 = moment(product.sellDate);
             sellDateBP.push(temp1.fromNow());
             var temp2 = moment(product.expDate);
@@ -68,12 +68,12 @@ module.exports.user = async function (req, res) {
             return (product.topBidder === req.user.authId && product.status === 'done');
         });
 
-        var sellProduct = products.filter(function(product){
+        var sellProduct = products.filter(function (product) {
             return (product.seller === req.user.authId);
         });
 
-        var selledProduct = products.filter(function(product){
-            return (product.status ==='done' && product.topBidder);
+        var selledProduct = products.filter(function (product) {
+            return (product.status === 'done' && product.topBidder);
         });
 
         if (user) {
@@ -220,6 +220,43 @@ module.exports.delwishlist = async function (req, res) {
             $set: { wishlist: newWishList }
         });
         res.redirect('/user/wishlist');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+module.exports.viewUser = async function (req, res) {
+    var username = req.params.username;
+    var seller = await User.findOne({ authId: username });
+    res.render('sellerprofile', {
+        user: req.user,
+        seller: seller
+    });
+}
+
+module.exports.review = function (req, res) {
+    res.render('review', {
+        user: req.user
+    });
+}
+
+module.exports.postReview = function (req, res) {
+    try {
+        var username = req.params.username;
+        var like = false;
+        if (req.body.like == 'true') {
+            like = true;
+        }
+        User.findOne({ authId: username }, function (err, doc) {
+            var temp = {
+                username: req.user.authId,
+                like: like,
+                comment: req.body.comment
+            }
+            doc.reviews.turn.push(temp);
+            doc.save();
+        });
+        res.redirect('/user/' + username);
     } catch (error) {
         console.log(error);
     }

@@ -22,7 +22,7 @@
             <span><%= user.profile.name %></span>
             <br />
             <h6 class="d-inline font-weight-bold fs-18">Điểm đánh giá:</h6>
-            <span>86 điểm</span> <br />
+            <span><%= user.reviews.point%> điểm</span> <br />
             <h6 class="d-inline font-weight-bold fs-18">Email:</h6>
             <span><%= user.profile.email %></span> 
             <br />
@@ -46,7 +46,7 @@
             <a href="/user/post" class="btn btn-outline-success">
               Đăng sản phẩm
             </a>
-            <% } else if (user.type === 'seller') { %>
+            <% } else if (user.type === 'admin') { %>
             <span>Quản trị viên</span>
             <% } %>
             
@@ -185,7 +185,7 @@
                   >
                     <div class="panel-body">
                       <% sellProduct.forEach(function(product){%>
-                        <h3>Dell XPS15</h3>
+                        <h3><%= product.name%></h3>
                         <div class="row">
                         <div class="col-3">
                           <img
@@ -299,7 +299,7 @@
                             <div class="col-4">
                               <div class="fb-ratings-overview-wrapper">
                                 <div class="fb-ratings-overview-score">
-                                  <span class="fs-28 font-weight-bold">86</span>
+                                  <span class="fs-28 font-weight-bold"><%= user.reviews.point%></span>
                                   <span>trên 100 điểm</span>
                                 </div>
                               </div>
@@ -311,98 +311,29 @@
                                 <i class="fa fa-star-half-o"></i>
                               </div>
                             </div>
-                            <div class="col-8">
-                              <div class="fb-ratings-filter">
-                                <span
-                                  class="fb-ratings-filter-item fb-ratings-filter-item-active"
-                                  >Tất cả</span
-                                >
-                                <span class="fb-ratings-filter-item"
-                                  >1 điểm</span
-                                >
-                                <span class="fb-ratings-filter-item"
-                                  >-1 điểm</span
-                                >
-                              </div>
-                            </div>
                           </div>
                         </div>
                         <div class="fb-ratings-list">
-                          <div class="fb-ratings-list-item">
-                            <div class="fb-ratings-filter-item-avatar">
-                              <img
-                                src="../images/profilepicture.png"
-                                alt=""
-                                width="40px"
-                                height="40px"
-                              />
+                          <% user.reviews.turn.forEach(function(element){ %>
+                                <div class="fb-ratings-list-item">
+                              <div class="fb-ratings-filter-item-avatar">
+                              </div>
+                              <div class="fb-ratings-filter-item-content">
+                                <strong><%= element.username%></strong>
+                                <p>
+                                  <% if(element.like) { %>
+                                    <i class="fa fa-thumbs-up">(+1)</i>
+                                  <%} else {%>
+                                    <i class="fa fa-thumbs-down">(-1)</i>
+                                  <%}%>
+                                </p>
+                                <p>
+                                 <%= element.comment%>
+                                </p>
+                                <br>
+                              </div>
                             </div>
-                            <div class="fb-ratings-filter-item-content">
-                              <strong>User1</strong>
-                              <p>
-                                <i class="fa fa-thumbs-up">(+1)</i>
-                              </p>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Asperiores odio aspernatur
-                                exercitationem. Illo porro perspiciatis
-                                blanditiis nesciunt odit tenetur odio sint
-                                corrupti quod consectetur, molestias
-                                necessitatibus inventore? Id, itaque placeat.
-                              </p>
-                              <p>1/9/2019 20:40</p>
-                            </div>
-                          </div>
-                          <div class="fb-ratings-list-item">
-                            <div class="fb-ratings-filter-item-avatar">
-                              <img
-                                src="../images/profilepicture.png"
-                                alt=""
-                                width="40px"
-                                height="40px"
-                              />
-                            </div>
-                            <div class="fb-ratings-filter-item-content">
-                              <strong>User2</strong>
-                              <p>
-                                <i class="fa fa-thumbs-up">(+1)</i>
-                              </p>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Asperiores odio aspernatur
-                                exercitationem. Illo porro perspiciatis
-                                blanditiis nesciunt odit tenetur odio sint
-                                corrupti quod consectetur, molestias
-                                necessitatibus inventore? Id, itaque placeat.
-                              </p>
-                              <p>1/9/2019 20:40</p>
-                            </div>
-                          </div>
-                          <div class="fb-ratings-list-item">
-                            <div class="fb-ratings-filter-item-avatar">
-                              <img
-                                src="../images/profilepicture.png"
-                                alt=""
-                                width="40px"
-                                height="40px"
-                              />
-                            </div>
-                            <div class="fb-ratings-filter-item-content">
-                              <strong>User3</strong>
-                              <p>
-                                <i class="fa fa-thumbs-down">(-1)</i>
-                              </p>
-                              <p>
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipisicing elit. Asperiores odio aspernatur
-                                exercitationem. Illo porro perspiciatis
-                                blanditiis nesciunt odit tenetur odio sint
-                                corrupti quod consectetur, molestias
-                                necessitatibus inventore? Id, itaque placeat.
-                              </p>
-                              <p>1/9/2019 20:40</p>
-                            </div>
-                          </div>
+                              <%});%>
                         </div>
                       </div>
                     </div>
