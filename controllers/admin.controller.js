@@ -85,10 +85,11 @@ module.exports.addChild = async function(req, res){
     res.redirect('/admin/categories');
 }
 
-module.exports.posteditCat = function (req, res) {
+module.exports.posteditCat = async function (req, res) {
     var id = req.params.id;
-    Cat.findById(id, function (err, doc) {
+    await Cat.findById(id,async function (err, doc) {
         var oldName = doc.name;
+        await Product.updateMany({ category: { $all: [oldName] } }, { $set: { "category.$" : req.body.catName } });
         if (!err) {
             doc.name = req.body.catName;
             doc.save();

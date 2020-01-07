@@ -10,11 +10,6 @@
           <div class="col-4 profile-picture text-center">
             <img src="/images/users/<%= seller.id %>.jpg" alt="" width="200px" height="200px"
               onerror="this.src='/images/users/default_avt.jpg'" />
-            <a href="/user/update" class="update-profile-btn">
-              <h5 class="m-t-10 font-weight-bold">
-                <i class="fa fa-plus"></i> Cập nhật thông tin
-              </h5>
-            </a>
           </div>
           <div class="col-8">
             <div class="info-profile fs-18">
@@ -73,7 +68,7 @@
                               <div class="col-4">
                                 <div class="fb-ratings-overview-wrapper">
                                   <div class="fb-ratings-overview-score">
-                                    <span class="fs-28 font-weight-bold"><%= seller.reviews.point%></span>
+                                    <span class="fs-28 font-weight-bold"><%= seller.point%></span>
                                     <span>trên 100 điểm</span>
                                   </div>
                                 </div>
@@ -90,7 +85,7 @@
                             </div>
                           </div>
                           <div class="fb-ratings-list">
-                              <% seller.reviews.turn.forEach(function(element){ %>
+                              <% seller.reviews.forEach(function(element){ %>
                                 <div class="fb-ratings-list-item">
                               <div class="fb-ratings-filter-item-avatar">
                                 

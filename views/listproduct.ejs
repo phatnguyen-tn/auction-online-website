@@ -77,6 +77,9 @@
                 <div class="product-details">
                   <div class="nameP">
                     <h6 class="d-inline m-r-5"><%= product.name%></h6>
+                    <% if(count[index] < 60*60*1000) { %>
+                      <span class="new">mới</span>
+                    <%}%>
                   </div>
                   <br />
                   <div class="price">

@@ -163,12 +163,14 @@ module.exports.listproduct = function (req, res) {
         var topBidder = [];
         var sellDate = [];
         var dateExp = [];
+        var count = [];
         products.forEach(function (product) {
             var temp = moment(product.sellDate);
             sellDate.push(temp.fromNow());
             var temp1 = moment(product.expDate);
             dateExp.push(temp1.fromNow());
             topBidder.push(findTopBidder(product.historyBidId.turn));
+            count.push(moment().diff(temp));
         });
         topBidder.forEach(function (element) {
             element.username = maskInfo(element.username);
@@ -186,7 +188,8 @@ module.exports.listproduct = function (req, res) {
             currentPage: page,
             totalPage: totalPage,
             topBidder: topBidder,
-            user: req.user
+            user: req.user,
+            count: count
         });
     } catch (error) {
         console.log(error);
@@ -267,7 +270,7 @@ module.exports.bid = async function (req, res) {
             await transporter.sendMail({
                 from: `"Auction" <${config.EMAIL_USER}>`,
                 to: user.profile.email,
-                subject: 'Xác thực email',
+                subject: 'Xác thực đấu giá',
                 html: `
                         <h1>Xin chào ${user.profile.name}</h1>
                         <br>
@@ -278,7 +281,7 @@ module.exports.bid = async function (req, res) {
             await transporter.sendMail({
                 from: `"Auction" <${config.EMAIL_USER}>`,
                 to: req.user.profile.email,
-                subject: 'Xác thực email',
+                subject: 'Xác thực đấu giá',
                 html: `
                         <h1>Xin chào ${req.user.profile.name}</h1>
                         <br>

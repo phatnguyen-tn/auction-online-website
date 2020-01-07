@@ -49,15 +49,12 @@ const UserSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    point: {
+        type: Number,
+        default: 100
+    },
     reviews: {
-        type: {
-            point: Number,
-            turn: Array
-        },
-        default:{
-            point: 100,
-            turn: []
-        }
+        type: Array
     }
 })
 

@@ -138,17 +138,6 @@ $(document).ready(function () {
 		window.open(url, '_self');
 	});
 
-	var sellDate = $('.sellDate').html();
-	function checkInNMinutes(date) {
-		// var check1 = date.indexOf('Trong');
-		// var check2 = date.indexOf('phút');
-		// var check3 = date.indexOf('trước');
-		// if (check1 + check2 + check3) {
-		// 	$('.nameP').append('<span class="new">mới</span>');
-		// }
-	}
-	checkInNMinutes(sellDate);
-
 	$('#exampleModal').on('show.bs.modal', function (event) {
 		var button = $(event.relatedTarget); // Button that triggered the modal
 		var recipient = button.data('whatever'); // Extract info from data-* attributes

@@ -20,7 +20,7 @@ const moment = require('moment');
 
 function fiveMostBidProduct(products) {
     var res = products.sort(function(product1, product2){
-        return product1.historyBidId.turn.length - product2.historyBidId.turn.length;
+        return product2.historyBidId.turn.length - product1.historyBidId.turn.length;
     });
     return res;
 }
@@ -28,17 +28,17 @@ function fiveMostBidProduct(products) {
 function fiveLatestProduct(products) {
     var res = products.sort(function(product1, product2){
         var temp1 = moment(product1.expDate);
-        var dis1 = temp1.diff(moment());
+        var dis1 = moment().diff(temp1);
         var temp2 = moment(product2.expDate);
-        var dis2 = temp2.diff(moment());
-        return dis1 - dis2;
+        var dis2 = moment().diff(temp2);
+        return dis2 - dis1;
     });
     return res;
 }
 
 function fiveMostPriceProduct(products) {
     var res = products.sort(function(product1, product2){
-        return product1.currentPrice - product2.currentPrice;
+        return product2.currentPrice - product1.currentPrice;
     });
     return res;
 }

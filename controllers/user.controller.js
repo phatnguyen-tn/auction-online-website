@@ -234,28 +234,68 @@ module.exports.viewUser = async function (req, res) {
     });
 }
 
-module.exports.review = function (req, res) {
+module.exports.reviewBidder = function (req, res) {
+    var productId = req.query.id;
+    var products = res.locals.products;
+    var username = req.params.username;
+    products.forEach(function(product){
+        if(product.id == productId && product.topBidder !== username && product.status == 'done'){
+            res.redirect('/user');
+        }
+    });
     res.render('review', {
         user: req.user
     });
 }
 
-module.exports.postReview = function (req, res) {
+module.exports.reviewSeller = function (req, res) {
+    var productId = req.query.id;
+    var products = res.locals.products;
+    var username = req.params.username;
+    products.forEach(function(product){
+        if(product.id == productId && product.seller !== username && product.status == 'done'){
+            res.redirect('/user');
+        }
+    });
+    res.render('review', {
+        user: req.user
+    });
+}
+
+function calPoint(list){
+    var like = 0;
+    var dislike = 0;
+    for (let index = 0; index < list.length; index++) {
+        const element = list[index];
+        if (element.like) like++;
+        else dislike++;
+    }
+    return like/(like+dislike)*100;
+}
+
+module.exports.postReview = async function (req, res) {
     try {
         var username = req.params.username;
         var like = false;
         if (req.body.like == 'true') {
             like = true;
         }
-        User.findOne({ authId: username }, function (err, doc) {
-            var temp = {
-                username: req.user.authId,
-                like: like,
-                comment: req.body.comment
-            }
-            doc.reviews.turn.push(temp);
+        var temp = {
+            username: req.user.authId,
+            like: like,
+            comment: req.body.comment
+        }
+        await User.updateOne({ authId: username }, {
+            $push: { reviews: temp}
+        }
+        , { upsert: true });
+
+        await User.findOne({authId: username}, function(err, doc){
+            var list = doc.reviews;
+            doc.point = calPoint(list);
             doc.save();
         });
+
         res.redirect('/user/' + username);
     } catch (error) {
         console.log(error);
