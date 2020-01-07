@@ -9,6 +9,11 @@ function isExpired(date) {
     return end.diff(moment());
 }
 
+// Auto Extend Expired Date
+function autoExtend(date) {
+    return date.add(10, 'minutes');
+}
+
 module.exports = function (app) {
     app.use(async function (req, res, next) {
         const cats = await Cat.find();
@@ -18,6 +23,10 @@ module.exports = function (app) {
         products.forEach(function (product) {
             var expDate = product.expDate;
             var temp = Product.findOne({ _id: product._id }, async function (err, doc) {
+                if (doc.extend === 'yes' && isExpired(expDate) <= 5*60*1000) {
+                    doc.extend = 'no';
+                    doc.expDate = autoExtend(expDate);
+                }
                 if (doc.status == 'bidding' && isExpired(expDate) <= 0) {
                     doc.status = 'done';
                     // Update category

@@ -129,7 +129,7 @@ module.exports.postProduct = async function (req, res) {
         });
         tmp.seller = req.user.authId;
         tmp.sellDate = moment();
-        tmp.expDate = moment().add(5, 'days');
+        tmp.expDate = moment().add(15, 'minutes');
         tmp.images = req.body.avatar;
         tmp.description = req.body.description;
         tmp.currentPrice = req.body.startingPrice;
