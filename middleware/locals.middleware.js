@@ -11,7 +11,8 @@ function isExpired(date) {
 
 // Auto Extend Expired Date
 function autoExtend(date) {
-    return date.add(10, 'minutes');
+    var temp = moment(date);
+    return temp.add(10, 'minutes');
 }
 
 module.exports = function (app) {

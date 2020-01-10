@@ -30,7 +30,7 @@ $(document).ready(function () {
 	/*------------------
 		  wishbtn
 	  --------------------*/
-	  
+
 	$('.wishlist-btn').on('click', function () {
 		$(this).toggleClass('color-f151167 color-666666');
 		var element = $('.wishlist-btn > i');
@@ -133,8 +133,9 @@ $(document).ready(function () {
 
 	$('.sorting-select').on('change', function () {
 		var url = window.location.href;
-		url = url.split('?')[0];
-		url += '?sort=' + $(this).val();
+		
+			url = url.split('?')[0];
+			url += '?sort=' + $(this).val();
 		window.open(url, '_self');
 	});
 
@@ -152,8 +153,8 @@ $(document).ready(function () {
 		$('.bidPrice').val($('.quantity').val());
 	});
 
-	function checkNewPassword(){
-		if($('#re_newPassword').val() == $('#newPassword').val()){
+	function checkNewPassword() {
+		if ($('#re_newPassword').val() == $('#newPassword').val()) {
 			return true;
 		}
 		else {
@@ -161,5 +162,7 @@ $(document).ready(function () {
 			return false;
 		}
 	}
+
+	$('.carousel').carousel();
 
 });

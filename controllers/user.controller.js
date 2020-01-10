@@ -27,21 +27,32 @@ moment.updateLocale('en', {
     }
 });
 
+function findProductById(products, id) {
+    for (let index = 0; index < products.length; index++) {
+        const element = products[index];
+        if (element.id === id) {
+            return element;
+        }
+    };
+}
+
 module.exports.user = async function (req, res) {
     try {
         const user = await User.findById(req.user.id);
         var wishlist = [];
         var wishlists = req.user.wishlist;
-        var products = res.locals.products;
+        var products = await Product.find();
         var sellDate = [];
         var expDate = [];
         wishlists.forEach(function (element) {
             var temp = findProductById(products, element);
-            var temp1 = moment(temp.sellDate);
-            sellDate.push(temp1.fromNow());
-            var temp2 = moment(temp.expDate);
-            expDate.push(temp2.fromNow());
-            wishlist.push(temp);
+            if (temp && temp.status === 'bidding') {
+                var temp1 = moment(temp.sellDate);
+                sellDate.push(temp1.fromNow());
+                var temp2 = moment(temp.expDate);
+                expDate.push(temp2.fromNow());
+                wishlist.push(temp);
+            }
         });
         wishlist.forEach(function (element) {
             var temp1 = moment(element.sellDate);
@@ -49,13 +60,15 @@ module.exports.user = async function (req, res) {
             var temp2 = moment(element.expDate);
             element.expDate = temp2.fromNow();
         });
-        var biddingProduct = products.filter(function (product) {
+        var productBidding = res.locals.products;
+        var biddingProduct = productBidding.filter(function (product) {
             for (let index = 0; index < product.historyBidId.turn.length; index++) {
                 const element = product.historyBidId.turn[index];
                 if (element.username === req.user.authId)
                     return true;
             }
         });
+
         var sellDateBP = [];
         var expDateBP = [];
         biddingProduct.forEach(function (product) {
@@ -64,12 +77,13 @@ module.exports.user = async function (req, res) {
             var temp2 = moment(product.expDate);
             expDateBP.push(temp2.fromNow());
         });
+
         var winProduct = products.filter(function (product) {
             return (product.topBidder === req.user.authId && product.status === 'done');
         });
 
         var sellProduct = products.filter(function (product) {
-            return (product.seller === req.user.authId);
+            return (product.seller === req.user.authId && product.status === 'bidding');
         });
 
         var selledProduct = products.filter(function (product) {
@@ -129,7 +143,7 @@ module.exports.postProduct = async function (req, res) {
         });
         tmp.seller = req.user.authId;
         tmp.sellDate = moment();
-        tmp.expDate = moment().add(15, 'minutes');
+        tmp.expDate = moment().add(5, 'minutes');
         tmp.images = req.body.avatar;
         tmp.description = req.body.description;
         tmp.currentPrice = req.body.startingPrice;
@@ -145,15 +159,6 @@ module.exports.postProduct = async function (req, res) {
     } catch (error) {
         console.log(error);
     }
-}
-
-function findProductById(products, id) {
-    for (let index = 0; index < products.length; index++) {
-        const element = products[index];
-        if (element.id === id) {
-            return element;
-        }
-    };
 }
 
 module.exports.upgradeRole = async function (req, res) {
@@ -238,8 +243,8 @@ module.exports.reviewBidder = function (req, res) {
     var productId = req.query.id;
     var products = res.locals.products;
     var username = req.params.username;
-    products.forEach(function(product){
-        if(product.id == productId && product.topBidder !== username && product.status == 'done'){
+    products.forEach(function (product) {
+        if (product.id == productId && product.topBidder !== username && product.status == 'done') {
             res.redirect('/user');
         }
     });
@@ -252,8 +257,8 @@ module.exports.reviewSeller = function (req, res) {
     var productId = req.query.id;
     var products = res.locals.products;
     var username = req.params.username;
-    products.forEach(function(product){
-        if(product.id == productId && product.seller !== username && product.status == 'done'){
+    products.forEach(function (product) {
+        if (product.id == productId && product.seller !== username && product.status == 'done') {
             res.redirect('/user');
         }
     });
@@ -262,7 +267,7 @@ module.exports.reviewSeller = function (req, res) {
     });
 }
 
-function calPoint(list){
+function calPoint(list) {
     var like = 0;
     var dislike = 0;
     for (let index = 0; index < list.length; index++) {
@@ -270,7 +275,7 @@ function calPoint(list){
         if (element.like) like++;
         else dislike++;
     }
-    return like/(like+dislike)*100;
+    return like / (like + dislike) * 100;
 }
 
 module.exports.postReview = async function (req, res) {
@@ -286,11 +291,11 @@ module.exports.postReview = async function (req, res) {
             comment: req.body.comment
         }
         await User.updateOne({ authId: username }, {
-            $push: { reviews: temp}
+            $push: { reviews: temp }
         }
-        , { upsert: true });
+            , { upsert: true });
 
-        await User.findOne({authId: username}, function(err, doc){
+        await User.findOne({ authId: username }, function (err, doc) {
             var list = doc.reviews;
             doc.point = calPoint(list);
             doc.save();

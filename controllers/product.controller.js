@@ -77,14 +77,14 @@ function filterProduct(array, condition) {
             return (array.sort(function (element1, element2) {
                 var date1 = moment(element1.sellDate);
                 var date2 = moment(element2.sellDate);
-                return date1.diff(date2);
+                return date2.diff(date1);
             }));
             break;
         case 2:
             return (array.sort(function (element1, element2) {
                 var date1 = moment(element1.sellDate);
                 var date2 = moment(element2.sellDate);
-                return date2.diff(date1);
+                return date1.diff(date2);
             }));
             break;
         case 3:
@@ -222,7 +222,7 @@ module.exports.productdetail = function (req, res) {
     var product = findProductById(products, id);
     var productByCat = [];
     productByCat = findProductByCat(products, product.category[1], id);
-    productByCat.slice(0, 5);
+    productByCat = productByCat.slice(0, 5);
     seller = maskInfo(product.seller);
     topBidder = maskInfo(product.topBidder)
     var temp = moment(product.sellDate);
